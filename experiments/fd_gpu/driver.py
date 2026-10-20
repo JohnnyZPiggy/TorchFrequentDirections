@@ -195,7 +195,7 @@ def profile(fn, a, ell):
 def benchmarks(gpu):
     from torchfrequentdirections import fast_fd, reference_fd
     results = []
-    for n,d,ell in ((64,32,4),(128,64,8),(256,128,16)):
+    for n,d,ell in ((64,32,4),(128,64,8),(256,128,16),(128,512,32)):
         for dtype in (torch.float32, torch.float64):
             a = torch.randn(n,d,dtype=torch.float64,generator=torch.Generator().manual_seed(SEED)).to(dtype)
             row = {'n':n, 'd':d, 'ell':ell, 'dtype':str(dtype), 'methods':[]}
@@ -279,4 +279,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    raise SystemExit(0 if main()['status'] == 'PASS' else 1)
