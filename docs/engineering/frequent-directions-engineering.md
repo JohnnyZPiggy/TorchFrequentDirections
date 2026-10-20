@@ -1,5 +1,14 @@
 # Issue #1 — CPU bootstrap engineering evidence
 
+Issue #5 follow-up: `sketch()` now copies and zero-pads an occupied prefix of
+at most ell rows, retaining finite output checks and the longer-buffer shrink.
+The [R1–R3 update](../research/frequent-directions-tensorization.md) documents
+exact Gram equivalence and the noncanonical row-representation change.
+Candidate `687ea56596d1b47633b2abf5f94b3feffe04ec31` passed 26 clean-source
+CPU tests, independent CPU/T4 oracle checks and shuffled paired A/B measurements;
+see the [Issue #5 report](../../reports/gpu/issue5-20261020/summary.md).
+Secondary zero-clear and finite-check removal are deferred. GPT review is pending.
+
 Issue #3 follow-up: the core algorithm below is unchanged. A project-owned
 exact-source driver and artifact manifest now exercise same-algorithm CPU/GPU
 correctness, transfers, synchronized repeated timing and intrusive SVD/update
