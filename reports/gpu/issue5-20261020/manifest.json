@@ -1,0 +1,90 @@
+{
+  "status": "PASS",
+  "scientific_acceptance": "ARCHITECT_REVIEW_PENDING",
+  "source_sha": "687ea56596d1b47633b2abf5f94b3feffe04ec31",
+  "baseline_sha": "73203cb3415bc0c8733e7f4e7c0d1d63a431a03f",
+  "run_id": "fd5-20261020-205608",
+  "issue": "https://github.com/JohnnyZPiggy/TorchFrequentDirections/issues/5",
+  "environment": {
+    "python": "3.13.15",
+    "torch": "2.11.0+cu130",
+    "cuda": "13.0",
+    "cpu_threads": 1,
+    "tf32": false,
+    "cpu_model": "Intel(R) Xeon(R) CPU @ 2.00GHz"
+  },
+  "device": {
+    "observed": "Tesla T4",
+    "compute_capability": [
+      7,
+      5
+    ],
+    "total_memory_bytes": 15637086208,
+    "tensor_device": "cuda:0"
+  },
+  "seed": 20261020,
+  "cleanup_confirmed": true,
+  "source_snapshot": "a60ed92d80a8866b413b928d609cc3afb82ec408",
+  "artifacts": [
+    {
+      "name": "summary.md",
+      "bytes": 9993,
+      "sha256": "348e13fcdeaf0ef7a14f7db0ae35e67ec005b2e43652e7fb99dfbb7c65ca167d"
+    },
+    {
+      "name": "correctness.json",
+      "bytes": 3637,
+      "sha256": "e73fd48fa4b1ba47639ad8deb6d98566f27144a6e1a48a32720506ecfd246d14"
+    },
+    {
+      "name": "benchmark.csv",
+      "bytes": 113906,
+      "sha256": "51dc533f024fba68fb3358cf4e8edad9bb374f48af5717ce6c604022e0ea4262"
+    },
+    {
+      "name": "profile.csv",
+      "bytes": 13072,
+      "sha256": "d9c051d8b28f292a6087eca250a14dc567b20b620480da75aa29c953e6dcd0ab"
+    },
+    {
+      "name": "cpu_validation.json",
+      "bytes": 104225,
+      "sha256": "528f5e12e9aa27dd7e32e5a2c85929d6c34cac2eaa28186d8d66778ce006b032"
+    },
+    {
+      "name": "snapshot.json",
+      "bytes": 222,
+      "sha256": "379cee212a2ec1b2b4576f23c0588d37f612bb3e49b0904bb87f6dafb7740cb1"
+    },
+    {
+      "name": "local-ab-summary.json",
+      "bytes": 644,
+      "sha256": "1229d6064ce827a235d337bd8758e5ac347a8254e3d675bdcd4d1a767bcb3c16"
+    },
+    {
+      "name": "local-execution.json",
+      "bytes": 721,
+      "sha256": "14e6df0e1ae769252dce7dad99d8bdbc212f06bc8bde4faf6680cbee3331c6b9"
+    },
+    {
+      "name": "preflight.json",
+      "bytes": 3115,
+      "sha256": "dd4cd5539feb9a2db350571c31c338e5cf756764e221b3f1b4fccdbff63af35f"
+    },
+    {
+      "name": "fd-snapshot.json",
+      "bytes": 896485,
+      "sha256": "7ae49be64bcbd63aaa9c6ec9834c67bcf949f350f8f384762864696e086888a9"
+    },
+    {
+      "name": "colab-control.json",
+      "bytes": 5929,
+      "sha256": "ac34dd9e0558df6cf923263cc290368db6964e6bf5272b1d419e773f94d02835"
+    },
+    {
+      "name": "host-execution.json",
+      "bytes": 703,
+      "sha256": "05a816634473514d581513ef007c6bdf233f87e6ec88e78da8486f12b570ba4c"
+    }
+  ]
+}

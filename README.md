@@ -1,9 +1,10 @@
 # TorchFrequentDirections
 
 Inference-only reference and buffered Frequent Directions, using native PyTorch
-SVD. The CPU baseline was accepted in PR #2; bounded CPU/GPU measurements for
-[Issue #3](https://github.com/JohnnyZPiggy/TorchFrequentDirections/issues/3) are
-submitted for GPT Architect review.
+SVD. CPU and bounded T4 baselines were accepted in PRs #2/#4; the lossless
+short-snapshot optimization for
+[Issue #5](https://github.com/JohnnyZPiggy/TorchFrequentDirections/issues/5)
+is submitted for GPT Architect review.
 
 ```sh
 python -m pip install .
@@ -39,6 +40,8 @@ of at most `ell` rows is represented without shrink, so it may have rank `ell`.
 Short Fast snapshots copy the occupied rows and pad zeros without SVD. Their row
 orientation can differ from earlier releases; covariance and right-subspace
 guarantees, independent ownership and continued-update semantics are preserved.
+For PCA, extract the right singular subspace of the returned sketch; slicing its
+raw rows does not select principal components.
 
 [Mathematical specification](docs/research/frequent-directions-tensorization.md),
 [engineering/provenance and evidence](docs/engineering/frequent-directions-engineering.md),
@@ -50,6 +53,9 @@ PyTorch 2.11.0+cu130 / Python 3.13.15, float32/float64. See the
 for measured shapes, transfers, variability, cleanup and limitations. Most small
 tested cases were slower on GPU; the wider float32 Fast case showed a modest
 gain against a one-thread CPU baseline. This is not a general speedup guarantee.
+The [snapshot A/B report](reports/gpu/issue5-20261020/summary.md) compares this
+optimization with the exact previous source in the same CPU/T4 environment,
+including short and unchanged long-buffer paths and 20 shuffled paired trials.
 Packaging permits torch>=2.0 / Python>=3.10, but older releases are unverified.
 TPU, torch.compile, half precision and other accelerators remain NOT RUN;
 autograd is unsupported.

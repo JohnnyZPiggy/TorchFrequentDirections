@@ -1,0 +1,89 @@
+{
+  "status": "PASS",
+  "source_sha": "687ea56596d1b47633b2abf5f94b3feffe04ec31",
+  "baseline_sha": "73203cb3415bc0c8733e7f4e7c0d1d63a431a03f",
+  "edge_cases": 156,
+  "workload_cases": 32,
+  "oracle": "CPU float64 Gram PSD/spectral tail/projection oracle; all k/tail/residual observations retained compactly in raw JSON.",
+  "tolerance": "32*eps(input_dtype)*max(n,d,2*ell,1)*||A||_F^2; baseline/candidate Gram gap: four times that slack.",
+  "checks": "All occupancy boundaries, zero/rank-one/random, ell=1, ell>d, exact occupied-row copy, zero padding, alias isolation, multiple fills and continued updates passed; short nonempty SVD 1->0, empty 0->0, long 1->1. Finite-call counts unchanged.",
+  "precision_results": [
+    {
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "cases": 47,
+      "status": "PASS",
+      "max_baseline_candidate_gram_gap_over_tolerance": 0.004641884408584492,
+      "baseline": {
+        "psd_max_excess_over_tolerance": 0.01856753763433797,
+        "covariance_max_excess_over_tolerance": 0.00971125532200288,
+        "projection_max_excess_over_tolerance": 5.350521120627668e-10,
+        "k_bound_checks": 234
+      },
+      "candidate": {
+        "psd_max_excess_over_tolerance": 0.00971125532200288,
+        "covariance_max_excess_over_tolerance": 0.00971125532200288,
+        "projection_max_excess_over_tolerance": 5.350521120627668e-10,
+        "k_bound_checks": 234
+      }
+    },
+    {
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "cases": 47,
+      "status": "PASS",
+      "max_baseline_candidate_gram_gap_over_tolerance": 0.004097006995461441,
+      "baseline": {
+        "psd_max_excess_over_tolerance": 0.016388027981845764,
+        "covariance_max_excess_over_tolerance": 0.021079751945715042,
+        "projection_max_excess_over_tolerance": 0.010539875972857521,
+        "k_bound_checks": 234
+      },
+      "candidate": {
+        "psd_max_excess_over_tolerance": 0.015623744920849494,
+        "covariance_max_excess_over_tolerance": 0.021079751945715042,
+        "projection_max_excess_over_tolerance": 0.010539875972857521,
+        "k_bound_checks": 234
+      }
+    },
+    {
+      "device": "cuda",
+      "dtype": "torch.float32",
+      "cases": 47,
+      "status": "PASS",
+      "max_baseline_candidate_gram_gap_over_tolerance": 0.018502512189644885,
+      "baseline": {
+        "psd_max_excess_over_tolerance": 0.029683855916672733,
+        "covariance_max_excess_over_tolerance": 0.07401004875857956,
+        "projection_max_excess_over_tolerance": 1.6539309961357813e-09,
+        "k_bound_checks": 234
+      },
+      "candidate": {
+        "psd_max_excess_over_tolerance": 0.006228173480062243,
+        "covariance_max_excess_over_tolerance": 0.021795293754556702,
+        "projection_max_excess_over_tolerance": 1.6539309961357813e-09,
+        "k_bound_checks": 234
+      }
+    },
+    {
+      "device": "cuda",
+      "dtype": "torch.float64",
+      "cases": 47,
+      "status": "PASS",
+      "max_baseline_candidate_gram_gap_over_tolerance": 0.008352274780847579,
+      "baseline": {
+        "psd_max_excess_over_tolerance": 0.033409099123390316,
+        "covariance_max_excess_over_tolerance": 0.033409099123390316,
+        "projection_max_excess_over_tolerance": 0.010539875972857521,
+        "k_bound_checks": 234
+      },
+      "candidate": {
+        "psd_max_excess_over_tolerance": 0.005698191479086098,
+        "covariance_max_excess_over_tolerance": 0.021079751945715042,
+        "projection_max_excess_over_tolerance": 0.010539875972857521,
+        "k_bound_checks": 234
+      }
+    }
+  ],
+  "scientific_acceptance": "ARCHITECT_REVIEW_PENDING"
+}

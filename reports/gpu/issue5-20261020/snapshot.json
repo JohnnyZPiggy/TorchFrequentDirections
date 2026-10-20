@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "framework_sha": "a60ed92d80a8866b413b928d609cc3afb82ec408",
+  "files_verified": 131,
+  "preexisting_template_links": 8,
+  "project_root_links": "PASS",
+  "parsers": "Python AST / JSON / SVG XML"
+}
