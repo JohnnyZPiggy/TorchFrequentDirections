@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "scope": "local inspection only, no third-party redistribution",
+  "code_copyright": "2013 Shohei Hido",
+  "code_license": "BSD two-condition text; inspected, not vendored",
+  "official_2015_author_repository": "UNVERIFIED",
+  "files": [
+    {
+      "path": "paper.pdf",
+      "bytes": 968280,
+      "sha256": "8c4a9578f1924787b8d9ea10f4537973423b8b67d7089c0101506bb69cf2d263"
+    },
+    {
+      "path": "arXiv-1501.01711v2.tar.gz",
+      "bytes": 244994,
+      "sha256": "cfb7386b77960472c1bb60bbfcb708ab489abc9d286ffc8c4b61387d0e1b48ee"
+    },
+    {
+      "path": "frequent-direction-master.zip",
+      "bytes": 5795,
+      "sha256": "98ba018704fdb99e3ea3492745c5723bda8120ce6930b33573d5e5f57279b597"
+    },
+    {
+      "path": "frequent-direction-master/.gitignore",
+      "bytes": 25,
+      "sha256": "9919686b638bdc138b4e0577b732a50ed08cad66f698e068886f6723ee53a297"
+    },
+    {
+      "path": "frequent-direction-master/fd_sketch.py",
+      "bytes": 2649,
+      "sha256": "55fcd06fd29ecbcb34914089e0db7fed40abcc156611fd2a4d61ce2203cc802c"
+    },
+    {
+      "path": "frequent-direction-master/fd_sketch_test.py",
+      "bytes": 1726,
+      "sha256": "1b744eb565b1fe588442df99d3c9ddd8dbcbb147634fdeb1cd0c4cd442c9b129"
+    },
+    {
+      "path": "frequent-direction-master/LICENSE",
+      "bytes": 1293,
+      "sha256": "cf5379e98b2b9b52c4a0e7c7e2bd8afc1f8b89b0b8d4cc94a2994f83513af8ed"
+    },
+    {
+      "path": "frequent-direction-master/README.rst",
+      "bytes": 1267,
+      "sha256": "d9c210b1636b9dfde7375c7a89bfb9acee229b43a3ec06d2568545145c3f02a2"
+    },
+    {
+      "path": "frequent-direction-master/sample_usps_pca_rep.py",
+      "bytes": 3838,
+      "sha256": "5357fd35e62c264d80cb29726cf8b3217852d2ed16fa14da76632eef3cb168ca"
+    }
+  ]
+}
