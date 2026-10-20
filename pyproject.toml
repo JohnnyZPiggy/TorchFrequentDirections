@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "torchfrequentdirections"
+version = "0.1.0"
+description = "Reference and buffered Frequent Directions with native PyTorch SVD"
+requires-python = ">=3.10"
+dependencies = ["torch>=2.0"]
+license = {file = "LICENSE"}
+
+[tool.setuptools.packages.find]
+include = ["torchfrequentdirections*"]
