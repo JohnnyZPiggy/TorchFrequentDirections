@@ -1,5 +1,14 @@
 # Issue #1 — CPU bootstrap engineering evidence
 
+Issue #3 follow-up: the core algorithm below is unchanged. A project-owned
+exact-source driver and artifact manifest now exercise same-algorithm CPU/GPU
+correctness, transfers, synchronized repeated timing and intrusive SVD/update
+diagnostics. The real T4 run, clean-source 21-test CPU regression and session
+cleanup are recorded in the [GPU experimental report](../../reports/gpu/issue3-20261020/summary.md).
+Its tested source is `608975335817431d841e0ad313a21d4930304a46`;
+GPT Architect scientific/engineering review is pending. The Issue #1 results
+below remain historical CPU-only evidence.
+
 Owner: Codex Engineer. Decision/merge owner: GPT Architect. Status: REVIEW;
 actual run identities/results are in [execution](../../reports/issue1/execution.json)
 and [CPU observations](../../reports/issue1/cpu-validation.json).

@@ -1,0 +1,93 @@
+{
+  "status": "PASS",
+  "scientific_acceptance": "ARCHITECT_REVIEW_PENDING",
+  "source_sha": "608975335817431d841e0ad313a21d4930304a46",
+  "run_id": "fd3-20261020-203909",
+  "issue": "https://github.com/JohnnyZPiggy/TorchFrequentDirections/issues/3",
+  "framework_sha": "a60ed92d80a8866b413b928d609cc3afb82ec408",
+  "device": {
+    "requested": "T4",
+    "observed": "Tesla T4",
+    "compute_capability": [
+      7,
+      5
+    ],
+    "total_memory_bytes": 15637086208,
+    "tensor_device": "cuda:0"
+  },
+  "environment": {
+    "python": "3.13.15",
+    "torch": "2.11.0+cu130",
+    "cuda_version": "13.0",
+    "cuda_available": true,
+    "cpu_threads": 1,
+    "tf32": false,
+    "cpu_model": "Intel(R) Xeon(R) CPU @ 2.00GHz"
+  },
+  "seed": 20261020,
+  "cleanup_confirmed": true,
+  "tpu": "NOT_RUN",
+  "compilation": "NOT_RUN",
+  "artifacts": [
+    {
+      "name": "cpu-validation.json",
+      "bytes": 104323,
+      "sha256": "d724b5a91aba504826ea2de041266fc53b9dbb3a0de484e87d155967ababf1a4"
+    },
+    {
+      "name": "local-execution.json",
+      "bytes": 6499,
+      "sha256": "77429c97bf72258a5d5eb768cf4b24e7f43f8a9d69df2bf09f80a493a236a2f7"
+    },
+    {
+      "name": "local-science-summary.json",
+      "bytes": 668,
+      "sha256": "aa0b39d0c71f4b76a930dc5f0af419ddb2fccb72011c158b16da3762f34f8d37"
+    },
+    {
+      "name": "preflight.json",
+      "bytes": 3113,
+      "sha256": "2916b40e145629b48f69d722c9f6029ce795a6bec88c235d33218bf1e273f923"
+    },
+    {
+      "name": "framework-review.json",
+      "bytes": 75393,
+      "sha256": "9ca47fa487550e6ed61439b48eaa537e12ae3f1f63b4caf09254868a9cb84a71"
+    },
+    {
+      "name": "fd-science.json",
+      "bytes": 332101,
+      "sha256": "96e85876d74f2456c25dff336a07539c5641b47dfa53ab6c02e806819b3ce1ff"
+    },
+    {
+      "name": "colab-control.json",
+      "bytes": 5931,
+      "sha256": "2d065a5f04a614d4d7ba1f5a8e475c3676cc6c66e2515e08698b8674f6f1a5c1"
+    },
+    {
+      "name": "host-execution.json",
+      "bytes": 726,
+      "sha256": "dc649ac6b0fe8dc67295f28c3229b7a34ed1ceb501ba7451ec8becc0f4a8dc12"
+    },
+    {
+      "name": "correctness.json",
+      "bytes": 2062,
+      "sha256": "d4607ac58c6676d205f1b63e76a54be284aec71ecc9a7ccca6772a55c9230cf5"
+    },
+    {
+      "name": "benchmark.csv",
+      "bytes": 19730,
+      "sha256": "4645feaa2fabcb9a2053c41293157ee752b0fb46b6cdd07f8f82767617304cf1"
+    },
+    {
+      "name": "profile.csv",
+      "bytes": 5114,
+      "sha256": "b448cdc149487069aa23d838f0aeca03393f0f5896a1867198ea560df13e68ca"
+    },
+    {
+      "name": "summary.md",
+      "bytes": 8528,
+      "sha256": "165f1bcf51ef44a193d2204b59aca8421f0aad3305cfb16193f85bc878d0da0e"
+    }
+  ]
+}

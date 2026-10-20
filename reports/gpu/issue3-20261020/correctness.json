@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "source_sha": "608975335817431d841e0ad313a21d4930304a46",
+  "seed": 20261020,
+  "edge_fixture_results": 28,
+  "benchmark_method_results": 16,
+  "oracle": "Independent CPU float64 symmetric Gram eigenvalues, full SVD tails and right-space projection; no FD shrink formula.",
+  "tolerance": "32 * eps(input_dtype) * max(n,d,2*ell,1) * ||A||_F^2; same-algorithm covariance gap uses 4 times that slack.",
+  "negative_control": "Local test_oracle_rejects_bad_partial_truncation PASS in cpu-validation.json.",
+  "limits": "Empirical inherited small-matrix slack, not an unlimited-stream proof; no equality of singular vectors required.",
+  "precision_results": [
+    {
+      "dtype": "torch.float32",
+      "cases": 22,
+      "status": "PASS",
+      "cpu": {
+        "max_psd_excess_over_tolerance": 0.004527868570547481,
+        "max_covariance_excess_over_tolerance": 0.01921632430996455,
+        "max_projection_excess_over_tolerance": 2.1947419006532638e-10,
+        "k_bound_checks": 170
+      },
+      "gpu": {
+        "max_psd_excess_over_tolerance": 0.02125297542464924,
+        "max_covariance_excess_over_tolerance": 0.07906401871036456,
+        "max_projection_excess_over_tolerance": 3.8502908177461895e-09,
+        "k_bound_checks": 170
+      },
+      "same_algorithm_max_gap_over_tolerance": 0.0163100711811752
+    },
+    {
+      "dtype": "torch.float64",
+      "cases": 22,
+      "status": "PASS",
+      "cpu": {
+        "max_psd_excess_over_tolerance": 0.029365650198257643,
+        "max_covariance_excess_over_tolerance": 0.03282124663598214,
+        "max_projection_excess_over_tolerance": 0.0031003267944683353,
+        "k_bound_checks": 170
+      },
+      "gpu": {
+        "max_psd_excess_over_tolerance": 0.042993074488271145,
+        "max_covariance_excess_over_tolerance": 0.042993074488271145,
+        "max_projection_excess_over_tolerance": 0.0031003267944683353,
+        "k_bound_checks": 170
+      },
+      "same_algorithm_max_gap_over_tolerance": 0.03199100464204749
+    }
+  ],
+  "raw_evidence": "fd-science.json"
+}

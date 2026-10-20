@@ -1,0 +1,2166 @@
+{
+  "framework_sha": "a60ed92d80a8866b413b928d609cc3afb82ec408",
+  "status": "PASS",
+  "scope": "All tracked UTF-8 files read from exact Git blobs; Python AST, JSON and SVG XML parsed; outlines/diagram labels indexed. Normative workflows and all nine Python sources manually reviewed; translations/historical evidence structurally cross-checked, not evidence of new execution.",
+  "files": [
+    {
+      "path": ".github/ISSUE_TEMPLATE/engineering_task.md",
+      "bytes": 947,
+      "sha256": "b1d9f88774e09639525ec1ecac5682f4cdb65ac5b054b01e881753096ef37d7e",
+      "outline": [
+        "name: SAE engineering task",
+        "title: \"[SAE] \""
+      ],
+      "legacy_gate_lines": [
+        "**Codex compute contract (algorithm tasks):** exact pinned SHA install → packaged correctness/benchmark CLI (no GitHub writes) → optional separately authorized Publisher branch/PR. Codex runs local and authorized Colab CLI CPU/GPU/TPU; Scientist approves GPU/TPU hardware, session/time/quota limits. Mark untested devices or publication NOT RUN."
+      ]
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/engineering_task_zh-CN.md",
+      "bytes": 966,
+      "sha256": "8c0ff7274ebb34662f06c13eba46edd0654f8330a7071744d35b5cfdacb31021",
+      "outline": [
+        "name: SAE 工程任务（中文）",
+        "title: \"[SAE] \""
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/mathematical_research.md",
+      "bytes": 817,
+      "sha256": "17401337fccca750ed7746bcc6579b282a60eee3c2e92f5bf8bc89379df238c7",
+      "outline": [
+        "name: SAE mathematical structure study",
+        "title: \"[SAE Research] \""
+      ],
+      "legacy_gate_lines": [
+        "**Scientist decision:** NOT_STARTED / RESEARCH_READY / RESEARCH_BLOCKED / NOT_TENSORIZABLE",
+        "**Proposed handoff to Architect (only after Scientist decision):**"
+      ]
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/mathematical_research_zh-CN.md",
+      "bytes": 771,
+      "sha256": "de6fe0ee2c9244cbc81c5939af1c6092409ca760b28d8b202f0d55a0b7bb1498",
+      "outline": [
+        "name: SAE 数学结构与张量化研究",
+        "title: \"[SAE 结构研究] \""
+      ],
+      "legacy_gate_lines": [
+        "**科学家决策：** NOT_STARTED / RESEARCH_READY / RESEARCH_BLOCKED / NOT_TENSORIZABLE",
+        "**交接总架构师的下一步（需科学家审核）：**"
+      ]
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE/sae_zh-CN.md",
+      "bytes": 717,
+      "sha256": "8f6ab8a7c47fd0e3aae684a9f4e893683f3e6731a67adf9b965dfc3b6e82f198",
+      "outline": [
+        "## SAE PR 摘要（中文）",
+        "### 数学与实现变更",
+        "### 验证记录",
+        "### 风险与后续工作",
+        "### GPT 架构师证据审核与合并决定"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": ".github/pull_request_template.md",
+      "bytes": 1100,
+      "sha256": "96216604dcbc4cf571e3d6edf37697f9f05250596845c7a5bcadc032ef307af1",
+      "outline": [
+        "## SAE PR summary",
+        "### Mathematical and implementation changes",
+        "### Three-artifact traceability",
+        "### Validation",
+        "### Risks and follow-up",
+        "### GPT Architect evidence review and merge decision"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 165,
+      "sha256": "ab1b2a7e838e36afb3e8bc0df0f966202c5c1e3caddb8a3938c6afe614d8cb7d"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 5131,
+      "sha256": "22a0f581f4ce874524b08bcdde03f3198ef013d6d9242eab345ce00c56eb43aa",
+      "outline": [
+        "# SAE Framework — Shared Agent Constitution (V3.3)",
+        "## Mission",
+        "## Roles",
+        "## Binding principles",
+        "## Precedence",
+        "## Commands",
+        "## Authoritative references"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 10593,
+      "sha256": "da6de531d730b4c5d13bc09bb98ec34734e282488e2f1007b71ea39a088ea3dc",
+      "outline": [
+        "# Changelog",
+        "## V3.3 — Lean Research Lab Phase 1: Explore / Validate and one Codex batch (2026-10-20)",
+        "## V3.3 — Bilingual native-card architecture SVG refresh (2026-10-20)",
+        "## V3.3 — GPT autonomous decision Fast Lane (2026-10-20)",
+        "## V3.3 — Experiment by Default: remove Scientist compute permission gate (2026-10-20)",
+        "## V3.3 — No Price Gate standing Colab compute authorization (2026-10-20)",
+        "## V3.3 — Protocol consistency and documentation cleanup (2026-10-19)",
+        "## V3.3 — Next-Action Completion Gate (2026-10-19)",
+        "## V3.3 — Codex-operated compute and constitution simplification (2026-10-19)",
+        "## Colab two-command execution interface (2026-10-18)",
+        "## Research-first scientific workflow amendment (2026-10-18)",
+        "## Framework V3.2 — Initial public protocol package"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1069,
+      "sha256": "af2060353a0ed2ee0ad1818d60548a0e2b9f22909ff6444505b8fee2a9cd6710"
+    },
+    {
+      "path": "README.md",
+      "bytes": 8861,
+      "sha256": "d8e200ec8f7b738260ecf6ad309324e3bd4abf51fe51e96b6af6008d54c4666d",
+      "outline": [
+        "# SAE Framework V3.3",
+        "## Architecture",
+        "## Who does what?",
+        "## Workflow",
+        "## Optional one-click continuation",
+        "## Start",
+        "## Verification status (2026-10-20)",
+        "## Documentation"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "README.zh-CN.md",
+      "bytes": 8374,
+      "sha256": "854fc90b78be45838e1c26b93f9e5ed42124d50bb97eb26af4416fc7ab00b7c5",
+      "outline": [
+        "# SAE Framework V3.3",
+        "## 组织架构图",
+        "## 角色",
+        "## 工作模式",
+        "## 可选：一键继续下一轮",
+        "## 快速开始",
+        "## 验证状态（2026-10-20）",
+        "## 文档"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "SAE_BOOTSTRAP.md",
+      "bytes": 3816,
+      "sha256": "75eae3baeb11887f7694705b5b1c31eac613b59e2558bdca261c40ba8b2bbb17",
+      "outline": [
+        "# SAE Bootstrap — Project Adoption Protocol (V3.3)",
+        "## Inputs and preflight",
+        "## Adopt a self-contained pinned snapshot",
+        "## Research and engineering initialization",
+        "## Acceptance and failure"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "docs/ADOPTION_SMOKE_TEST.md",
+      "bytes": 4498,
+      "sha256": "c2ecda3396eb7b54e8d38addf23fa772e287a1f51f8461adf64c28dd2b2b687e",
+      "outline": [
+        "# SAE Project Adoption Smoke Test (No GitHub Actions)",
+        "## Test 1 — Inspect before any write",
+        "## Test 2 — Make the snapshot self-contained",
+        "## Test 3 — Verify protocol behavior",
+        "## Test 4 — Config and fast-lane contract",
+        "## Test 5 — Evidence and security",
+        "## Expected output"
+      ],
+      "legacy_gate_lines": [
+        "- **Architect:** with `推进架构师工作`, check GPT autonomously dispatches a concise [Lean Lab batch](../workflows/LEAN_RESEARCH_LAB.md) with a real task goal, mode, source identity, oracle, finite timeout and cleanup, without a Scientist decision. Formal VALIDATE evidence must still meet scientific gates."
+      ]
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "bytes": 3453,
+      "sha256": "e9e03fd47240683e3f64bb9d077e95b23b374a619b73831fd31f6ee22b1ac59a",
+      "outline": [
+        "# SAE V3.3 Architecture and Boundaries",
+        "## Two equal outcomes",
+        "## Authority and execution",
+        "## Iterative operating loop",
+        "## Evidence and capability honesty"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "docs/INTEGRATIONS.md",
+      "bytes": 2553,
+      "sha256": "ef89bab8fb6a1eed0ea7f621561722e13a8286b384f5bcf3be8c19b4f49d4b03",
+      "outline": [
+        "# SAE V3.3 — Integrations and Reality Check",
+        "## What is known",
+        "## Adoption"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "docs/LANGUAGE_POLICY.md",
+      "bytes": 1981,
+      "sha256": "01befe174a438d2cd99bbfe5524dc0abaece13fdd57b3e85b9e1a3c5ace606f1",
+      "outline": [
+        "# Documentation Language Policy",
+        "## Language choices",
+        "## Canonical technical contract",
+        "## Maintaining translations"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "docs/ROADMAP.md",
+      "bytes": 1876,
+      "sha256": "18a1edc3f222a5f8cc54890221537ff6d6a5c8956338266b3f65ef022909e9da",
+      "outline": [
+        "# SAE Framework V3.3 — Capability Roadmap",
+        "## Verified in Scientist handoff (2026-10-19)",
+        "## P0 — End-to-end Codex experiment delegation",
+        "## P1 — Reusable project adoption",
+        "## P2 — Quality of life"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "docs/figures/SAE_Framework_V3.2.en.svg",
+      "bytes": 14347,
+      "sha256": "29010b89d1513c1f07b1cdd121e998bec12923d74e323458fd4dd1f0db00a92e",
+      "labels": [
+        "SAE / V3.2",
+        "SAE Framework V3.2",
+        "Research-First Agentic R&D",
+        "TWO EQUAL OBJECTIVES",
+        "Engineering Productivity",
+        "Scientific Learning",
+        "Reliable, Reproducible Software",
+        "Efficient Collaboration / Rigorous Tests",
+        "Deep Algorithm & ML Understanding",
+        "Math / PyTorch / GPU / Experiments",
+        "ONE PROJECT = BETTER SOFTWARE + BETTER SCIENTIST",
+        "Human · Scientist",
+        "Research / Learning / Colab / Final Authority",
+        "GPT · Architect + Mentor",
+        "Codex · Engineer",
+        "Architecture / Tasks / Reviews",
+        "Matvec Discovery / Tensorization",
+        "Task Claims / Implementation / Tests",
+        "Feedback / Maintenance",
+        "Research → Architect Cycle",
+        "Engineer Work Cycle",
+        "Research → Design → Implementation → Validation",
+        "GitHub · Central Hub",
+        "Shared Tasks, Code and Experiment Evidence",
+        "Issues",
+        "Pull Requests",
+        "Code / Specs",
+        "CPU Tests",
+        "GPU Reports",
+        "Fetch Code / Publish Experiments",
+        "Google Colab · Experiments",
+        "Thin Notebook / Python CLI / CPU-GPU Tests / GitHub Reports",
+        "Notebook / Temporary Files Only",
+        "Google Drive · Simple Workspace",
+        "One Folder / No Sync / No Data Handoff",
+        "Mentor research first / Human-led decisions / Verified GPU experiments"
+      ]
+    },
+    {
+      "path": "docs/figures/SAE_Framework_V3.2.svg",
+      "bytes": 14604,
+      "sha256": "59507a0f38eb9eada13bb4935c9d4148683f10716ee382c75a8da7627123d565",
+      "labels": [
+        "SAE  /  V3.2",
+        "SAE Framework V3.2",
+        "GitHub-Centric Research & Learning",
+        "TWO PARALLEL GOALS  /  两项并行目标",
+        "Engineering Productivity",
+        "Scientific Learning",
+        "高效交付可靠、可复现的算法软件",
+        "自动化协作 · 严谨测试 · 降低开发成本",
+        "持续深化数学与 ML 工程理解",
+        "算法推导 · PyTorch / GPU · 实验分析",
+        "ONE PROJECT  =  VERIFIED SOFTWARE  +  DEEPER UNDERSTANDING",
+        "你 · Scientist",
+        "研究选题 · 主动学习 · Colab 实验 · 最终决策权",
+        "GPT · Architect + Mentor",
+        "Codex · Engineer",
+        "数学设计 · 任务派发 · 审查",
+        "算法辅导 · GPU 实验解读",
+        "领取任务 · 实现 · 测试",
+        "提交反馈 · 维护",
+        "推进架构师工作 / 推进导师工作",
+        "推进工程师工作",
+        "双向任务、代码与审查反馈",
+        "GitHub · Central Hub",
+        "唯一共享协作与实验记录中心",
+        "Issues / 任务",
+        "Pull Requests",
+        "Code / Spec",
+        "CPU Tests",
+        "GPU Reports",
+        "代码拉取  /  实验结果提交",
+        "Google Colab · Experiments",
+        "Thin Notebook · Python CLI · CPU/GPU 实验 · 自动上传 GitHub",
+        "仅供 Notebook / 临时文件使用",
+        "Google Drive · Simple Workspace",
+        "只建立一个文件夹 · 不进行同步 · 不承担协作交换",
+        "Research decisions by human  ·  GPT reviews engineering & mentors learning  ·  Experiments recorded in GitHub"
+      ]
+    },
+    {
+      "path": "docs/figures/SAE_Framework_V3.2.zh-CN.svg",
+      "bytes": 14419,
+      "sha256": "60b672fd41a830d8d4ef0833cfc48cac6a9ba8742621a922275c93f6492da4bd",
+      "labels": [
+        "SAE / V3.2",
+        "SAE Framework V3.2",
+        "数学研究优先 · 人机协作科研工程",
+        "两项同等重要的目标",
+        "工程生产力",
+        "科学学习",
+        "可靠、可复现的算法软件",
+        "高效协作 · 严谨测试 · 降低成本",
+        "深入理解数学与 ML 工程",
+        "数学推导 · PyTorch · GPU 实验",
+        "一个项目 = 更好的软件 + 更强的科学家",
+        "你 · 科学家",
+        "选题 · 学习 · Colab 实验 · 最终决策",
+        "GPT · 架构师 + 科学导师",
+        "Codex · 软件工程师",
+        "架构设计 · 派发 · 审查",
+        "矩阵向量结构 · 张量化研究",
+        "任务领取 · 实现 · 测试",
+        "提交反馈 · 代码维护",
+        "推进架构师工作 / 推进导师工作",
+        "推进工程师工作",
+        "数学研究 → 架构设计 → 工程 → 实验",
+        "GitHub · 协作中枢",
+        "共享任务 · 代码 · 实验记录",
+        "任务 Issues",
+        "代码审核 PR",
+        "代码 / 规范",
+        "CPU 测试",
+        "GPU 报告",
+        "下载代码 / 提交实验结果",
+        "Google Colab · 实验平台",
+        "薄 Notebook · Python CLI · CPU/GPU 实验 · GitHub 上传",
+        "仅供 Notebook / 临时文件使用",
+        "Google Drive · 临时工作目录",
+        "仅一个文件夹 · 不同步 · 不做协作中转",
+        "导师先研究数学结构 · 科学家决策 · GitHub 存档真实实验"
+      ]
+    },
+    {
+      "path": "docs/figures/SAE_Framework_V3.3.en.mmd",
+      "bytes": 2333,
+      "sha256": "0e4216afb566326e6155f06d63e66d0466789d791d7e37b83d4582216ff49fb0",
+      "outline": [],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "docs/figures/SAE_Framework_V3.3.en.svg",
+      "bytes": 28023,
+      "sha256": "e8a05e6f49300ca17f8f43f77aed2a1b3e389816557790ab3923a2e860e50d7c",
+      "labels": [
+        "SAE FRAMEWORK   /   V3.3",
+        "PR #33  ·  MERGED",
+        "GPT Autonomous Research Architecture",
+        "Scientist–Architect–Engineer   ·   Autonomous Research Fast Lane",
+        "Engineering Productivity",
+        "Fast delivery · Portable · Reproducible",
+        "Scientific Learning",
+        "Math · Tensorization · Numerics · ML Systems",
+        "Research goals & direction",
+        "STRATEGIC DIRECTION",
+        "Scientist · Human Researcher",
+        "Sets research goals · Redirects · Can stop work",
+        "No routine science, experiment, compute or PR signoffs",
+        "Delegates decisions to GPT · No approval queue",
+        "GPT · Autonomous Research Core",
+        "Scientific & engineering authority · Dual roles",
+        "Chief Architect",
+        "Chief architect · Technical decisions",
+        "System design, experiments & Codex tasks",
+        "Correctness and T1/T2/T3 evidence review",
+        "Final decisions on eligible PR merges",
+        "Scientific Mentor",
+        "Scientific mentor · Mathematical research",
+        "R1–R3 structure and equivalent formulations",
+        "Tensorization, numerical risk & interpretation",
+        "Decides RESEARCH_READY / blockers",
+        "FAST LANE  ·  GPT proceeds without Scientist stage approvals",
+        "Experiment specification · Direct dispatch",
+        "Codex · Engineer",
+        "Engineering executor · CPU / GPU / TPU by default",
+        "Implementation",
+        "PyTorch · CLI · Tensorization · Compile",
+        "Experiment & Probe",
+        "CPU / GPU / TPU · PROBE_ONLY",
+        "Evidence & Delivery",
+        "Real runs · SHA · Logs · PRs",
+        "Colab CLI · Hardware execution · Numerical checks",
+        "Heterogeneous Compute Layer",
+        "HARDWARE-AGNOSTIC",
+        "CPU",
+        "Oracle · Correctness",
+        "Local / Colab CLI",
+        "GPU",
+        "PyTorch · Compile",
+        "Benchmark · Profiling",
+        "TPU",
+        "PyTorch / XLA",
+        "Probe · Compatibility",
+        "Real access · Finite timeout · Session cleanup · Honest evidence",
+        "Source SHA · Measured results · Reproducible evidence",
+        "GitHub · Collaboration & Evidence Hub",
+        "SINGLE SOURCE OF TRUTH",
+        "Issues / Tasks",
+        "Branches / PRs",
+        "Research / Reports",
+        "Actual Evidence → GPT Review → Next Iteration",
+        "Research, engineering and experiments iterate; failures feed back",
+        "Real Boundaries of Autonomous Decisions",
+        "No Scientist stage-approval queue",
+        "Parallel science, implementation and probes",
+        "New billing & sensitive release require user consent",
+        "Formal claims require mathematical & measured evidence",
+        "SAE V3.3  ·  GPT Autonomous Fast Lane  ·  policy @ b1b48ce",
+        "Architecture diagram · Documentation only · No runtime execution implied"
+      ]
+    },
+    {
+      "path": "docs/figures/SAE_Framework_V3.3.zh-CN.mmd",
+      "bytes": 2280,
+      "sha256": "f4d7cee8690fc89454a0188364ef9d7a4368fef85c15d77f5dbed9303f17da0a",
+      "outline": [],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "docs/figures/SAE_Framework_V3.3.zh-CN.svg",
+      "bytes": 30232,
+      "sha256": "ea162f110e6df7eb9371ef594719960a69ae835d87458a194ca7cd853b3d73da",
+      "labels": [
+        "SAE FRAMEWORK   /   V3.3",
+        "PR #33  ·  MERGED",
+        "GPT 自主科研组织架构",
+        "Scientist–Architect–Engineer   ·   自主科研快速通道",
+        "工程生产力",
+        "快速实现 · 跨硬件 · 可复现",
+        "科学学习",
+        "数学结构 · 张量化 · 数值与系统理解",
+        "研究目标与方向",
+        "STRATEGIC DIRECTION",
+        "Scientist · 人类研究者",
+        "研究目标设定 · 反馈 · 随时调整或叫停",
+        "不承担常规科研、实验、算力或 PR 审批",
+        "授权 GPT 自主决策 · 不设审批队列",
+        "GPT · 自主科研决策核心",
+        "科学与工程决策权 · 双重角色",
+        "Chief Architect",
+        "总架构师 · 科研与工程决策",
+        "架构规划、实验设计、Codex 派单",
+        "数值正确性与 T1/T2/T3 证据审核",
+        "合格 PR 自主决定与合并",
+        "Scientific Mentor",
+        "科学导师 · 数学结构探索与决策",
+        "R1–R3 数学结构、等价推导与假设",
+        "张量化机会、数值风险与科研解释",
+        "自主决定 RESEARCH_READY / 阻塞",
+        "FAST LANE  ·  GPT 自主放行，无 Scientist 阶段审批",
+        "实验规格 · 直接派单 · 快速执行",
+        "Codex · Engineer",
+        "工程执行主体 · 默认运行 CPU / GPU / TPU",
+        "实现与重构",
+        "PyTorch · CLI · 张量化 · Compile",
+        "实验与诊断",
+        "CPU / GPU / TPU · PROBE_ONLY",
+        "证据与交付",
+        "真实运行 · SHA · 日志 · PR",
+        "Colab CLI · 设备执行 · 数值验证",
+        "异构计算执行层",
+        "HARDWARE-AGNOSTIC",
+        "CPU",
+        "Oracle · Correctness",
+        "本地 / Colab CLI",
+        "GPU",
+        "PyTorch · Compile",
+        "Benchmark · Profiling",
+        "TPU",
+        "PyTorch / XLA",
+        "设备探针 · 兼容验证",
+        "真实权限 · 有界超时 · 会话释放 · 不虚报结果",
+        "源码 SHA · 真实实验结果 · 可复现证据",
+        "GitHub · 协作与证据中心",
+        "SINGLE SOURCE OF TRUTH",
+        "Issues / Tasks",
+        "Branches / PRs",
+        "Research / Reports",
+        "真实证据 → GPT 审查 → 下一轮迭代",
+        "科研、工程、实验持续循环 · 失败返回数学或工程阶段",
+        "自主决策的真实边界",
+        "无需 Scientist 常规审批",
+        "科研 / 实现 / 设备准备可并行",
+        "新增付费与敏感外发需用户明确同意",
+        "正式结论必须有数学与实测证据",
+        "SAE V3.3  ·  GPT Autonomous Fast Lane  ·  policy @ b1b48ce",
+        "Architecture diagram · Documentation only · No runtime execution implied"
+      ]
+    },
+    {
+      "path": "examples/colab/README.md",
+      "bytes": 1005,
+      "sha256": "832a672d635f7ff6912e627cf13fc65d2b820e71c95e74ffdf9e49d78e196e5b",
+      "outline": [
+        "# Thin Colab Notebook — illustrative cell plan"
+      ],
+      "legacy_gate_lines": [
+        "**This directory is documentation, not a working notebook or Publisher.** GPT designs orchestration; Codex implements and runs authorized Colab CLI experiments. The Scientist approves resources and reviews scientific conclusions; the cells below are illustrative only."
+      ]
+    },
+    {
+      "path": "examples/compute_adapter/artifacts.json",
+      "bytes": 54,
+      "sha256": "799deb06ec41f09717974458c2ae434f65ac23e27815dc4bd486bd1c4400225e",
+      "keys": [
+        "artifacts"
+      ]
+    },
+    {
+      "path": "examples/compute_adapter/driver.py",
+      "bytes": 937,
+      "sha256": "61839da0c4c6ea5866784074539a650e737e74b6a787cb8fa5f83a1afc6a4bf9",
+      "functions": [
+        "main"
+      ]
+    },
+    {
+      "path": "examples/project/AGENTS.md",
+      "bytes": 3102,
+      "sha256": "bba3888e98d2126590ee74a3b23ea30c237b1fd2a05adc465ddd10cac8971070",
+      "outline": [
+        "# Project Agent Entry Point — SAE V3.3",
+        "## Before work",
+        "## Project roles",
+        "## Workflow",
+        "## Role commands"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "examples/project/sae.yaml",
+      "bytes": 2352,
+      "sha256": "00d531ee92127b481787db9246ac2b7d384d7c8bc67185900d6093b2df4a3fa7",
+      "outline": [
+        "# SAE V3.3-compatible Lean Lab example. Replace placeholders and pin an immutable framework SHA.",
+        "# This is a configuration template, not proof that any runner/Publisher exists."
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "examples/reports/manifest.example.json",
+      "bytes": 702,
+      "sha256": "ee1c55c5ce07f821f21f93275d281943888b6b7b442046a43622db59db7a6583",
+      "keys": [
+        "schema_version",
+        "run_id",
+        "timestamp_utc",
+        "status",
+        "source_commit_sha",
+        "issue_number",
+        "code_pr_number",
+        "device",
+        "environment",
+        "dtype",
+        "seed",
+        "command",
+        "measurement",
+        "notes"
+      ]
+    },
+    {
+      "path": "governance/STANDING_AUTHORIZATION.md",
+      "bytes": 11579,
+      "sha256": "d892020f378268456201aaaf7b8e7101f5d995faa2d8b2ccf9d1e942e82f1754",
+      "outline": [
+        "# Permanent Architect Merge Authority — Scientist → GPT Chief Architect",
+        "## What the Scientist authorizes",
+        "## GPT autonomous decision authority — Scientist delegation (2026-10-20)",
+        "## Repository scope — all the owner's public repositories, without registration",
+        "## Three review tiers — one merge decision-maker",
+        "## Merge Gate (each PR, every Architect work cycle)",
+        "## Boundary, revocation and adoption"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/AGENTS.zh-CN.md",
+      "bytes": 4627,
+      "sha256": "b7192b153c433a1ff3a548639bdda12df1cc692e6fdfcfdb67bcbf46f8078a72",
+      "outline": [
+        "# SAE Framework — 智能体共同宪章（V3.3）",
+        "## 使命",
+        "## 角色",
+        "## 核心规则",
+        "## 冲突优先级",
+        "## 角色口令",
+        "## 权威协议入口"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/CHANGELOG.md",
+      "bytes": 8985,
+      "sha256": "9cef8437dc89d74f0184b919f716589ee6d8a789c0f531706f4763ee64e7b095",
+      "outline": [
+        "# 变更记录（中文）",
+        "## V3.3 — Lean Research Lab 第一阶段：Explore / Validate 双模式与 Codex 单批次（2026-10-20）",
+        "## V3.3 — 中英文原生卡片式 SVG 架构更新（2026-10-20）",
+        "## V3.3 — GPT 自主决策快速通道（2026-10-20）",
+        "## V3.3 — Experiment by Default：取消 Scientist 算力审批（2026-10-20）",
+        "## V3.3 — No Price Gate 常设 Colab 计算授权（2026-10-20）",
+        "## V3.3 — 协议一致性与文档去重（2026-10-19）",
+        "## V3.3 — Next-Action Completion Gate（2026-10-19）",
+        "## V3.3 — Codex 接管计算实验与宪章精简（2026-10-19）",
+        "## Colab 双命令执行契约（2026-10-18）",
+        "## 研究先于工程的流程增强（2026-10-18)",
+        "## SAE Framework V3.2 — 初始公开协议包",
+        "## 双语文档更新"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/README.md",
+      "bytes": 2469,
+      "sha256": "68e49e8e2e5bd39c3edf7d9ea5480063f28ab6d79d192390d22c8cddb0cec265",
+      "outline": [
+        "# SAE Framework — 简体中文文档导航",
+        "## 快速导航",
+        "## V3.3 执行职责",
+        "## 哪个语言版本具有执行效力？",
+        "## 本人全部公开仓库的无限期架构师合并裁量权"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/SAE_BOOTSTRAP.md",
+      "bytes": 3093,
+      "sha256": "330ca6c02d438beea8b1609961a233dbe975bfd08e3f6be2cc502f8ffce9d4a5",
+      "outline": [
+        "# SAE 新项目初始化协议（V3.3）",
+        "## 输入与检查",
+        "## 固定协议快照",
+        "## 研究与工程",
+        "## 验收与失败"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/docs/ADOPTION_SMOKE_TEST.md",
+      "bytes": 3675,
+      "sha256": "0dd4249f610f4fe4dd024231101fe1cfb011bc2f55635397c5bd2efb8dc6065a",
+      "outline": [
+        "# SAE 子项目初始化冒烟验收（不使用 GitHub Actions）",
+        "## 检查 1：操作前审查",
+        "## 检查 2：协议副本完整且路径正确",
+        "## 检查 3：用实际指令演练",
+        "## 检查 4：配置与快速通道",
+        "## 检查 5：证据和权限",
+        "## 输出"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/docs/ARCHITECTURE.md",
+      "bytes": 2918,
+      "sha256": "b4086c24919c2d74dbdd0e6a402e4a18913d163118eeb2bf8698eab9faa02dd7",
+      "outline": [
+        "# SAE V3.3 架构与边界",
+        "## 两个同等重要的目标",
+        "## 职责",
+        "## 多轮循环",
+        "## 已验证与未验证"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/docs/INTEGRATIONS.md",
+      "bytes": 2246,
+      "sha256": "317630566a5aa3e703c6793a1dd694ed2da79c6c7a479712c8f2dfacffdce2b3",
+      "outline": [
+        "# SAE V3.3 — 工具集成与能力边界",
+        "## 已知状态",
+        "## 项目采用"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/docs/LANGUAGE_POLICY.md",
+      "bytes": 1705,
+      "sha256": "8792536bd0b3806cba41851218297cc6f579f1b851c41f5c49fdf293e1b06857",
+      "outline": [
+        "# 双语文档与维护规范",
+        "## 如何切换语言",
+        "## 哪些文档具有执行效力？",
+        "## 共同维护"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/docs/ROADMAP.md",
+      "bytes": 1670,
+      "sha256": "922efab3652ffafd856dd1c9894917442b69cb5330976ac382f385d8f52629ab",
+      "outline": [
+        "# SAE Framework V3.3 — 能力路线图",
+        "## 据 Scientist 交接已验证（2026-10-19）",
+        "## P0 — Codex 实验委托闭环",
+        "## P1 — 跨项目复用",
+        "## P2 — 体验优化"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/examples/colab/README.md",
+      "bytes": 806,
+      "sha256": "0fce8702245883242a525b521d756ab2a2bfb0368686b88075322706c7c96baa",
+      "outline": [
+        "# 薄 Colab Notebook 示例说明"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/examples/project/AGENTS.zh-CN.md",
+      "bytes": 2595,
+      "sha256": "5f2b45ee60b89d4b518b6977f08ef4285986bcb1f627c10204b05522b28b2340",
+      "outline": [
+        "# SAE V3.3 — 新项目 AGENTS 中文参考",
+        "## 工作前",
+        "## 分工",
+        "## 流程"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/examples/project/SAE_CONFIG.md",
+      "bytes": 3149,
+      "sha256": "4b8e4a04a21fb6118b454eeedc80f2c94cd8d5949539824861d068493866afbb",
+      "outline": [
+        "# sae.yaml 项目配置说明（中文）",
+        "## 角色与决策",
+        "## 双模式和单批次任务",
+        "## 算力、证据及发布"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/examples/reports/README.md",
+      "bytes": 1031,
+      "sha256": "ac6bf6e684290c72fdd032c6504a7bf63ebdbb26320b0410560440b85a090135",
+      "outline": [
+        "# 实验 manifest 配置说明（中文）"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/governance/STANDING_AUTHORIZATION.md",
+      "bytes": 9000,
+      "sha256": "7658533260337048f2df2a58fe0e1fdccd040e573bfb02986afdc5820f9b024b",
+      "outline": [
+        "# 永久性架构师合并授权 — Scientist → GPT Chief Architect",
+        "## 科学家究竟授权了什么",
+        "## GPT 自主决策权 — Scientist 全面委托（2026-10-20）",
+        "## 仓库范围：本人当前及未来的全部公开仓库，免登记",
+        "## 三级审查，不是三级合并授权人",
+        "## 每个 PR 的 Merge Gate",
+        "## 边界、撤销与新仓库"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/protocols/ARCHITECT.md",
+      "bytes": 3265,
+      "sha256": "dddaf35728b92a76f1078e1cd095e1c14c016c7b6611e93df17b2f15e4c1034d",
+      "outline": [
+        "# GPT 总架构师协议（V3.3）",
+        "## 使命",
+        "## 单次有边界的工作",
+        "## 实验和证据边界"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/protocols/ENGINEER.md",
+      "bytes": 2590,
+      "sha256": "1eff197328c68bf4904fc9c750c06b5fb7dfff0218944f31b693f06eafc1cabf",
+      "outline": [
+        "# Codex 工程师协议（V3.3）",
+        "## 使命",
+        "## 职责",
+        "## 能力边界（2026-10-19）"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/protocols/MENTOR.md",
+      "bytes": 3206,
+      "sha256": "72d006bb56e5f2f6805e89029c01f374d11e8d6b6ef3b5444b0e2e5ea11282a5",
+      "outline": [
+        "# GPT 科学导师协议",
+        "## 目标",
+        "## 工程开始前的首要责任：数学结构探索与张量化研究",
+        "## 单次教学周期",
+        "## 可选主题",
+        "## 角色分离",
+        "## 每轮结束的下一步口令",
+        "## 角色恢复与防止出戏"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/protocols/SCIENTIST.md",
+      "bytes": 2094,
+      "sha256": "1a5e17004d55c621b84de6807da37318f6fef78721c24b003a6a2fbc7c81d7bc",
+      "outline": [
+        "# 人类科学家协议（V3.3）",
+        "## 人类设定目标，不设签核队列",
+        "## 委托执行"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/templates/ENGINEERING_REPORT.md",
+      "bytes": 4398,
+      "sha256": "dc05cd8ec764a9209ddb34565b1abddef0cc5d1288233109374cd1a7d4530e62",
+      "outline": [
+        "# SAE 工程设计与实现报告 — <算法名称>",
+        "## 1. 数学与工程契约（GPT 架构师）",
+        "## 2. 工程设计（架构师 → Codex）",
+        "## 2a. 生态复用评估 — Build vs. Reuse（架构师，派单前）",
+        "## 3. 实际实现记录（Codex）",
+        "## 4. 真实验证证据（Codex）",
+        "## 5. 复现与交接（Codex）",
+        "## 6. 审核与后续（GPT 架构师）"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/templates/EXPERIMENT_REPORT.md",
+      "bytes": 1710,
+      "sha256": "a18335fd4506ee8eca6b856d5586db18135da069344f082220c23c05ff4b44c0",
+      "outline": [
+        "# SAE Colab 实验报告 — <run-id>",
+        "## 三文档溯源关联",
+        "## 环境",
+        "## 正确性",
+        "## Benchmark",
+        "## 实验结果",
+        "## 解读（GPT 科研/工程验收）",
+        "## 下一步"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/templates/GPU_READINESS.md",
+      "bytes": 1543,
+      "sha256": "f1406a5328f8a90b0b1999ae957dd9f604331738ea55dbb4121130b8b47bac5f",
+      "outline": [
+        "# GPU 实验准备验收 — <algorithm>"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/templates/ISSUE_TEMPLATE.md",
+      "bytes": 1972,
+      "sha256": "9e148504070188693acb3a7f9d1ff7ce58d10ae577cc6c985b6ae6b437c80af2",
+      "outline": [
+        "# 【SAE 工程任务】<简短标题>",
+        "## 科学目的",
+        "## 数学结构研究前置审核",
+        "## 数学与数值契约",
+        "## 交付内容",
+        "## 计算实验交付关口（算法实现任务）",
+        "## 验收条件",
+        "## 任务交接"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/templates/PR_TEMPLATE.md",
+      "bytes": 1438,
+      "sha256": "39df5aef59f7ad0f00fd44286108cfb014edcdf19b530f8dfe925c15fe15a778",
+      "outline": [
+        "# SAE Pull Request：<标题>",
+        "## 改动范围与数学动机",
+        "## 验证证据（未执行不能写通过）",
+        "## 三份文档的关联",
+        "## 复现",
+        "## 风险与限制",
+        "## 需要审查的事项",
+        "## 学习主题（可选）"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/templates/TENSORIZATION_STUDY.md",
+      "bytes": 2737,
+      "sha256": "11d3fd1340ab7e9eee147cb495a77ee6311cbaa976991b277e9a24c3ac9d9e15",
+      "outline": [
+        "# 数学结构与张量化重构研究报告 — <算法名称>",
+        "## 1. 原始数学问题",
+        "## 2. 数学结构清单",
+        "## 3. 张量化数学推导",
+        "## 4. 数值正确性契约",
+        "## 5. 算法复杂度及硬件可行性",
+        "## 6. 初步工程与实验建议（尚未执行）",
+        "## 与三文档闭环的交接",
+        "## 7. 备选路径、风险和 GPT 科研决定"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/workflows/CODE_REVIEW.md",
+      "bytes": 2124,
+      "sha256": "d4881d9abb72fd68e30fa59510741c89ee069069262fff8e7122675886475c73",
+      "outline": [
+        "# 技术审查与合并关口",
+        "## GPT 总架构师依据证据审查",
+        "## 审查结果",
+        "## 合并政策",
+        "## 性能审查"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/workflows/COLAB_TWO_COMMAND.md",
+      "bytes": 1270,
+      "sha256": "5696cae061175451efc8b5c6b4744656f438692cb3042f959b86da80595d0024",
+      "outline": [
+        "# Colab CLI 三阶段兼容入口（V3.3）"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/workflows/ECOSYSTEM_REVIEW.md",
+      "bytes": 3150,
+      "sha256": "241e66aa36775a88a5e242e003a180fccdf9ee87ab09350667e21e10699d0a1c",
+      "outline": [
+        "# 生态感知型架构设计 — 轻量级 Build-vs-Reuse 关口",
+        "## 时机与责任人",
+        "## 三步有边界检索",
+        "## 选择规则",
+        "## 只在现有报告留一小段",
+        "## 边界"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/workflows/GPU_EXPERIMENT.md",
+      "bytes": 6114,
+      "sha256": "e7fe10097f3b5f9029db69c15c224bc675b2afcec9b8a480ace704371553c7a4",
+      "outline": [
+        "# 计算实验协议 — CPU / GPU / TPU（V3.3）",
+        "## 职责与前置条件",
+        "## 三个独立逻辑阶段",
+        "## Experiment by Default — 实验默认执行，无 Scientist 算力授权关口（2026-10-20）",
+        "## 计算资源与设备",
+        "## 证据",
+        "## GitHub 发布与失败",
+        "## 截至 2026-10-19 的验证状态"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/workflows/LEAN_RESEARCH_LAB.md",
+      "bytes": 5109,
+      "sha256": "c59ed72fe5b75404d8e5aa016e00b2053ea2ea7fa143228ee3d9a163df129295",
+      "outline": [
+        "# Lean Research Lab — Explore / Validate 双模式与 Codex 有界实验批次（兼容 V3.3）",
+        "## 目的及优先级",
+        "## 按结论类型划分双模式",
+        "## 一个 Codex 任务 → 一个有界工程/实验批次",
+        "## 精简交接与学习",
+        "## 实现状态"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/workflows/LEARNING.md",
+      "bytes": 1612,
+      "sha256": "23a72a9c1b227e23a8a3833f3101183a2abc76f0648e4048df235f7b9a5fa3f7",
+      "outline": [
+        "# 科学学习闭环",
+        "## 第一个工程里程碑之前",
+        "## 每个里程碑",
+        "## 简短学习笔记建议内容",
+        "## 防止形式主义"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/workflows/MATHEMATICAL_RESEARCH.md",
+      "bytes": 4502,
+      "sha256": "494a0d98afc8152dc42984bc0a41d956e66bdb50f10440a64becda99f18293e1",
+      "outline": [
+        "# 数学结构探索与张量化研究关口",
+        "## 研究先于工程",
+        "## R1：研究原始数学结构（GPT Mentor）",
+        "## R2：推导等价张量数学表达",
+        "## R3：输出数学研究交接报告",
+        "## 从数学报告到工程、实验报告",
+        "## 进入架构师与工程阶段",
+        "## 「推进导师工作」如何变化？"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/workflows/NEXT_ACTION.md",
+      "bytes": 5346,
+      "sha256": "a94fcddc997251977b4ba9f52f933ee98b68d31eb952de24fdc7e77e5e3c5874",
+      "outline": [
+        "# 下一步口令协议 — Agent 交接与手机一键继续",
+        "## 目标",
+        "## 统一输出格式",
+        "## Next-Action Completion Gate — 回复结束前自检（V3.3）",
+        "### 复制粘贴与交互式多选降级",
+        "## 示例（仅演示，不是实际项目状态）",
+        "## 与现有协议关系",
+        "## 角色恢复与防止出戏"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/workflows/RESEARCH_PIPELINE.md",
+      "bytes": 3209,
+      "sha256": "e00ca9b49188db0d334321221a13a4218ff85278cbd6328799a303968d528dc7",
+      "outline": [
+        "# 研究先行、CPU 验证、获授权异构实验（V3.3）",
+        "## I. 数学研究 — GPT Mentor/Architect",
+        "## II. 工程与 CPU 正确性 — Architect + Codex",
+        "## III. 设备实验 — Codex 默认执行、Architect 审核"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/workflows/ROLE_RECOVERY.md",
+      "bytes": 2080,
+      "sha256": "faf76b9aaf1cc59369407c6d00d2382ee4076df5abaa048e75a78676f55c5672",
+      "outline": [
+        "# 角色恢复与完整性协议（V3.3）",
+        "## 目的",
+        "## 恢复检查"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/workflows/SECURITY.md",
+      "bytes": 1511,
+      "sha256": "aafde2a7a125894f4d50e2c5d35f8effde3822905b44bb5c881b6d83b1e2eb5a",
+      "outline": [
+        "# 权限、信任与成本边界"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/workflows/TASK_MANAGEMENT.md",
+      "bytes": 4593,
+      "sha256": "0e2821a80fd67b2eec40c0189e2453c8722bc1c13133f01f335cdb55fe75d95f",
+      "outline": [
+        "# GitHub 任务管理与交接协议",
+        "## 推荐标签体系",
+        "## 工程任务前的数学研究关口",
+        "## Issue/PR 与三文档关联",
+        "## Lean Lab 精简执行",
+        "## 生命周期",
+        "## 状态一致性",
+        "## 每轮结束的下一步口令",
+        "## 角色恢复与防止出戏",
+        "## 全部本人公开仓库由架构师永久独立决定是否合并"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "i18n/zh-CN/workflows/THREE_ARTIFACT_HANDOFF.md",
+      "bytes": 4659,
+      "sha256": "12ac65a66ab81735800b7f1952d745798f06cb06bb75a90850bc07f2721aea4e",
+      "outline": [
+        "# 三文档交接协议：数学、工程、实验",
+        "## 为什么要建立三类文档？",
+        "## 三段交接契约",
+        "## 模板与位置",
+        "## 典型迭代",
+        "## 模板实例化时的链接",
+        "## 轻量与诚信原则"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "protocols/ARCHITECT.md",
+      "bytes": 3751,
+      "sha256": "30331c670e804f3fb6cda8c9348c14192fc58e418d2d00432450f3bdc4d63f16",
+      "outline": [
+        "# Chief Architect Protocol — GPT (V3.3)",
+        "## Mission",
+        "## One bounded cycle",
+        "## Experiment and evidence boundaries"
+      ],
+      "legacy_gate_lines": [
+        "7. Independently decide science, T1/T2/T3 in-scope policy/engineering and eligible PR `MERGE / DO_NOT_MERGE` under [Standing Authorization](../governance/STANDING_AUTHORIZATION.md), based on true evidence, owner/public/tool/protection checks and exact reviewed head. No Scientist decision/signoff or per-PR permission. Respect new-billing, sensitive-data and external destructive/account-permission boundaries; leave one concise review, merge and verify."
+      ]
+    },
+    {
+      "path": "protocols/ENGINEER.md",
+      "bytes": 3013,
+      "sha256": "321a76c231d3e1fb56b6644c58d3dc58b50a01e396e857216aa9c41b88546c1a",
+      "outline": [
+        "# Software Engineer Protocol — Codex (V3.3)",
+        "## Mission",
+        "## Responsibilities",
+        "## Verified capability vs pending integration (2026-10-19)"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "protocols/MENTOR.md",
+      "bytes": 3761,
+      "sha256": "0d5d8eb366a5621469e20d1f9f084ba23003df95eb7796fd01e1e0b8a825725d",
+      "outline": [
+        "# Scientific Mentor Protocol — GPT",
+        "## Goal",
+        "## Primary responsibility before engineering: mathematical structure discovery",
+        "## Cycle",
+        "## Example topics",
+        "## Separation of concerns",
+        "## Required next-action handoff",
+        "## Role recovery and integrity"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "protocols/SCIENTIST.md",
+      "bytes": 2454,
+      "sha256": "a16d39cc44d781e71de6881f55ff4ec241620098a49cfac1570ba1904e9a2e39",
+      "outline": [
+        "# Scientist Protocol — Human Research Owner (V3.3)",
+        "## Human direction, not a signoff queue",
+        "## Delegated operations"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "reports/colab-cli-074-offline-diagnosis/diagnostic-final.json",
+      "bytes": 5034,
+      "sha256": "33f83fd23298bd98f729daf2182d05e170c740530ca7c3c640ad4cf3ee7daa88",
+      "keys": [
+        "classification",
+        "status",
+        "utc_start",
+        "utc_end",
+        "elapsed_seconds",
+        "python_version",
+        "versions",
+        "authorized_http_timeout_seconds",
+        "authorized_max_allowed_time",
+        "plain_requests_timeout",
+        "requests_scalar_connect_read_seconds",
+        "mock_boundary",
+        "auth_defaults",
+        "diagnostic_script_sha256",
+        "sources",
+        "cases",
+        "real_allocation_attempts",
+        "real_provider_requests",
+        "real_credentials_loaded",
+        "live_ready",
+        "limitation"
+      ]
+    },
+    {
+      "path": "reports/colab-cli-074-offline-diagnosis/manifest.json",
+      "bytes": 2589,
+      "sha256": "23ba9486c655d9b8d1bfdf5365b9a345432e90e2f05de339bbd9de03bf0cfeda",
+      "keys": [
+        "classification",
+        "status",
+        "base_sha",
+        "original_live_sha",
+        "utc_evidence_packaged",
+        "unittest",
+        "diagnostic_command",
+        "local_retired_observer",
+        "execution_handoffs",
+        "final_evidence_handoffs",
+        "real_provider_calls",
+        "real_allocation_attempts",
+        "current_server_state",
+        "live_ready",
+        "files"
+      ]
+    },
+    {
+      "path": "reports/colab-cli-074-offline-diagnosis/summary.md",
+      "bytes": 5288,
+      "sha256": "d2901568811a141b788959f73d6f53091528f82f046e58e7b526b8e4a9a976b4",
+      "outline": [
+        "# Issue 40 / PR 41 follow-up — LOCAL_DIAGNOSIS_PASS; LIVE_READY_NOT_GRANTED",
+        "## Actual local results",
+        "## Findings supported by source and mocks",
+        "## Boundaries and handoff"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "reports/colab-cli-074-offline-diagnosis/unittest-windows.txt",
+      "bytes": 4254,
+      "sha256": "52faa4879e25edaf2d2a627094c06b781c74a8e2d17558c16d4b8e2afb2afdab"
+    },
+    {
+      "path": "reports/compute-issue38/summary.md",
+      "bytes": 4891,
+      "sha256": "af3f6355ecfc7351f4e4aa3564d857349870f68a1fff72d31465d6b8e13983f6",
+      "outline": [
+        "# Issue 38 — LOCAL_VALIDATED / LIVE_NOT_RUN"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "reports/compute-issue38/windows/test-evidence.json",
+      "bytes": 6012,
+      "sha256": "4ec897cfd4ad5ae037c1d173f4353712c4708ecaf17d2adc8a6fe51285e1ffcb",
+      "keys": [
+        "status",
+        "classification",
+        "tested_framework_sha",
+        "source_promoted_from",
+        "utc_start",
+        "python",
+        "platform",
+        "new_colab_sessions",
+        "gpu",
+        "tpu",
+        "pytorch_compilation",
+        "real_pip_install",
+        "human_approval_count",
+        "handoff_count",
+        "github_publication_utc",
+        "source_file_sha256",
+        "test_command",
+        "exit_code",
+        "stdout",
+        "stderr",
+        "test_elapsed_seconds",
+        "total_local_validation_seconds",
+        "utc_end"
+      ]
+    },
+    {
+      "path": "reports/compute-issue38/wsl/preflight-only/colab-control.json",
+      "bytes": 3089,
+      "sha256": "a7ff38067420a43975cd5cfe4de20a1dd974a2e9f51b835938f5f7ffd2698336",
+      "keys": [
+        "status",
+        "source_sha",
+        "run_id",
+        "created",
+        "cleanup_confirmed",
+        "utc_start",
+        "commands",
+        "classification",
+        "events",
+        "per_attempt_approvals_actual",
+        "api_escalation_requests_actual",
+        "handoffs_actual",
+        "tool_script_sha256",
+        "preflight",
+        "cleanup_seconds",
+        "total_seconds",
+        "utc_end"
+      ]
+    },
+    {
+      "path": "reports/compute-issue38/wsl/test-evidence.json",
+      "bytes": 6053,
+      "sha256": "62378b0007768bc730c8ba3c68618591280ebc284bf505ce5742b1821df72939",
+      "keys": [
+        "status",
+        "classification",
+        "tested_framework_sha",
+        "source_promoted_from",
+        "utc_start",
+        "python",
+        "platform",
+        "new_colab_sessions",
+        "gpu",
+        "tpu",
+        "pytorch_compilation",
+        "real_pip_install",
+        "human_approval_count",
+        "handoff_count",
+        "github_publication_utc",
+        "source_file_sha256",
+        "test_command",
+        "exit_code",
+        "stdout",
+        "stderr",
+        "test_elapsed_seconds",
+        "local_preflight",
+        "total_local_validation_seconds",
+        "utc_end"
+      ]
+    },
+    {
+      "path": "reports/compute-issue43/controller-mock-cases.json",
+      "bytes": 25228,
+      "sha256": "a8222fca8324b2a8f37b1f0e8d89b15eef0f5c4f63a30cd4a03ef3cd3d65ff89",
+      "keys": [
+        "classification",
+        "tested_source_sha",
+        "provider",
+        "cases"
+      ]
+    },
+    {
+      "path": "reports/compute-issue43/execution.json",
+      "bytes": 836,
+      "sha256": "7aee7af9e842708acd9dee61512900d4c1e8b8fa1816e0d281c22e8f7b3eb5e2",
+      "keys": [
+        "classification",
+        "tested_source_sha",
+        "utc_start",
+        "commands",
+        "provider",
+        "real_provider_requests",
+        "real_allocation_attempts",
+        "current_server_state",
+        "real_credentials_loaded",
+        "status",
+        "utc_end",
+        "wall_seconds"
+      ]
+    },
+    {
+      "path": "reports/compute-issue43/installed-cli-final.json",
+      "bytes": 3995,
+      "sha256": "4a614958ed8f73f06169d7736de5899c2c47b415f438d9ae62e7d2e232d36dcc",
+      "keys": [
+        "classification",
+        "status",
+        "utc_start",
+        "utc_end",
+        "elapsed_seconds",
+        "python_version",
+        "cases",
+        "cli_version",
+        "provider",
+        "real_provider_requests",
+        "real_credentials_loaded",
+        "live_ready",
+        "diagnostic_script_sha256",
+        "controller_sha256",
+        "sources",
+        "limitation"
+      ]
+    },
+    {
+      "path": "reports/compute-issue43/manifest.json",
+      "bytes": 2122,
+      "sha256": "dd21e9986a7500c1af99a233ec175e71e7571ae980e1d35116ade5683f794f8b",
+      "keys": [
+        "status",
+        "provider",
+        "live_ready",
+        "base_sha",
+        "tested_source_sha",
+        "utc_packaged",
+        "source_files",
+        "evidence_files"
+      ]
+    },
+    {
+      "path": "reports/compute-issue43/summary.md",
+      "bytes": 5576,
+      "sha256": "5a1bf91eafe7d643a24d729c01351ba53d3b9ca71aab8ddb86d5c581c41dc17e",
+      "outline": [
+        "# Issue 43 — LOCAL_VALIDATED / PROVIDER_NOT_RUN",
+        "## Minimal change and trust argument",
+        "## Real local evidence",
+        "## Preserved limits and review"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "reports/compute-issue43/unittest-windows.txt",
+      "bytes": 4898,
+      "sha256": "3433b8a8e1c941765c72215daee13c985ee3bbd1a3ad0052116edf06c5ddd6bf"
+    },
+    {
+      "path": "reports/compute-live-smoke-issue40-150403/host-observation.json",
+      "bytes": 13751,
+      "sha256": "6f6c3a40a15783052da3252f63392318fe02ae738fdd835b814b5c960cd6fca9",
+      "keys": [
+        "utc_start",
+        "source_sha",
+        "classification",
+        "device_request",
+        "observed_device",
+        "observations",
+        "allocation_limit_seconds",
+        "cleanup_reserve_seconds",
+        "host_interrupt_after_seconds",
+        "host_kill_after_interrupt_seconds",
+        "new_call_cap",
+        "tool_blob_sha256",
+        "controller_exit_code",
+        "independent_server_zero_sessions",
+        "sessions_readback_exit_code",
+        "utc_end",
+        "elapsed_seconds"
+      ]
+    },
+    {
+      "path": "reports/compute-live-smoke-issue40-150403/live/colab-control.json",
+      "bytes": 4658,
+      "sha256": "f823199a2a3e6698785402202cab602fda64260e840d58f493b6931c8142e3b3",
+      "keys": [
+        "status",
+        "source_sha",
+        "run_id",
+        "created",
+        "cleanup_confirmed",
+        "utc_start",
+        "commands",
+        "classification",
+        "events",
+        "per_attempt_approvals_actual",
+        "api_escalation_requests_actual",
+        "handoffs_actual",
+        "tool_script_sha256",
+        "preflight",
+        "driver_transport_sha256",
+        "artifact_manifest_sha256",
+        "balance_before",
+        "error",
+        "utc_cleanup_verified",
+        "allocation_lifecycle_seconds",
+        "transport_cleanup_confirmed",
+        "cleanup_seconds",
+        "total_seconds",
+        "utc_end"
+      ]
+    },
+    {
+      "path": "reports/compute-live-smoke-issue40-150403/manifest.json",
+      "bytes": 1389,
+      "sha256": "bdc5f86676f900022b41fc197ccca33cc2b0fe1ee05870678ac73b691634cf15",
+      "keys": [
+        "status",
+        "source_sha",
+        "report_cutoff_utc",
+        "task_start_utc",
+        "task_deadline_utc",
+        "allocation_limit_seconds",
+        "cleanup_reserve_seconds",
+        "task_limit_seconds",
+        "new_commands",
+        "reallocations",
+        "artifact_verified",
+        "cleanup_verified",
+        "device_requested",
+        "device_observation",
+        "device_scope",
+        "github_access",
+        "colab_auth",
+        "entitlement",
+        "github_publication_utc",
+        "gpt_live_ready_decision",
+        "gpu_numerical",
+        "tpu",
+        "compilation",
+        "artifacts"
+      ]
+    },
+    {
+      "path": "reports/compute-live-smoke-issue40-150403/preflight/colab-control.json",
+      "bytes": 3096,
+      "sha256": "8ac234c970c8649ff7fbd6772be7bbaca8d1ece501fd42fae204d51d50206326",
+      "keys": [
+        "status",
+        "source_sha",
+        "run_id",
+        "created",
+        "cleanup_confirmed",
+        "utc_start",
+        "commands",
+        "classification",
+        "events",
+        "per_attempt_approvals_actual",
+        "api_escalation_requests_actual",
+        "handoffs_actual",
+        "tool_script_sha256",
+        "preflight",
+        "cleanup_seconds",
+        "total_seconds",
+        "utc_end"
+      ]
+    },
+    {
+      "path": "reports/compute-live-smoke-issue40-150403/summary.md",
+      "bytes": 2878,
+      "sha256": "beff70a7f6bdd9f5a26b2a6e5bcd87958c80fe6aaac48af1fea7c3af4d96eb08",
+      "outline": [
+        "# Issue 40 — TRANSPORT_LIVE_FAIL; GPT LIVE_READY decision pending"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "reports/compute-live-t4-issue45/attempt-1-165207/colab-control.json",
+      "bytes": 5937,
+      "sha256": "ea1670d9ef1ecda85b5a0b2bc210ad78f7ec9d5b3f59ce5e13b981508eac9528",
+      "keys": [
+        "status",
+        "source_sha",
+        "run_id",
+        "created",
+        "cleanup_confirmed",
+        "utc_start",
+        "commands",
+        "readbacks",
+        "classification",
+        "events",
+        "per_attempt_approvals_actual",
+        "api_escalation_requests_actual",
+        "handoffs_actual",
+        "tool_script_sha256",
+        "preflight",
+        "driver_transport_sha256",
+        "artifact_manifest_sha256",
+        "balance_before",
+        "artifact_sha256",
+        "utc_cleanup_verified",
+        "allocation_lifecycle_seconds",
+        "transport_cleanup_confirmed",
+        "cleanup_seconds",
+        "total_seconds",
+        "utc_end"
+      ]
+    },
+    {
+      "path": "reports/compute-live-t4-issue45/attempt-1-165207/transport-check.json",
+      "bytes": 202,
+      "sha256": "da167ca43f358ce64c9aa4d471b1d6df60c8ee014d68ee06e09a4786c05b28f3",
+      "keys": [
+        "source_sha",
+        "status",
+        "classification",
+        "live_gpu",
+        "tpu",
+        "compilation"
+      ]
+    },
+    {
+      "path": "reports/compute-live-t4-issue45/host-attempt-1.json",
+      "bytes": 1652,
+      "sha256": "ef42ecb94951c4e148893e0c3490f3b749561b38e04e09251bccd6c7df92eeb8",
+      "keys": [
+        "utc_start",
+        "source_sha",
+        "attempt",
+        "run_id",
+        "classification",
+        "device_requested",
+        "device_observed",
+        "status_polling_calls",
+        "tool_blob_sha256",
+        "limits",
+        "provider_numerical_gpu",
+        "tpu",
+        "compilation",
+        "controller_exit_code",
+        "independent_final_readback",
+        "controller_cleanup_confirmed",
+        "new_commands",
+        "artifact_verified",
+        "artifact_bytes",
+        "artifact_sha256",
+        "utc_end",
+        "elapsed_seconds"
+      ]
+    },
+    {
+      "path": "reports/compute-live-t4-issue45/invocation.json",
+      "bytes": 1149,
+      "sha256": "c14fb50cb6587c4a1f1a825f85a3289b4360b4663d880ac03cbc0295654a7e07",
+      "keys": [
+        "python",
+        "cli",
+        "controller_relative_path",
+        "repo_path",
+        "source_sha",
+        "driver",
+        "artifacts",
+        "device",
+        "task_seconds",
+        "allocation_seconds",
+        "cleanup_seconds",
+        "kernel_timeout",
+        "work_timeout",
+        "run_id",
+        "out_relative_path",
+        "stdin",
+        "controller_exit_code",
+        "separate_preflight",
+        "host_wrapper_sha256",
+        "host_wrapper_scope",
+        "independent_final_readback"
+      ]
+    },
+    {
+      "path": "reports/compute-live-t4-issue45/manifest.json",
+      "bytes": 2303,
+      "sha256": "cfc8caac69b1334c97fb56d309afa4d6fd5712b4bd297b66d50a47e29bf38c4e",
+      "keys": [
+        "status",
+        "source_sha",
+        "pr_base_sha_at_dispatch",
+        "utc_packaged",
+        "task_start_utc",
+        "attempts_completed",
+        "allocation_commands",
+        "allocation_attempt_cap",
+        "retries",
+        "attempt_2",
+        "requested_device",
+        "observed_device",
+        "kernel_marker",
+        "driver",
+        "artifact_validation",
+        "cleanup_confirmed",
+        "independent_authenticated_zero",
+        "numerical_gpu",
+        "tpu",
+        "compilation",
+        "gpt_live_ready_decision",
+        "execution_handoffs",
+        "final_evidence_handoffs",
+        "source_sha256",
+        "files"
+      ]
+    },
+    {
+      "path": "reports/compute-live-t4-issue45/preflight-165207/colab-control.json",
+      "bytes": 3110,
+      "sha256": "e9b98447c1205bea5d7601519a5c69fadab49b97a2e657d4da2764a5299235b6",
+      "keys": [
+        "status",
+        "source_sha",
+        "run_id",
+        "created",
+        "cleanup_confirmed",
+        "utc_start",
+        "commands",
+        "readbacks",
+        "classification",
+        "events",
+        "per_attempt_approvals_actual",
+        "api_escalation_requests_actual",
+        "handoffs_actual",
+        "tool_script_sha256",
+        "preflight",
+        "cleanup_seconds",
+        "total_seconds",
+        "utc_end"
+      ]
+    },
+    {
+      "path": "reports/compute-live-t4-issue45/summary.md",
+      "bytes": 4621,
+      "sha256": "64600e005baa1ddd5a925db28ebdc6e73f769af138f77ea007cc797c6084efeb",
+      "outline": [
+        "# Issue 45 — TRANSPORT_LIVE_PASS; GPT LIVE_READY decision pending",
+        "## Actual provider result",
+        "## Scope, limits and skipped work"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "templates/ENGINEERING_REPORT.md",
+      "bytes": 4832,
+      "sha256": "d14dad78f192c3607ed6d7e291831f24fb12c42110592598762bfe9f04e1b801",
+      "outline": [
+        "# SAE Engineering Design & Implementation Report — <algorithm>",
+        "## 1. Mathematical and engineering contract (Architect)",
+        "## 2. Software design (Architect → Codex)",
+        "## 2a. Ecosystem Review — Build vs. Reuse (Architect; before Codex dispatch)",
+        "## 3. Implementation record (Codex)",
+        "## 4. Actual validation evidence (Codex)",
+        "## 5. Reproduction and handoff (Codex)",
+        "## 6. Review and decision (GPT Architect)"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "templates/EXPERIMENT_REPORT.md",
+      "bytes": 1793,
+      "sha256": "6a3b826f73a9be8acd3bbef323b488661f0bfd5ea5d78a8592411fa1173cf417",
+      "outline": [
+        "# SAE Colab Experiment Report — <run-id>",
+        "## Three-artifact provenance",
+        "## Setup",
+        "## Correctness",
+        "## Benchmark",
+        "## Results",
+        "## Interpretation (GPT science/engineering acceptance)",
+        "## Next action"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "templates/GPU_READINESS.md",
+      "bytes": 1603,
+      "sha256": "dae97ae85dd574151571bf950270d84f90edac2dab1ab17f6e28ad28cbcd025e",
+      "outline": [
+        "# GPU Readiness Gate — <algorithm>"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "templates/ISSUE_TEMPLATE.md",
+      "bytes": 2149,
+      "sha256": "a7137f2718c7c71f4ce126cbb6ba3354c003121e4bbf71bf613e54d116c65868",
+      "outline": [
+        "# [SAE Engineering Task] <short title>",
+        "## Scientific purpose",
+        "## Pre-engineering mathematical research gate",
+        "## Mathematical / numerical contract",
+        "## Deliverables",
+        "## Compute delivery gate (algorithm implementation tasks)",
+        "## Acceptance criteria",
+        "## Handoff"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "templates/PR_TEMPLATE.md",
+      "bytes": 1521,
+      "sha256": "e74ff3e217c0c8f90ffae13b2885ec1a92beda7b0a93f488dfca194a11a4fc6b",
+      "outline": [
+        "# SAE Pull Request: <title>",
+        "## Scope and mathematical motivation",
+        "## Evidence (no implied execution)",
+        "## Three-artifact links",
+        "## Reproduction",
+        "## Risks / limitations",
+        "## Review requests",
+        "## Learning opportunity (optional)"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "templates/TENSORIZATION_STUDY.md",
+      "bytes": 3134,
+      "sha256": "3a60d86f4c37038f0d1b4174a2d2158a508612ff4283a3803b0e7c71b561b717",
+      "outline": [
+        "# Mathematical Structure & Tensorization Study — <algorithm>",
+        "## 1. Reference mathematical problem",
+        "## 2. Structure inventory",
+        "## 3. Derivation of the tensorized formulation",
+        "## 4. Numerical and correctness contract",
+        "## 5. Complexity and hardware feasibility",
+        "## 6. Proposed architecture and experiments (not yet run)",
+        "## Handoff into the three-artifact chain",
+        "## 7. Alternatives, risks and scientist decision"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "tools/compute/NOTICE.md",
+      "bytes": 1522,
+      "sha256": "47ac1a7866dfd343902f4cb3206b50ffccc386ba5e7b8797f38aecfb1e0796c5",
+      "outline": [
+        "# Source and licensing"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "tools/compute/README.md",
+      "bytes": 9224,
+      "sha256": "2830d5e5a20d3b89d5dc608c02d4975af2c25095ce77451cc6d278333a663153",
+      "outline": [
+        "# Local preflight and bounded Colab transport",
+        "## Pinning and local-only use",
+        "## Project-owned adapter contract",
+        "## Bounds and evidence"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "tools/compute/README.zh-CN.md",
+      "bytes": 5678,
+      "sha256": "4ee70f7a21bbde953563ab5337d4e575793cabc52bdb705224c7a5324093427a",
+      "outline": [
+        "# 本地预检与有界 Colab 传输"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "tools/compute/colab_control.py",
+      "bytes": 16172,
+      "sha256": "1d564818b48c9d39d1209fb57d88d24c67316efeb1f2ce73172c56350cdc29af",
+      "functions": [
+        "strict_json",
+        "authenticated_usage",
+        "load_adapter",
+        "parser",
+        "utc",
+        "run",
+        "unique",
+        "blob",
+        "cli",
+        "readback",
+        "step",
+        "probe",
+        "workload",
+        "download"
+      ]
+    },
+    {
+      "path": "tools/compute/diagnostics/README.md",
+      "bytes": 6441,
+      "sha256": "fac58f360ff30e5a351c6f01fc50cb4da5dea74dafce1fee6d09528d70b0f70f",
+      "outline": [
+        "# Colab CLI 0.7.4: offline timeout diagnosis",
+        "## Installed call chain and timeout distinction",
+        "## Status observer policy",
+        "## Evidence limits"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "tools/compute/diagnostics/authenticated_readback_074.py",
+      "bytes": 6416,
+      "sha256": "1bc6d2a15d39faca13aee95e243b8d9a3b9ebf401bfdd63693757fb5859fe8ba",
+      "functions": [
+        "diagnose",
+        "send",
+        "invoke"
+      ]
+    },
+    {
+      "path": "tools/compute/diagnostics/colab_cli_074.py",
+      "bytes": 9877,
+      "sha256": "2113e888ab41979c3695dfd30dd7b79405ca4b318bbf5e766564aca6ef17948c",
+      "functions": [
+        "deny_network",
+        "dependencies",
+        "run_child",
+        "source_record",
+        "diagnose",
+        "send"
+      ]
+    },
+    {
+      "path": "tools/compute/environment_preflight.py",
+      "bytes": 7469,
+      "sha256": "1ab11ff4baedfa875a23307f9f6af961d1ac8481f62a91f2570d755674dec112",
+      "functions": [
+        "PreflightError",
+        "resolve_cli",
+        "preflight",
+        "__init__",
+        "command",
+        "event",
+        "check_paths",
+        "extract"
+      ]
+    },
+    {
+      "path": "tools/compute/kernel_smoke.py",
+      "bytes": 103,
+      "sha256": "63eedb51b7ac4710009df64d01cf9e33a6e6bdb498294766b215ee90d9490b03",
+      "functions": []
+    },
+    {
+      "path": "tools/compute/tests/test_adapter.py",
+      "bytes": 4719,
+      "sha256": "320567a82b315b9e292ecf4adcb579a100a0306557aff34723b27c7fc3410a10",
+      "functions": [
+        "AdapterTests",
+        "setUp",
+        "git",
+        "pin",
+        "load",
+        "test_pinned_files_ignore_dirty_adapter_and_manifest",
+        "test_unsafe_adapter_paths_rejected",
+        "test_manifest_structure_and_safe_names",
+        "test_symlink_blob_is_not_an_executable_adapter",
+        "test_source_sha_is_immutable",
+        "test_duplicate_json_fields_rejected",
+        "test_example_runs_locally_without_provider"
+      ]
+    },
+    {
+      "path": "tools/compute/tests/test_colab_control.py",
+      "bytes": 19604,
+      "sha256": "1b980b881d81f43789910fdcf81ccb26cf367034ede7bdf3cf842b1128636456",
+      "functions": [
+        "Clock",
+        "FakeCLI",
+        "ControllerTests",
+        "__init__",
+        "__call__",
+        "__init__",
+        "__call__",
+        "run_fake",
+        "test_success_defaults_to_probe_before_work_and_download",
+        "test_probe_failure_skips_work_and_cleans_up",
+        "test_probe_timeout_has_short_bound",
+        "test_work_hang_preserves_cleanup_reserve",
+        "test_expired_work_budget_still_stops",
+        "test_hash_mismatch",
+        "test_artifact_source_and_status_mismatch",
+        "test_partial_new_failure_stops",
+        "test_allocation_timeout_is_outer_scope_not_http_diagnosis",
+        "test_interrupt_stops",
+        "test_failed_cleanup_never_passes",
+        "test_existing_sessions_not_touched",
+        "test_quota_blocks_allocation",
+        "test_untrusted_preallocation_readbacks_never_allocate",
+        "test_untrusted_cleanup_readback_or_failed_stop_never_passes",
+        "test_unreviewed_cli_version_blocks_before_provider",
+        "test_authenticated_usage_rejects_partial_ambiguous_or_nonfinite_text",
+        "test_preflight_only_never_calls_provider",
+        "test_existing_output_not_overwritten",
+        "test_unavailable_cli_blocks_before_provider",
+        "test_real_local_child_timeout_still_cleans_up",
+        "test_real_local_allocation_child_timeout_without_status_polling",
+        "test_preflight_failure_keeps_timed_child_report",
+        "subprocess_cli",
+        "subprocess_cli"
+      ]
+    },
+    {
+      "path": "tools/compute/tests/test_environment_preflight.py",
+      "bytes": 5876,
+      "sha256": "0071109a79139973af3f5ea1b75c12900dd55e61d0be4770005295cb065dec61",
+      "functions": [
+        "PreflightTests",
+        "setUp",
+        "git",
+        "fake",
+        "test_exact_export_ignores_dirty_crlf_worktree_and_local_pip_paths",
+        "test_default_preflight_does_not_install_or_contact_provider",
+        "test_invalid_sha_before_any_command",
+        "test_reject_synced_or_checkout_temp",
+        "test_nonwritable_temp_stops_before_pip",
+        "test_git_or_cli_timeout_is_bounded_and_safe",
+        "test_cli_resolution_and_missing_cli"
+      ]
+    },
+    {
+      "path": "workflows/CODE_REVIEW.md",
+      "bytes": 2441,
+      "sha256": "6b912babb84725bf720d146f6e9836bbb3f8556ba0b9a7cd018a4403ca7725f7",
+      "outline": [
+        "# Technical Review and Merge Gates",
+        "## Architect review is evidence-driven",
+        "## Decision outcome",
+        "## Merge policy",
+        "## Performance gates"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "workflows/COLAB_TWO_COMMAND.md",
+      "bytes": 1503,
+      "sha256": "850ba948879d566e844f485ed598ef2ac3442f958b0097674b211a6b8e942519",
+      "outline": [
+        "# Colab CLI Three-Stage Compatibility Guide (V3.3)"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "workflows/ECOSYSTEM_REVIEW.md",
+      "bytes": 3993,
+      "sha256": "b666b3176cd63adb54956cd68a5e52545b0def9d2ba8a8d23b5f89960f2cbe5d",
+      "outline": [
+        "# Ecosystem-Aware Architecture — Lightweight Build-vs-Reuse Gate",
+        "## When and who",
+        "## Three-pass bounded discovery",
+        "## Compare approaches",
+        "## One small record; no extra report",
+        "## Guardrails"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "workflows/GPU_EXPERIMENT.md",
+      "bytes": 7182,
+      "sha256": "b95ada8a428e082f6eed67874315780c8df9063382d93e0972ff38b5fdd81ffe",
+      "outline": [
+        "# Compute Experiment Protocol — CPU / GPU / TPU (V3.3)",
+        "## Ownership and prerequisites",
+        "## Three separate logical stages",
+        "## Experiment by Default — no Scientist compute gate (2026-10-20)",
+        "## Compute and hardware controls",
+        "## Required evidence",
+        "## GitHub publication and failure handling",
+        "## Verified state as of 2026-10-19"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "workflows/LEAN_RESEARCH_LAB.md",
+      "bytes": 5968,
+      "sha256": "368d7322ac8c8a09db14a1b181384d536d544766c635508b5e28338ae204c519",
+      "outline": [
+        "# Lean Research Lab — Explore / Validate and Codex Experiment Batches (V3.3-compatible)",
+        "## Purpose and precedence",
+        "## Two modes, chosen by the intended claim",
+        "## One Codex task → one bounded engineering/experiment batch",
+        "## Lightweight handoff and learning",
+        "## Implementation status"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "workflows/LEARNING.md",
+      "bytes": 1894,
+      "sha256": "d9b823ac7879e2de42f4e7f1ef3aec642d63d33c8a9f922bf8cab74d4888caf7",
+      "outline": [
+        "# Scientific Learning Loop",
+        "## Before the first engineering milestone",
+        "## During a milestone",
+        "## Suggested note fields",
+        "## Guardrails"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "workflows/MATHEMATICAL_RESEARCH.md",
+      "bytes": 5519,
+      "sha256": "b88ff1904cdae62a060e6b34e456d50b8285362376d851315803fdc3a11f5cd9",
+      "outline": [
+        "# Mathematical Structure Discovery & Tensorization Research Gate",
+        "## Research-first principle",
+        "## Stage R1 — Examine the mathematical problem (GPT Mentor)",
+        "## Stage R2 — Derive an equivalent tensor formulation",
+        "## Stage R3 — Produce a research handoff",
+        "## Mathematics → Engineering → Experiment artifact link",
+        "## Gate to Architect and Engineer",
+        "## Mentor invocation behavior"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "workflows/NEXT_ACTION.md",
+      "bytes": 5943,
+      "sha256": "3fb5fb4a89a6ba9b3f445519bb52e6c526ffb6a2a3f59b3cb2f89b9ebee732de",
+      "outline": [
+        "# Next-Action Protocol — Agent Handoff and One-Tap Continuation",
+        "## Purpose",
+        "## Mandatory compact footer",
+        "## Next-Action Completion Gate — pre-send check (V3.3)",
+        "### Copy/paste and interactive-choice fallback",
+        "## Example (illustrative only)",
+        "## Integration",
+        "## Role recovery and integrity"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "workflows/RESEARCH_PIPELINE.md",
+      "bytes": 3583,
+      "sha256": "844269c76d25cab70f0e8d4cfc78df08b6f5a773c06f79861a2d9d40f36ef8a1",
+      "outline": [
+        "# Research Pipeline — Scientific Gate, CPU Validation, Authorized Accelerators (V3.3)",
+        "## I. Mathematical research — GPT Mentor/Architect",
+        "## II. Engineering and CPU correctness — Architect + Codex",
+        "## III. Device experiments — Codex executes by default, Architect reviews"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "workflows/ROLE_RECOVERY.md",
+      "bytes": 2437,
+      "sha256": "5d6eac6f16b4da7878e005b613b9291485ef192eaacfda973c166cb17854ca20",
+      "outline": [
+        "# Role Recovery & Integrity Protocol (V3.3)",
+        "## Purpose",
+        "## Recovery checklist"
+      ],
+      "legacy_gate_lines": [
+        "4. Recover live Issues/PRs, source SHA, current evidence and previous **GPT research/engineering decisions**. Distinguish a mathematical hypothesis, `RESEARCH_READY`, CPU verification and **actual device-specific verification**; no Scientist decision lookup. Do not infer GPU/TPU support from CPU/CLI options."
+      ]
+    },
+    {
+      "path": "workflows/SCIENTIST_ONE_CLICK_NEXT_ACTIONS.md",
+      "bytes": 4113,
+      "sha256": "9242057e55b2458aaf9fc9d84d735d9f7c8305aa853dbff52faae31da1d30a55",
+      "outline": [
+        "# Scientist one-click next actions (optional UI convention)",
+        "## Goal",
+        "## ChatGPT final-response contract (when the client supports interactions)",
+        "## Interaction safety and scientific gates",
+        "## Example (conceptual text; actual UI is supplied by the ChatGPT client, not GitHub)",
+        "## Verification"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "workflows/SECURITY.md",
+      "bytes": 1758,
+      "sha256": "e81212259be4ff23caca9fe123b387709baaf93bac64fe36da32a8f2c74d5e3c",
+      "outline": [
+        "# Permissions, Trust and Cost Guardrails"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "workflows/TASK_MANAGEMENT.md",
+      "bytes": 5206,
+      "sha256": "798a935da10107986c38dcb871aed9ffe4306f00ca9de9baf9a2a8d078ba72cb",
+      "outline": [
+        "# GitHub Task Management and Handoff",
+        "## Minimal label vocabulary",
+        "## Pre-engineering research gate",
+        "## Linked artifacts in Issue/PR handoffs",
+        "## Lean execution path",
+        "## Lifecycle",
+        "## State consistency",
+        "## Required next-action handoff",
+        "## Role recovery and integrity",
+        "## Indefinite owner-wide Architect merge decision"
+      ],
+      "legacy_gate_lines": []
+    },
+    {
+      "path": "workflows/THREE_ARTIFACT_HANDOFF.md",
+      "bytes": 6086,
+      "sha256": "0662b260e6cbdc8a0545743c0fc3e87a292f6bd401d2b3ad3ecc1ba6064f3b84",
+      "outline": [
+        "# Three Research Artifacts — Mathematics, Engineering, Experiment",
+        "## Purpose",
+        "## Contract: one question, one authority, connected evidence",
+        "## Templates (in this Framework repo)",
+        "## Minimal lifecycle",
+        "## Template instantiation",
+        "## Lightweight rules",
+        "## Handoff integrity check"
+      ],
+      "legacy_gate_lines": []
+    }
+  ],
+  "file_count": 131,
+  "bytes": 605207
+}
