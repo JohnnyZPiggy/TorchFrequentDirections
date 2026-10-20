@@ -1,6 +1,7 @@
 import importlib.util
 from pathlib import Path
 import tempfile
+import subprocess
 import unittest
 from unittest.mock import patch
 
@@ -32,6 +33,17 @@ class GPUDriverTests(unittest.TestCase):
         self.assertEqual(len(calls),7)
         self.assertEqual(report['p95_ms'],max(report['samples_ms']))
         self.assertGreaterEqual(report['median_ms'],0)
+
+    def test_local_source_requires_exact_commit_identity(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            (root/'fixture').write_bytes(b'checked bytes')
+            expected = driver.hashlib.sha256(b'checked bytes').hexdigest()
+            wrong = subprocess.CompletedProcess([],0,'1'*40+'\n','')
+            with patch.dict(driver.SOURCE_FILES, {'fixture': expected}, clear=True), \
+                 patch.object(driver.subprocess,'run',return_value=wrong):
+                with self.assertRaisesRegex(RuntimeError,'SOURCE_MISMATCH'):
+                    driver.install_source('0'*40,root,local=root)
 
     def test_both_methods_profile_the_actual_update(self):
         from torchfrequentdirections import reference_fd,fast_fd

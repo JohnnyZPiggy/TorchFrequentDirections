@@ -50,6 +50,10 @@ def install_source(sha, destination, local=None):
         if path.is_symlink() or hashlib.sha256(path.read_bytes()).hexdigest() != expected:
             raise RuntimeError('SOURCE_MISMATCH')
     if local:
+        actual = subprocess.run(['git', '-C', str(root), 'rev-parse', 'HEAD'],
+                                capture_output=True, text=True, timeout=10)
+        if actual.returncode or actual.stdout.strip() != sha:
+            raise RuntimeError('SOURCE_MISMATCH')
         sys.path.insert(0, str(root))
     else:
         target = destination / 'installed'
