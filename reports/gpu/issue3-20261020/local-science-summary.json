@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "source_sha": "608975335817431d841e0ad313a21d4930304a46",
+  "environment": {
+    "python": "3.12.3",
+    "torch": "2.11.0+cpu",
+    "cuda_version": null,
+    "cuda_available": false,
+    "cpu_threads": 1,
+    "tf32": false,
+    "cpu_model": "AMD Ryzen 7 4800H with Radeon Graphics"
+  },
+  "correctness_results": 28,
+  "benchmark_shapes_and_dtypes": 8,
+  "correctness_all_pass": true,
+  "gpu": "NOT_RUN",
+  "elapsed_seconds": 5.823203277999994,
+  "raw_sha256": "6b544a3c4216ab53cabab4adbc924caee7f58277290cac68a51dbcd47421cfd4",
+  "note": "Local raw pilot retained locally; remote fd-science.json holds primary same-host CPU/GPU comparisons."
+}

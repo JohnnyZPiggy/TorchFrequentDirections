@@ -1,8 +1,9 @@
 # TorchFrequentDirections
 
 Inference-only reference and buffered Frequent Directions, using native PyTorch
-SVD. First CPU engineering batch for [Issue #1](https://github.com/JohnnyZPiggy/TorchFrequentDirections/issues/1);
-scientific acceptance and merge remain with GPT Architect.
+SVD. The CPU baseline was accepted in PR #2; bounded CPU/GPU measurements for
+[Issue #3](https://github.com/JohnnyZPiggy/TorchFrequentDirections/issues/3) are
+submitted for GPT Architect review.
 
 ```sh
 python -m pip install .
@@ -40,9 +41,14 @@ of at most `ell` rows is represented without shrink, so it may have rank `ell`.
 [engineering/provenance and evidence](docs/engineering/frequent-directions-engineering.md),
 [SAE rules](AGENTS.md), [complete fixed snapshot](.sae/AGENTS.md).
 
-Tested: CPU PyTorch 2.11.0+cpu, Python 3.12.3, float32/float64. Packaging permits
-torch>=2.0 / Python>=3.10, but older releases are unverified. GPU/TPU, autograd,
-torch.compile, half precision and accelerator performance are NOT RUN/unsupported
-in this milestone. Benchmark timings are CPU observations, not GPU speedup claims.
+Tested: CPU PyTorch 2.11.0+cpu / Python 3.12.3 and a real Tesla T4 with
+PyTorch 2.11.0+cu130 / Python 3.13.15, float32/float64. See the
+[exact-source numerical and CPU/GPU report](reports/gpu/issue3-20261020/summary.md)
+for measured shapes, transfers, variability, cleanup and limitations. Most small
+tested cases were slower on GPU; the wider float32 Fast case showed a modest
+gain against a one-thread CPU baseline. This is not a general speedup guarantee.
+Packaging permits torch>=2.0 / Python>=3.10, but older releases are unverified.
+TPU, torch.compile, half precision and other accelerators remain NOT RUN;
+autograd is unsupported.
 No GitHub Actions or background computation. Root code is MIT; bundled SAE retains
 its own MIT license. No original paper or third-party implementation is distributed.

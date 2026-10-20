@@ -1,0 +1,23 @@
+{
+  "source_sha": "608975335817431d841e0ad313a21d4930304a46",
+  "run_id": "fd3-20261020-203909",
+  "utc_start": "2026-10-20T20:39:09.175900+00:00",
+  "controller_task_seconds": 600,
+  "allocation_seconds": 540,
+  "work_timeout_seconds": 300,
+  "cleanup_reserve_seconds": 60,
+  "host_timeout_seconds": 660,
+  "new_attempt_limit": 1,
+  "controller_exit_code": 0,
+  "independent_readback": {
+    "utc": "2026-10-20T20:40:34.400214+00:00",
+    "status": "AUTHENTICATED_ZERO",
+    "assignments": 0
+  },
+  "elapsed_seconds": 88.21610229199999,
+  "utc_end": "2026-10-20T20:40:34.441534+00:00",
+  "status": "PASS",
+  "download_sha256": {
+    "fd-science.json": "96e85876d74f2456c25dff336a07539c5641b47dfa53ab6c02e806819b3ce1ff"
+  }
+}
