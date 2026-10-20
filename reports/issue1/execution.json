@@ -1,0 +1,498 @@
+{
+  "status": "PASS",
+  "validation_started_utc": "2026-10-20T20:12:23.514969+00:00",
+  "validation_completed_utc": "2026-10-20T20:13:11.339294+00:00",
+  "validation_wall_seconds": 47.823679300010554,
+  "source_sha": "77754cc983e51d20b3dc31f225c81567f8ffe69b",
+  "source_clean_at_validation": true,
+  "framework_tests": {
+    "status": "PASS",
+    "exit_code": 0,
+    "host_seconds": 23.739224400007515,
+    "python": "3.12.14",
+    "command": "python -X utf8 -m unittest discover -s tools/compute/tests -v (cwd .sae)",
+    "stdout": "",
+    "stderr": "test_duplicate_json_fields_rejected (test_adapter.AdapterTests.test_duplicate_json_fields_rejected) ... ok\ntest_example_runs_locally_without_provider (test_adapter.AdapterTests.test_example_runs_locally_without_provider) ... ok\ntest_manifest_structure_and_safe_names (test_adapter.AdapterTests.test_manifest_structure_and_safe_names) ... ok\ntest_pinned_files_ignore_dirty_adapter_and_manifest (test_adapter.AdapterTests.test_pinned_files_ignore_dirty_adapter_and_manifest) ... ok\ntest_source_sha_is_immutable (test_adapter.AdapterTests.test_source_sha_is_immutable) ... ok\ntest_symlink_blob_is_not_an_executable_adapter (test_adapter.AdapterTests.test_symlink_blob_is_not_an_executable_adapter) ... ok\ntest_unsafe_adapter_paths_rejected (test_adapter.AdapterTests.test_unsafe_adapter_paths_rejected) ... ok\ntest_allocation_timeout_is_outer_scope_not_http_diagnosis (test_colab_control.ControllerTests.test_allocation_timeout_is_outer_scope_not_http_diagnosis) ... ok\ntest_artifact_source_and_status_mismatch (test_colab_control.ControllerTests.test_artifact_source_and_status_mismatch) ... ok\ntest_authenticated_usage_rejects_partial_ambiguous_or_nonfinite_text (test_colab_control.ControllerTests.test_authenticated_usage_rejects_partial_ambiguous_or_nonfinite_text) ... ok\ntest_existing_output_not_overwritten (test_colab_control.ControllerTests.test_existing_output_not_overwritten) ... ok\ntest_existing_sessions_not_touched (test_colab_control.ControllerTests.test_existing_sessions_not_touched) ... ok\ntest_expired_work_budget_still_stops (test_colab_control.ControllerTests.test_expired_work_budget_still_stops) ... ok\ntest_failed_cleanup_never_passes (test_colab_control.ControllerTests.test_failed_cleanup_never_passes) ... ok\ntest_hash_mismatch (test_colab_control.ControllerTests.test_hash_mismatch) ... ok\ntest_interrupt_stops (test_colab_control.ControllerTests.test_interrupt_stops) ... ok\ntest_partial_new_failure_stops (test_colab_control.ControllerTests.test_partial_new_failure_stops) ... ok\ntest_preflight_failure_keeps_timed_child_report (test_colab_control.ControllerTests.test_preflight_failure_keeps_timed_child_report) ... ok\ntest_preflight_only_never_calls_provider (test_colab_control.ControllerTests.test_preflight_only_never_calls_provider) ... ok\ntest_probe_failure_skips_work_and_cleans_up (test_colab_control.ControllerTests.test_probe_failure_skips_work_and_cleans_up) ... ok\ntest_probe_timeout_has_short_bound (test_colab_control.ControllerTests.test_probe_timeout_has_short_bound) ... ok\ntest_quota_blocks_allocation (test_colab_control.ControllerTests.test_quota_blocks_allocation) ... ok\ntest_real_local_allocation_child_timeout_without_status_polling (test_colab_control.ControllerTests.test_real_local_allocation_child_timeout_without_status_polling) ... ok\ntest_real_local_child_timeout_still_cleans_up (test_colab_control.ControllerTests.test_real_local_child_timeout_still_cleans_up) ... ok\ntest_success_defaults_to_probe_before_work_and_download (test_colab_control.ControllerTests.test_success_defaults_to_probe_before_work_and_download) ... ok\ntest_unavailable_cli_blocks_before_provider (test_colab_control.ControllerTests.test_unavailable_cli_blocks_before_provider) ... ok\ntest_unreviewed_cli_version_blocks_before_provider (test_colab_control.ControllerTests.test_unreviewed_cli_version_blocks_before_provider) ... ok\ntest_untrusted_cleanup_readback_or_failed_stop_never_passes (test_colab_control.ControllerTests.test_untrusted_cleanup_readback_or_failed_stop_never_passes) ... ok\ntest_untrusted_preallocation_readbacks_never_allocate (test_colab_control.ControllerTests.test_untrusted_preallocation_readbacks_never_allocate) ... ok\ntest_work_hang_preserves_cleanup_reserve (test_colab_control.ControllerTests.test_work_hang_preserves_cleanup_reserve) ... ok\ntest_cli_resolution_and_missing_cli (test_environment_preflight.PreflightTests.test_cli_resolution_and_missing_cli) ... ok\ntest_default_preflight_does_not_install_or_contact_provider (test_environment_preflight.PreflightTests.test_default_preflight_does_not_install_or_contact_provider) ... ok\ntest_exact_export_ignores_dirty_crlf_worktree_and_local_pip_paths (test_environment_preflight.PreflightTests.test_exact_export_ignores_dirty_crlf_worktree_and_local_pip_paths) ... ok\ntest_git_or_cli_timeout_is_bounded_and_safe (test_environment_preflight.PreflightTests.test_git_or_cli_timeout_is_bounded_and_safe) ... ok\ntest_invalid_sha_before_any_command (test_environment_preflight.PreflightTests.test_invalid_sha_before_any_command) ... ok\ntest_nonwritable_temp_stops_before_pip (test_environment_preflight.PreflightTests.test_nonwritable_temp_stops_before_pip) ... ok\ntest_reject_synced_or_checkout_temp (test_environment_preflight.PreflightTests.test_reject_synced_or_checkout_temp) ... ok\n\n----------------------------------------------------------------------\nRan 37 tests in 23.487s\n\nOK\n"
+  },
+  "wsl_host_seconds": 24.077027699997416,
+  "wsl": {
+    "status": "PASS",
+    "source_sha": "77754cc983e51d20b3dc31f225c81567f8ffe69b",
+    "snapshot": {
+      "status": "PASS",
+      "framework_sha": "a60ed92d80a8866b413b928d609cc3afb82ec408",
+      "files_verified": 131,
+      "preexisting_template_links": 8,
+      "project_root_links": "PASS",
+      "parsers": "Python AST / JSON / SVG XML"
+    },
+    "packaging": {
+      "status": "PASS",
+      "builder": "uv 0.13.1 / setuptools 78.1.0",
+      "offline": true,
+      "archive_sha256": "ce6959f2cc888876fb2640c5dafbb7b871a907b01ac79b087505d951ea17d0d7",
+      "wheel": "torchfrequentdirections-0.1.0-py3-none-any.whl",
+      "wheel_sha256": "6ee5cc4d89fc5313ceb02e9bba66b9d7635e8885d6c012b65bf90e6366bc671a",
+      "members": [
+        "torchfrequentdirections/__init__.py",
+        "torchfrequentdirections/benchmarks.py",
+        "torchfrequentdirections/fd.py",
+        "torchfrequentdirections-0.1.0.dist-info/licenses/LICENSE",
+        "torchfrequentdirections-0.1.0.dist-info/METADATA",
+        "torchfrequentdirections-0.1.0.dist-info/WHEEL",
+        "torchfrequentdirections-0.1.0.dist-info/top_level.txt",
+        "torchfrequentdirections-0.1.0.dist-info/RECORD"
+      ],
+      "install": {
+        "status": "PASS",
+        "package_import": "isolated target wheel, outside source checkout",
+        "output_shape": [
+          2,
+          4
+        ],
+        "torch": "2.11.0+cpu"
+      },
+      "installed_benchmark": {
+        "status": "PASS",
+        "device": "cpu",
+        "torch": "2.11.0+cpu",
+        "threads": 1,
+        "seed": 1729,
+        "warmup": 2,
+        "scope": "constructor + update + final snapshot; excludes input generation",
+        "parameters": {
+          "n": 32,
+          "d": 8,
+          "ell": 2,
+          "dtype": "float64",
+          "repeat": 2
+        },
+        "measurements": [
+          {
+            "method": "reference_fd",
+            "seconds": [
+              0.002966631999981928,
+              0.0029661760000010418
+            ],
+            "median_seconds": 0.002966403999991485
+          },
+          {
+            "method": "fast_fd",
+            "seconds": [
+              0.0011802150000050915,
+              0.0013810749999834115
+            ],
+            "median_seconds": 0.0012806449999942515
+          }
+        ]
+      },
+      "isolation": "fresh wheel target; existing torch dependency environment reused"
+    },
+    "cpu_model": "AMD Ryzen 7 4800H with Radeon Graphics",
+    "benchmarks": [
+      {
+        "status": "PASS",
+        "device": "cpu",
+        "torch": "2.11.0+cpu",
+        "threads": 1,
+        "seed": 1729,
+        "warmup": 2,
+        "scope": "constructor + update + final snapshot; excludes input generation",
+        "parameters": {
+          "n": 128,
+          "d": 32,
+          "ell": 4,
+          "dtype": "float32",
+          "repeat": 5
+        },
+        "measurements": [
+          {
+            "method": "reference_fd",
+            "seconds": [
+              0.0141164450000133,
+              0.013947674999997162,
+              0.013995574000006172,
+              0.014114826999986008,
+              0.01462302400000226
+            ],
+            "median_seconds": 0.014114826999986008
+          },
+          {
+            "method": "fast_fd",
+            "seconds": [
+              0.0034726380000051904,
+              0.0033314050000115003,
+              0.0033903100000145514,
+              0.003311303000003818,
+              0.0034584729999949104
+            ],
+            "median_seconds": 0.0033903100000145514
+          }
+        ]
+      },
+      {
+        "status": "PASS",
+        "device": "cpu",
+        "torch": "2.11.0+cpu",
+        "threads": 1,
+        "seed": 1729,
+        "warmup": 2,
+        "scope": "constructor + update + final snapshot; excludes input generation",
+        "parameters": {
+          "n": 128,
+          "d": 32,
+          "ell": 4,
+          "dtype": "float64",
+          "repeat": 5
+        },
+        "measurements": [
+          {
+            "method": "reference_fd",
+            "seconds": [
+              0.013787935999999945,
+              0.018597258999989208,
+              0.014127982000019301,
+              0.014188504000003377,
+              0.013683813999989525
+            ],
+            "median_seconds": 0.014127982000019301
+          },
+          {
+            "method": "fast_fd",
+            "seconds": [
+              0.0033974309999962315,
+              0.003321561000007023,
+              0.003485011000009308,
+              0.003624344000002111,
+              0.0034431260000076236
+            ],
+            "median_seconds": 0.0034431260000076236
+          }
+        ]
+      },
+      {
+        "status": "PASS",
+        "device": "cpu",
+        "torch": "2.11.0+cpu",
+        "threads": 1,
+        "seed": 1729,
+        "warmup": 2,
+        "scope": "constructor + update + final snapshot; excludes input generation",
+        "parameters": {
+          "n": 256,
+          "d": 64,
+          "ell": 8,
+          "dtype": "float32",
+          "repeat": 5
+        },
+        "measurements": [
+          {
+            "method": "reference_fd",
+            "seconds": [
+              0.034720570000018824,
+              0.03313556599999856,
+              0.03279095100000973,
+              0.03403922999999054,
+              0.03423075899999617
+            ],
+            "median_seconds": 0.03403922999999054
+          },
+          {
+            "method": "fast_fd",
+            "seconds": [
+              0.0051576489999831665,
+              0.005419036000006372,
+              0.005182689999998047,
+              0.005142183000003797,
+              0.005340844000016887
+            ],
+            "median_seconds": 0.005182689999998047
+          }
+        ]
+      },
+      {
+        "status": "PASS",
+        "device": "cpu",
+        "torch": "2.11.0+cpu",
+        "threads": 1,
+        "seed": 1729,
+        "warmup": 2,
+        "scope": "constructor + update + final snapshot; excludes input generation",
+        "parameters": {
+          "n": 256,
+          "d": 64,
+          "ell": 8,
+          "dtype": "float64",
+          "repeat": 5
+        },
+        "measurements": [
+          {
+            "method": "reference_fd",
+            "seconds": [
+              0.0337263400000154,
+              0.03432419099999606,
+              0.03292900299999246,
+              0.03244515200000819,
+              0.03285336100000791
+            ],
+            "median_seconds": 0.03292900299999246
+          },
+          {
+            "method": "fast_fd",
+            "seconds": [
+              0.005565477999994073,
+              0.005504522000023826,
+              0.005314316000010422,
+              0.00548935899999492,
+              0.005704030000003968
+            ],
+            "median_seconds": 0.005504522000023826
+          }
+        ]
+      },
+      {
+        "status": "PASS",
+        "device": "cpu",
+        "torch": "2.11.0+cpu",
+        "threads": 1,
+        "seed": 1729,
+        "warmup": 2,
+        "scope": "constructor + update + final snapshot; excludes input generation",
+        "parameters": {
+          "n": 512,
+          "d": 64,
+          "ell": 16,
+          "dtype": "float32",
+          "repeat": 5
+        },
+        "measurements": [
+          {
+            "method": "reference_fd",
+            "seconds": [
+              0.08598119800001314,
+              0.08249775300001261,
+              0.08115983799999071,
+              0.08259482400001161,
+              0.08384143000000677
+            ],
+            "median_seconds": 0.08259482400001161
+          },
+          {
+            "method": "fast_fd",
+            "seconds": [
+              0.008336994999979197,
+              0.00819467399998075,
+              0.008052642999984982,
+              0.008191237000005458,
+              0.008343467000003102
+            ],
+            "median_seconds": 0.00819467399998075
+          }
+        ]
+      },
+      {
+        "status": "PASS",
+        "device": "cpu",
+        "torch": "2.11.0+cpu",
+        "threads": 1,
+        "seed": 1729,
+        "warmup": 2,
+        "scope": "constructor + update + final snapshot; excludes input generation",
+        "parameters": {
+          "n": 512,
+          "d": 64,
+          "ell": 16,
+          "dtype": "float64",
+          "repeat": 5
+        },
+        "measurements": [
+          {
+            "method": "reference_fd",
+            "seconds": [
+              0.09271632299999055,
+              0.09362689700000715,
+              0.09416708699998821,
+              0.0934614100000033,
+              0.09931141600000615
+            ],
+            "median_seconds": 0.09362689700000715
+          },
+          {
+            "method": "fast_fd",
+            "seconds": [
+              0.01061323099997935,
+              0.011312914000001228,
+              0.009967910999989726,
+              0.010518840000003138,
+              0.010576158000020541
+            ],
+            "median_seconds": 0.010576158000020541
+          }
+        ]
+      }
+    ],
+    "operations": [
+      {
+        "operation": "git",
+        "exit_code": 0,
+        "elapsed_seconds": 1.6146136190000107,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "operation": "git",
+        "exit_code": 0,
+        "elapsed_seconds": 0.048427670999984684,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "operation": "scripts/validate_cpu.py",
+        "exit_code": 0,
+        "elapsed_seconds": 3.2196014339999977,
+        "stdout": "[JSON_CAPTURED_IN_STRUCTURED_RESULT]",
+        "stderr": "[LOCAL_PATH]/.cache/sae-environments/torchyand-issue21-175309/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:307: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)\n  cpu = _conversion_method_template(device=torch.device(\"cpu\"))\n"
+      },
+      {
+        "operation": "scripts/check_snapshot.py",
+        "exit_code": 0,
+        "elapsed_seconds": 0.08518264400001385,
+        "stdout": "[JSON_CAPTURED_IN_STRUCTURED_RESULT]",
+        "stderr": ""
+      },
+      {
+        "operation": "[LOCAL_PATH]/.local/bin/uv",
+        "exit_code": 0,
+        "elapsed_seconds": 0.5846421649999911,
+        "stdout": "",
+        "stderr": "Building wheel...\n[LOCAL_PATH]/.cache/sae-environments/torchyand-issue21-175309/lib/python3.12/site-packages/setuptools/config/_apply_pyprojecttoml.py:82: SetuptoolsDeprecationWarning: `project.license` as a TOML table is deprecated\n!!\n\n        ********************************************************************************\n        Please use a simple string containing a SPDX expression for `project.license`. You can also use `project.license-files`. (Both options available on setuptools>=77.0.0).\n\n        This deprecation is overdue, please update your project and remove deprecated\n        calls to avoid build errors in the future.\n\n        See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.\n        ********************************************************************************\n\n!!\n  corresp(dist, value, root_dir)\nrunning bdist_wheel\nrunning build\nrunning build_py\ncreating build/lib/torchfrequentdirections\ncopying torchfrequentdirections/__init__.py -> build/lib/torchfrequentdirections\ncopying torchfrequentdirections/fd.py -> build/lib/torchfrequentdirections\ncopying torchfrequentdirections/benchmarks.py -> build/lib/torchfrequentdirections\nrunning egg_info\ncreating torchfrequentdirections.egg-info\nwriting torchfrequentdirections.egg-info/PKG-INFO\nwriting dependency_links to torchfrequentdirections.egg-info/dependency_links.txt\nwriting requirements to torchfrequentdirections.egg-info/requires.txt\nwriting top-level names to torchfrequentdirections.egg-info/top_level.txt\nwriting manifest file 'torchfrequentdirections.egg-info/SOURCES.txt'\nreading manifest file 'torchfrequentdirections.egg-info/SOURCES.txt'\nadding license file 'LICENSE'\nwriting manifest file 'torchfrequentdirections.egg-info/SOURCES.txt'\nwarning: build_py: byte-compiling is disabled, skipping.\n\ninstalling to build/bdist.linux-x86_64/wheel\nrunning install\nrunning install_lib\ncreating build/bdist.linux-x86_64/wheel\ncreating build/bdist.linux-x86_64/wheel/torchfrequentdirections\ncopying build/lib/torchfrequentdirections/__init__.py -> build/bdist.linux-x86_64/wheel/./torchfrequentdirections\ncopying build/lib/torchfrequentdirections/fd.py -> build/bdist.linux-x86_64/wheel/./torchfrequentdirections\ncopying build/lib/torchfrequentdirections/benchmarks.py -> build/bdist.linux-x86_64/wheel/./torchfrequentdirections\nwarning: install_lib: byte-compiling is disabled, skipping.\n\nrunning install_egg_info\nCopying torchfrequentdirections.egg-info to build/bdist.linux-x86_64/wheel/./torchfrequentdirections-0.1.0-py3.12.egg-info\nrunning install_scripts\ncreating build/bdist.linux-x86_64/wheel/torchfrequentdirections-0.1.0.dist-info/WHEEL\ncreating '[LOCAL_PATH]/wheels/.tmp-kzkfvrr_/torchfrequentdirections-0.1.0-py3-none-any.whl' and adding 'build/bdist.linux-x86_64/wheel' to it\nadding 'torchfrequentdirections/__init__.py'\nadding 'torchfrequentdirections/benchmarks.py'\nadding 'torchfrequentdirections/fd.py'\nadding 'torchfrequentdirections-0.1.0.dist-info/licenses/LICENSE'\nadding 'torchfrequentdirections-0.1.0.dist-info/METADATA'\nadding 'torchfrequentdirections-0.1.0.dist-info/WHEEL'\nadding 'torchfrequentdirections-0.1.0.dist-info/top_level.txt'\nadding 'torchfrequentdirections-0.1.0.dist-info/RECORD'\nremoving build/bdist.linux-x86_64/wheel\nSuccessfully built wheels/torchfrequentdirections-0.1.0-py3-none-any.whl\n"
+      },
+      {
+        "operation": "[LOCAL_PATH]/.local/bin/uv",
+        "exit_code": 0,
+        "elapsed_seconds": 0.03076748600000201,
+        "stdout": "",
+        "stderr": "Using CPython 3.12.3 interpreter at: [LOCAL_PATH]/.cache/sae-environments/torchyand-issue21-175309/bin/python\nResolved 1 package in 2ms\nPrepared 1 package in 14ms\nInstalled 1 package in 2ms\n + torchfrequentdirections==0.1.0 (from file://[LOCAL_PATH]/wheels/torchfrequentdirections-0.1.0-py3-none-any.whl)\n"
+      },
+      {
+        "operation": "-I",
+        "exit_code": 0,
+        "elapsed_seconds": 1.6280600510000056,
+        "stdout": "[JSON_CAPTURED_IN_STRUCTURED_RESULT]",
+        "stderr": "[LOCAL_PATH]/.cache/sae-environments/torchyand-issue21-175309/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:307: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)\n  cpu = _conversion_method_template(device=torch.device(\"cpu\"))\n"
+      },
+      {
+        "operation": "-I",
+        "exit_code": 0,
+        "elapsed_seconds": 1.5443443240000079,
+        "stdout": "[JSON_CAPTURED_IN_STRUCTURED_RESULT]",
+        "stderr": "[LOCAL_PATH]/.cache/sae-environments/torchyand-issue21-175309/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:307: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)\n  cpu = _conversion_method_template(device=torch.device(\"cpu\"))\n"
+      },
+      {
+        "operation": "-m",
+        "exit_code": 0,
+        "elapsed_seconds": 1.657229775000019,
+        "stdout": "[JSON_CAPTURED_IN_STRUCTURED_RESULT]",
+        "stderr": "[LOCAL_PATH]/.cache/sae-environments/torchyand-issue21-175309/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:307: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)\n  cpu = _conversion_method_template(device=torch.device(\"cpu\"))\n"
+      },
+      {
+        "operation": "-m",
+        "exit_code": 0,
+        "elapsed_seconds": 1.6851935110000227,
+        "stdout": "[JSON_CAPTURED_IN_STRUCTURED_RESULT]",
+        "stderr": "[LOCAL_PATH]/.cache/sae-environments/torchyand-issue21-175309/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:307: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)\n  cpu = _conversion_method_template(device=torch.device(\"cpu\"))\n"
+      },
+      {
+        "operation": "-m",
+        "exit_code": 0,
+        "elapsed_seconds": 1.911703344000017,
+        "stdout": "[JSON_CAPTURED_IN_STRUCTURED_RESULT]",
+        "stderr": "[LOCAL_PATH]/.cache/sae-environments/torchyand-issue21-175309/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:307: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)\n  cpu = _conversion_method_template(device=torch.device(\"cpu\"))\n"
+      },
+      {
+        "operation": "-m",
+        "exit_code": 0,
+        "elapsed_seconds": 1.8471219310000038,
+        "stdout": "[JSON_CAPTURED_IN_STRUCTURED_RESULT]",
+        "stderr": "[LOCAL_PATH]/.cache/sae-environments/torchyand-issue21-175309/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:307: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)\n  cpu = _conversion_method_template(device=torch.device(\"cpu\"))\n"
+      },
+      {
+        "operation": "-m",
+        "exit_code": 0,
+        "elapsed_seconds": 2.0881608949999872,
+        "stdout": "[JSON_CAPTURED_IN_STRUCTURED_RESULT]",
+        "stderr": "[LOCAL_PATH]/.cache/sae-environments/torchyand-issue21-175309/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:307: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)\n  cpu = _conversion_method_template(device=torch.device(\"cpu\"))\n"
+      },
+      {
+        "operation": "-m",
+        "exit_code": 0,
+        "elapsed_seconds": 2.226230692999991,
+        "stdout": "[JSON_CAPTURED_IN_STRUCTURED_RESULT]",
+        "stderr": "[LOCAL_PATH]/.cache/sae-environments/torchyand-issue21-175309/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:307: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)\n  cpu = _conversion_method_template(device=torch.device(\"cpu\"))\n"
+      }
+    ]
+  },
+  "gpu": "NOT_RUN",
+  "tpu": "NOT_RUN",
+  "colab_commands": 0,
+  "sessions_created": 0,
+  "remote_cleanup": "NOT_APPLICABLE_NO_ALLOCATION",
+  "current_server_state": "NOT_QUERIED",
+  "execution_handoffs": 0,
+  "final_evidence_handoffs": 1,
+  "algorithm_test_failures": 0,
+  "algorithm_repairs": 0,
+  "preliminary_runs": [
+    {
+      "tests": 15,
+      "status": "PASS",
+      "suite_seconds": 0.475
+    },
+    {
+      "framework_tests": 37,
+      "status": "PASS",
+      "suite_seconds": 23.05
+    }
+  ],
+  "preparation_failures": [
+    {
+      "class": "cross-platform source identity",
+      "cause": "two host harness runs failed clean-tree assertion: initial LICENSE CRLF restored to exact Git bytes, but WSL status still reported modified with identical blob hashes/no diff; final validation uses detached exact-SHA checkout on Linux filesystem",
+      "repairs": 2,
+      "algorithm_status": "validation command exited zero before both harness clean-tree assertions"
+    },
+    {
+      "class": "local text output",
+      "cause": "PDF text output hit console encoding; rerun UTF-8",
+      "repairs": 1
+    },
+    {
+      "class": "report formatting",
+      "cause": "Windows JSON writes introduced CRLF; normalized own reports only",
+      "repairs": 1
+    },
+    {
+      "class": "installation tooling",
+      "cause": "reused torch environment lacks pip and ensurepip; reused installed uv offline; first direct WSL Python launch lacked login-shell uv PATH, then used observed absolute executable",
+      "repairs": 2
+    },
+    {
+      "class": "cache cleanup policy",
+      "cause": "automated command policy rejected recursive local cache deletion; left ignored generated caches and excluded only __pycache__ from inventory file-set check",
+      "repairs": 0
+    }
+  ],
+  "bounds": {
+    "batch_limit_seconds": 3600,
+    "max_repairs_per_failure_class": 3,
+    "framework_process_timeout_seconds": 90,
+    "wsl_process_timeout_seconds": 180
+  },
+  "scientific_acceptance": "PENDING_GPT_REVIEW",
+  "merge": "NOT_MERGED",
+  "task_started_utc": "2026-10-20T19:53:21+00:00",
+  "evidence_sealed_utc": "2026-10-20T20:15:05.189283+00:00",
+  "task_wall_seconds_through_evidence_seal": 1304.189283,
+  "publication_time": "GitHub PR receipt; not included in evidence-seal duration",
+  "local_temporary_checkout_and_install_target": "released by TemporaryDirectory after capture"
+}

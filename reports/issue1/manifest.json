@@ -1,0 +1,95 @@
+{
+  "status": "PASS",
+  "source_sha": "77754cc983e51d20b3dc31f225c81567f8ffe69b",
+  "framework_sha": "a60ed92d80a8866b413b928d609cc3afb82ec408",
+  "evidence_sealed_utc": "2026-10-20T20:15:05.189283+00:00",
+  "task_wall_seconds_through_evidence_seal": 1304.189283,
+  "hash_scope": "all evidence JSON except this self-referential manifest; all tested non-snapshot source/config files below; 131 snapshot hashes in framework-inventory",
+  "source_files": [
+    {
+      "path": ".gitignore",
+      "sha256": "ff0570e9f5ff6f5e47866c034a36c8517eebed313b4c28168283721b5b0c0fc6"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "9e008b9e475885d0d4a55ec3dd2721b25241fd297129e4d416d5ced461876dec"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "2f0819452dd5f7667e2c0e93b769238a41c8164e62f89f212646076f66765bde"
+    },
+    {
+      "path": "README.md",
+      "sha256": "e3fcec389453b84b95891abe8c4368ae7d223bffba13efbef0f6d64c0be1110e"
+    },
+    {
+      "path": "docs/research/frequent-directions-tensorization.md",
+      "sha256": "6316e0e9b08d721ed4ed3acab6f550258d35cfc70745e9f4ae08ebb2299f8beb"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "31ecd084cafb753e17912f93d98695bfb3f81ed4a23527ec0ca2ac59e1782a3c"
+    },
+    {
+      "path": "sae.yaml",
+      "sha256": "c48d16d07e337358dc51b8e48bbe7fa02f19ecc3416498b1a286940dbaecb625"
+    },
+    {
+      "path": "scripts/check_snapshot.py",
+      "sha256": "47c55d83f5a305748630d383c6105d5b6d1cbe8072e78c8e1f17a553d0c99c54"
+    },
+    {
+      "path": "scripts/validate_cpu.py",
+      "sha256": "d7ab97134e5a14d8355ac411d8194d3f89ef90338e6daa9ad949e4eaf0039aef"
+    },
+    {
+      "path": "tests/test_fd.py",
+      "sha256": "f3c4903134e1b2573a99c64a74daa859442249c2ea542ec475fa0fc642201b54"
+    },
+    {
+      "path": "torchfrequentdirections/__init__.py",
+      "sha256": "e65e1bcff754fe3cc2b5e3fb383f7b6293a7a3a358757e8cc0861856e54306c7"
+    },
+    {
+      "path": "torchfrequentdirections/benchmarks.py",
+      "sha256": "832cdcab970a70465d79f8f73595f2bd3e50639d776e96bcfdc24a9240dd0020"
+    },
+    {
+      "path": "torchfrequentdirections/fd.py",
+      "sha256": "df1b7af6832574409856edaac2533c9c23e5fb9c8f0936826d383eff952cdff7"
+    }
+  ],
+  "files": [
+    {
+      "path": "cpu-validation.json",
+      "bytes": 103665,
+      "sha256": "8841bea5898d4fbf36306b9c6f8cddede87d759b6ba85a18c1d25d88e055796f"
+    },
+    {
+      "path": "execution.json",
+      "bytes": 26443,
+      "sha256": "93ec07d6f19a2dec3881afea1a23d93b6aad7ef7158d59c7e1001f0b92108e8e"
+    },
+    {
+      "path": "framework-inventory.json",
+      "bytes": 36499,
+      "sha256": "a9cb9d170e2bdcc35d756b47c831739f64ad982a198a7fd1479b90b9c2926eda"
+    },
+    {
+      "path": "input-provenance.json",
+      "bytes": 1781,
+      "sha256": "d228faff5c5d54dc26d303b4fb00c87cf40712eba991438d6d802a2b6445b6f4"
+    }
+  ],
+  "screening": {
+    "files_screened": 149,
+    "credential_pattern_matches": 0,
+    "private_root_matches": 0,
+    "actions_workflows": false,
+    "limitations": "bounded credential pattern + private-root review, not a guarantee of arbitrary secret detection"
+  },
+  "colab": "NOT_RUN",
+  "current_server_state": "NOT_QUERIED",
+  "gpt_review": "PENDING",
+  "merged": false
+}

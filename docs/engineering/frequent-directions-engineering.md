@@ -96,3 +96,56 @@ current remote server state is **NOT QUERIED**, not claimed authenticated zero.
 No new paid resource, Actions, background service or research approval flow.
 Batch repairs/failures/timings and handoff accounting are in execution.json;
 no per-attempt approval handoff. GPT review and merge are pending.
+
+## Observed final local batch
+
+Tested source: `77754cc983e51d20b3dc31f225c81567f8ffe69b`, detached clean Linux
+checkout. Python 3.12.3 / torch 2.11.0+cpu, AMD Ryzen 7 4800H; one torch thread.
+**16 tests PASS**, including 216 recorded fixture/method/dtype/capacity results
+and **956** k-specific bound comparisons, plus the 12-seed shape sweep inside
+the suite. Numerical validation + observation capture took **0.806 s**.
+Worst observed PSD/covariance/projection excesses were respectively 0.267 / 0.274 /
+0.00155 times the documented tolerance (rounded upward); all below one.
+These are empirical finite-precision checks, not exact PSD/proof claims.
+Windows Python 3.12.14 framework regressions: **37 PASS**, 23.487 s suite time.
+Final combined validation/build/install/bench process: **47.824 s**; this is not
+the full task duration. UTC timestamps and per-operation wall times are primary.
+
+Offline wheel build with installed uv 0.13.1/setuptools 78.1.0, fresh target install,
+outside-checkout isolated import and installed benchmark all **PASS**. Dependencies
+reuse the existing CPU torch environment; this is not a fresh dependency install.
+The legacy TOML license table builds successfully but emits a setuptools
+deprecation warning; a future packaging change should adopt SPDX metadata before
+moving to a backend that removes that syntax. Root MIT text is included in wheel.
+
+Actual commands (temporary paths represented by variables; no network/download):
+
+```sh
+# PYTHON is the existing Python 3.12.3 + torch environment; UV the observed uv executable.
+git clone --quiet --no-hardlinks --no-checkout "$REPO" "$SOURCE"
+git -C "$SOURCE" checkout --quiet --detach 77754cc983e51d20b3dc31f225c81567f8ffe69b
+# cwd SOURCE, PYTHONDONTWRITEBYTECODE=1
+"$PYTHON" scripts/validate_cpu.py
+"$PYTHON" scripts/check_snapshot.py
+"$UV" build --wheel --no-build-isolation --offline --no-python-downloads --python "$PYTHON" --out-dir "$WHEELS" "$SOURCE"
+"$UV" pip install --offline --no-deps --no-python-downloads --python "$PYTHON" --target "$TARGET" "$WHEEL"
+```
+
+The import/CLI smoke used `python -I`, inserted only TARGET ahead of the existing
+dependency environment, and asserted the imported package came from TARGET.
+Six CPU benchmark cases used n/d/ell = 128/32/4, 256/64/8, 512/64/16 in both
+dtypes, two warmups and five samples each. For example, float64 256/64/8 median
+was **32.929 ms reference / 5.505 ms Fast**. This is this CPU implementation and
+small workload only, not a general performance or GPU claim; all samples are in
+execution.json. Benchmark execution PASS is separate from the numerical oracle.
+
+Environment repairs were local: UTF-8 PDF output, report CRLF normalization,
+missing pip/ensurepip and non-login WSL uv path, and cross-filesystem source
+identity. Two clean-tree harness attempts failed before publication: even after
+restoring LICENSE's Git bytes, WSL status reported a change with identical Git
+blob hash and empty diff. The final validation uses an independent Linux checkout;
+no algorithm repair or failed numerical assertion occurred. An automated policy
+blocked recursive generated-cache deletion; ignored caches were retained and only
+`__pycache__` excluded from the snapshot file-set check. No rule or source byte was
+weakened to accept a changed snapshot. Source identity, package contents and all
+131 pinned file hashes were checked in that independent checkout.
