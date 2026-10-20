@@ -26,7 +26,7 @@ class ZeroClearDriverTests(unittest.TestCase):
 
     def test_clear_counter_is_specific_and_does_not_count_new_zeros(self):
         value=torch.ones(8,7)
-        actual=driver.profile(value.zero_,'cpu',support)
+        actual=driver.profile(lambda:value.zero_(),'cpu',support)
         other=driver.profile(lambda:value.new_zeros(value.shape),'cpu',support)
         self.assertEqual(actual['clear_calls'],1)
         self.assertEqual(other['clear_calls'],0)
