@@ -36,7 +36,8 @@ class GPUDriverTests(unittest.TestCase):
     def test_both_methods_profile_the_actual_update(self):
         from torchfrequentdirections import reference_fd,fast_fd
         a = torch.eye(4,dtype=torch.float64)
-        for fn,expected in ((reference_fd,4),(fast_fd,1)):
+        # Fast also canonicalizes the one-row residual during snapshot.
+        for fn,expected in ((reference_fd,4),(fast_fd,2)):
             report = driver.profile(fn,a,2)
             self.assertEqual(report['svd_calls'],expected)
             self.assertIn('standalone',report['scope'])
