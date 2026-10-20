@@ -82,6 +82,7 @@ class FrequentDirections:
             offset += take
             if self._count == self._buffer.shape[0]:
                 factor = self._factor(self._buffer, shrink=True)
+                self._buffer.zero_()
                 # After sigma_ell shrink only ell-1 directions can survive.
                 self._count = min(self.ell - 1, self.n_features)
                 self._buffer[:self._count] = factor[:self._count]

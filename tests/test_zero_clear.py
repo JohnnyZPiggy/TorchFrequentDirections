@@ -8,7 +8,7 @@ from test_gpu_driver import driver as oracle_helper
 
 
 class ClearingBaseline(FrequentDirections):
-    """Reproduce the old post-factor clear; integration uses the real pinned file."""
+    """Extra-clear comparator; pinned integration tests the actual no-clear source."""
     def _factor(self, rows, *, shrink):
         result=super()._factor(rows,shrink=shrink)
         if shrink and rows.shape[0]==2*self.ell:
