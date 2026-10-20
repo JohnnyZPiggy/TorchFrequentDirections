@@ -94,9 +94,17 @@ class FrequentDirections:
 
         More than ell pending rows require one extra FD shrink; truncating them
         would violate the error bound. At most ell rows can be returned exactly.
+        Short snapshots retain occupied rows, without canonical SVD orientation.
         """
         if self.method == "reference":
             return self._buffer.clone()
+        if self._count <= self.ell:
+            output = self._buffer.new_zeros((self.ell, self.n_features))
+            if self._count:
+                output[:self._count].copy_(self._buffer[:self._count])
+                if not bool(torch.isfinite(output).all()):
+                    raise FloatingPointError("snapshot contains a non-finite sketch")
+            return output
         return self._factor(self._buffer[:self._count], shrink=self._count > self.ell)
 
 

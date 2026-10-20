@@ -36,6 +36,9 @@ Fast FD uses a temporary `2*ell` buffer and an explicit occupied-row count; rows
 whose entries sum to zero remain data. A partial final buffer larger than `ell`
 receives an additional shrink, rather than unsafe row truncation. A short buffer
 of at most `ell` rows is represented without shrink, so it may have rank `ell`.
+Short Fast snapshots copy the occupied rows and pad zeros without SVD. Their row
+orientation can differ from earlier releases; covariance and right-subspace
+guarantees, independent ownership and continued-update semantics are preserved.
 
 [Mathematical specification](docs/research/frequent-directions-tensorization.md),
 [engineering/provenance and evidence](docs/engineering/frequent-directions-engineering.md),

@@ -34,7 +34,7 @@ Right singular vectors are ROWS of `Vh`, not columns of U.
 4. Snapshot extension: Algorithm 3.1 returns its temporary buffer, whereas this
    API promises `ell` rows. If the pending count exceeds ell, apply one further
    identical shrink before padding; otherwise represent all pending rows exactly
-   by reduced SVD. This extension obeys the same loss properties below. Snapshot
+   by copying occupied rows and padding zeros. This extension obeys the same loss properties below. Snapshot
    evaluation is nonmutating; repeated observation does not change the stream.
 5. `ell>d`: missing ell-th singular value is zero, so retain all d directions
    and pad zeros. This is an exact-covariance extension outside the useful
@@ -101,3 +101,44 @@ CPU/GPU crossover are **HYPOTHESES / NOT RUN**. This CPU-first Issue permits
 optional GPU; none is needed to claim only the local milestone. GPT Architect
 must independently review this reconstruction, final-partial-buffer extension,
 tolerances and evidence before acceptance/merge or an accelerator follow-up.
+
+## Issue #5 — lossless short-buffer snapshot (R1–R3)
+
+Architect dispatch and scoped **RESEARCH_READY** rationale:
+[Issue #5](https://github.com/JohnnyZPiggy/TorchFrequentDirections/issues/5).
+Codex records the proof-oriented implementation below; final scientific acceptance
+remains with GPT Mentor/Architect.
+
+R1: after any number of buffered updates, let C be the occupied m-by-d prefix.
+The public API promises an independent ell-by-d factor with FD Gram/projection
+bounds, not canonical row orientation. No inspected project caller requires a canonical factor;
+the tests compare Gram matrices, right subspaces and FD invariants. The old short
+snapshot computes C=U Sigma Vh and returns [Sigma Vh;0].
+
+R2: for 0<=m<=ell, choose B_new=[C;0]. Then, in exact arithmetic,
+`B_new.T B_new = C.T C = V Sigma^2 V.T = B_old.T B_old`, because U has
+orthonormal columns in the reduced SVD. This also covers m=0, rank deficiency,
+ell=1 and ell>d. Consequently both factors have identical eigenvalues and top-k
+right eigenspaces when the spectral gap is positive. Ties allow different choices
+inside a shared eigenspace; the original projection inequality still holds for a
+top-k right singular subspace. Padding adds no loss and no new Delta. It does not
+change future shrink schedules: snapshots never mutate buffer/count.
+
+The new path copies exact finite entries (no decomposition roundoff) but Gram
+products still round. Equality to the numerically computed old SVD factor is only
+up to roundoff, so tests use independent float64 Gram and projection oracles.
+The representation change is observable: rows are no longer SVD-oriented or
+orthogonal, and row slicing is not a top-k projection API. Callers needing right
+singular vectors must decompose the returned sketch. Such a decomposition remains
+necessary for PCA, so this optimization does not claim to eliminate downstream PCA SVD.
+
+R3: keep the m>ell shrink fallback and all input validation, invalid-update
+atomicity, finite output checks, dtype/device, no-autograd and alias isolation.
+The m=0 path stays exact zeros without SVD. Tests cover boundary occupancy,
+rank-deficient/zero cases, repeated observations and continued updates after
+several fills. A/B uses the exact previous main source in the same runtime,
+snapshot-only versus full update+snapshot, both active and inactive paths.
+The hypothesis is one saved SVD for each nonempty short snapshot; empty already
+used zero SVDs. Latency/synchronization benefit needs actual CPU/GPU measurements.
+No change to finite checks or full-buffer zeroing is included. Secondary zero-clear,
+compile/fusion and alternate SVD candidates are deferred to retain causal attribution.
