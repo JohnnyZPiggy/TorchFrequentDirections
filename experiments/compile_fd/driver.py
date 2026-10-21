@@ -15,7 +15,7 @@ import time
 import urllib.request
 
 os.environ.setdefault('TORCHINDUCTOR_COMPILE_THREADS','1')
-SOURCE_FILES = {'LICENSE': '2f0819452dd5f7667e2c0e93b769238a41c8164e62f89f212646076f66765bde', 'torchfrequentdirections/__init__.py': 'e65e1bcff754fe3cc2b5e3fb383f7b6293a7a3a358757e8cc0861856e54306c7', 'torchfrequentdirections/fd.py': '18e84afa295d3bb75cb97f68bd98fa339fc3ee061e26e8071051021066d30e85', 'experiments/qr_svd/driver.py': '65845b029b415e9214947433a76523380ae78f8e90006c11e304e7d9336480a4', 'experiments/qr_svd/cuda_driver.py': 'd8f919ac1d92a3f0ba17a577f84b4f98ff9b8361921b3ebf463fc66f7ef7b9b6', 'experiments/zero_clear/driver.py': '0ffa14cbf6a56ea4fadd10f252a5bb6a56fa8ae70bf8d794e1c91d41958ce18e', 'experiments/compile_fd/shrink.py': '53f5f97bc1013d5865a10de7fcb7b1b6832aa7a41fa6951e4144d1e1689501a2'}
+SOURCE_FILES = {'LICENSE': '2f0819452dd5f7667e2c0e93b769238a41c8164e62f89f212646076f66765bde', 'torchfrequentdirections/__init__.py': 'e65e1bcff754fe3cc2b5e3fb383f7b6293a7a3a358757e8cc0861856e54306c7', 'torchfrequentdirections/fd.py': '18e84afa295d3bb75cb97f68bd98fa339fc3ee061e26e8071051021066d30e85', 'experiments/qr_svd/driver.py': '65845b029b415e9214947433a76523380ae78f8e90006c11e304e7d9336480a4', 'experiments/qr_svd/cuda_driver.py': 'd8f919ac1d92a3f0ba17a577f84b4f98ff9b8361921b3ebf463fc66f7ef7b9b6', 'experiments/zero_clear/driver.py': '0ffa14cbf6a56ea4fadd10f252a5bb6a56fa8ae70bf8d794e1c91d41958ce18e', 'experiments/compile_fd/shrink.py': '53f5f97bc1013d5865a10de7fcb7b1b6832aa7a41fa6951e4144d1e1689501a2', 'experiments/qr_svd/prototype.py': '58c10f6297588c79f7ddb00f58e9f0b607c8b690405c2f8e1f49bc778ae1ddb2'}
 SEED=1520261021
 START=time.monotonic()
 CPU_ONLY=os.environ.get('SAE_CPU_ONLY')=='1'
