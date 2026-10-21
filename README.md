@@ -1,5 +1,7 @@
 # TorchFrequentDirections
 
+[English](README.md) | [简体中文](README.zh-CN.md)
+
 Streaming matrix sketches in native PyTorch: reference and buffered Frequent
 Directions for covariance approximation and right-subspace estimation.
 CPU, real-T4 and compilation studies explore performance; GPU acceleration is
