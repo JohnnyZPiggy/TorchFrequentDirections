@@ -64,3 +64,8 @@ Use a clean checkout, existing CPU PyTorch and an external timeout of 920 second
 per process (the reused driver enforces 900 seconds internally). No dependency,
 accelerator API or framework modification is needed. The external batch runner
 also enforces the total remaining Issue deadline and records skipped stages.
+
+Completed study: [Issue #11 evidence](../../reports/cpu/issue11-20261021/summary.md).
+MATH PASS; 1/2/4/8-thread execution completed. Shape crossover/integration remains
+INCONCLUSIVE under the repeated-screen/control criteria; retain direct default.
+GPU NOT_RUN. GPT acceptance is pending.

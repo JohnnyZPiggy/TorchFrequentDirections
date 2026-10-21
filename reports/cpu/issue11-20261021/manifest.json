@@ -1,0 +1,73 @@
+{
+  "source_sha": "f49068088b2b970da6ba0f585d132d6440d8f7da",
+  "files": {
+    "benchmark.csv": {
+      "bytes": 108773,
+      "sha256": "1fe810dac229d81182a1ff9f5e16ae5f4735b8ab7b60fcd2a2cd8555704cf8fd"
+    },
+    "execution.json": {
+      "bytes": 3029,
+      "sha256": "6335c30a1dda2938861bfb959b9adfbf8802573aa028b84749d1275a50467362"
+    },
+    "shape.json": {
+      "bytes": 1992242,
+      "sha256": "f99a5fa85d8e049e2ff7b8d7104d6151d78f3e171e2efca7ab67ee9bd681a594"
+    },
+    "shape.stderr.log": {
+      "bytes": 338,
+      "sha256": "10bc182b6344fdd55aaf59131e4f134021035b1d3cc317cde8881924a536d8bc"
+    },
+    "snapshot.json": {
+      "bytes": 208,
+      "sha256": "6bb52b7104d17a6897897cfbf4173a59bad135f8fde40019132c3bd45b33f6f8"
+    },
+    "summary.md": {
+      "bytes": 13558,
+      "sha256": "40230af12776ac6757c1ca0ed39793a81a3ec76ee174f88bf93db30de59f3032"
+    },
+    "threads1.json": {
+      "bytes": 598317,
+      "sha256": "a1303dbd03f394a2d5963c6f55c89f1637ed364a0544f451980b4b0706d51778"
+    },
+    "threads1.stderr.log": {
+      "bytes": 338,
+      "sha256": "10bc182b6344fdd55aaf59131e4f134021035b1d3cc317cde8881924a536d8bc"
+    },
+    "threads2.json": {
+      "bytes": 598196,
+      "sha256": "c825cc6733bd0b0dc1036cee24fa750da16eecb07b82a0811a83c8d25073569f"
+    },
+    "threads2.stderr.log": {
+      "bytes": 338,
+      "sha256": "10bc182b6344fdd55aaf59131e4f134021035b1d3cc317cde8881924a536d8bc"
+    },
+    "threads4.json": {
+      "bytes": 598425,
+      "sha256": "ac734368d7912e57bdcac9ca7e532cedd24ee35844b48e95b3745bd7f4099d67"
+    },
+    "threads4.stderr.log": {
+      "bytes": 338,
+      "sha256": "10bc182b6344fdd55aaf59131e4f134021035b1d3cc317cde8881924a536d8bc"
+    },
+    "threads8.json": {
+      "bytes": 598513,
+      "sha256": "b7359bc720c9115479b75b523b59025d6dfc34379477b7299838a1b877868041"
+    },
+    "threads8.stderr.log": {
+      "bytes": 338,
+      "sha256": "10bc182b6344fdd55aaf59131e4f134021035b1d3cc317cde8881924a536d8bc"
+    },
+    "unit.json": {
+      "bytes": 106251,
+      "sha256": "8fdd331d690a3266de14fda9c295f407b4fd44f2ae68ad9b05ba78eb09089a40"
+    },
+    "unit.stderr.log": {
+      "bytes": 338,
+      "sha256": "10bc182b6344fdd55aaf59131e4f134021035b1d3cc317cde8881924a536d8bc"
+    },
+    "verification.json": {
+      "bytes": 5324,
+      "sha256": "7d28f45ac24262edcc13a729a5e6636c75a00a9102b8d4ea0a69e0fc84a56d77"
+    }
+  }
+}

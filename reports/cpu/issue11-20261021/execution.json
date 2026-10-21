@@ -1,0 +1,127 @@
+{
+  "source_sha": "f49068088b2b970da6ba0f585d132d6440d8f7da",
+  "claim_utc": "2026-10-21T09:52:32Z",
+  "utc": "2026-10-21T10:01:11.957450+00:00",
+  "events": [
+    {
+      "name": "unit",
+      "threads": 1,
+      "status": "PASS",
+      "exit_code": 0,
+      "elapsed_seconds": 4.525579017,
+      "timeout_seconds": 120,
+      "argv": [
+        "python",
+        "scripts/validate_cpu.py"
+      ]
+    },
+    {
+      "name": "snapshot",
+      "threads": 1,
+      "status": "PASS",
+      "exit_code": 0,
+      "elapsed_seconds": 0.09292544000000014,
+      "timeout_seconds": 120,
+      "argv": [
+        "python",
+        "scripts/check_snapshot.py"
+      ]
+    },
+    {
+      "name": "shape",
+      "threads": 1,
+      "status": "PASS",
+      "exit_code": 0,
+      "elapsed_seconds": 93.053789957,
+      "timeout_seconds": 920,
+      "argv": [
+        "python",
+        "-m",
+        "experiments.qr_svd.shape_threads",
+        "shape",
+        "OUTPUT_DIR/shape.json"
+      ]
+    },
+    {
+      "name": "threads1",
+      "threads": 1,
+      "status": "PASS",
+      "exit_code": 0,
+      "elapsed_seconds": 46.835196912,
+      "timeout_seconds": 920,
+      "argv": [
+        "python",
+        "-m",
+        "experiments.qr_svd.shape_threads",
+        "threads",
+        "OUTPUT_DIR/threads1.json",
+        "--threads",
+        "1",
+        "--selection",
+        "OUTPUT_DIR/shape.json"
+      ]
+    },
+    {
+      "name": "threads2",
+      "threads": 2,
+      "status": "PASS",
+      "exit_code": 0,
+      "elapsed_seconds": 40.577772322000015,
+      "timeout_seconds": 920,
+      "argv": [
+        "python",
+        "-m",
+        "experiments.qr_svd.shape_threads",
+        "threads",
+        "OUTPUT_DIR/threads2.json",
+        "--threads",
+        "2",
+        "--selection",
+        "OUTPUT_DIR/shape.json"
+      ]
+    },
+    {
+      "name": "threads4",
+      "threads": 4,
+      "status": "PASS",
+      "exit_code": 0,
+      "elapsed_seconds": 38.40615159999999,
+      "timeout_seconds": 920,
+      "argv": [
+        "python",
+        "-m",
+        "experiments.qr_svd.shape_threads",
+        "threads",
+        "OUTPUT_DIR/threads4.json",
+        "--threads",
+        "4",
+        "--selection",
+        "OUTPUT_DIR/shape.json"
+      ]
+    },
+    {
+      "name": "threads8",
+      "threads": 8,
+      "status": "PASS",
+      "exit_code": 0,
+      "elapsed_seconds": 42.10759885099998,
+      "timeout_seconds": 920,
+      "argv": [
+        "python",
+        "-m",
+        "experiments.qr_svd.shape_threads",
+        "threads",
+        "OUTPUT_DIR/threads8.json",
+        "--threads",
+        "8",
+        "--selection",
+        "OUTPUT_DIR/shape.json"
+      ]
+    }
+  ],
+  "clean": true,
+  "scope": "CPU ONLY; no accelerator allocation/execution",
+  "note": "Existing CPU validator records CUDA availability=false with CPU-only torch.",
+  "batch_deadline_seconds_from_claim": 3300,
+  "argv_note": "Actual module/script arguments with temporary output paths sanitized as OUTPUT_DIR; thread environment in each raw report."
+}

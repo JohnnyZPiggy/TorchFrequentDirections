@@ -1,0 +1,285 @@
+{
+  "status": "PASS",
+  "tested_source": "f49068088b2b970da6ba0f585d132d6440d8f7da",
+  "recomputed_timing_blocks": 520,
+  "independent_oracle_evaluations": 760,
+  "k_bounds": 15748,
+  "previous_artifact_hashes_verified": 9,
+  "production_prototype_driver_unchanged": true,
+  "placebo_screen_flags": [
+    {
+      "phase": "threads",
+      "threads": 4,
+      "ell": 16,
+      "d": 128,
+      "dtype": "torch.float64",
+      "batch": 1,
+      "speedup": 0.9415076263924176
+    }
+  ],
+  "thread_regressions": [
+    {
+      "threads": 1,
+      "ell": 16,
+      "d": 32,
+      "dtype": "torch.float32",
+      "kind": "four_short"
+    },
+    {
+      "threads": 1,
+      "ell": 16,
+      "d": 32,
+      "dtype": "torch.float32",
+      "kind": "four_long"
+    },
+    {
+      "threads": 1,
+      "ell": 16,
+      "d": 32,
+      "dtype": "torch.float32",
+      "kind": "constant_n"
+    },
+    {
+      "threads": 1,
+      "ell": 16,
+      "d": 32,
+      "dtype": "torch.float64",
+      "kind": "four_short"
+    },
+    {
+      "threads": 1,
+      "ell": 16,
+      "d": 32,
+      "dtype": "torch.float64",
+      "kind": "four_long"
+    },
+    {
+      "threads": 1,
+      "ell": 16,
+      "d": 32,
+      "dtype": "torch.float64",
+      "kind": "constant_n"
+    },
+    {
+      "threads": 2,
+      "ell": 16,
+      "d": 32,
+      "dtype": "torch.float32",
+      "kind": "four_short"
+    },
+    {
+      "threads": 2,
+      "ell": 16,
+      "d": 32,
+      "dtype": "torch.float32",
+      "kind": "four_long"
+    },
+    {
+      "threads": 2,
+      "ell": 16,
+      "d": 32,
+      "dtype": "torch.float32",
+      "kind": "constant_n"
+    },
+    {
+      "threads": 2,
+      "ell": 16,
+      "d": 128,
+      "dtype": "torch.float32",
+      "kind": "four_short"
+    },
+    {
+      "threads": 2,
+      "ell": 16,
+      "d": 128,
+      "dtype": "torch.float32",
+      "kind": "four_long"
+    },
+    {
+      "threads": 2,
+      "ell": 16,
+      "d": 128,
+      "dtype": "torch.float32",
+      "kind": "constant_n"
+    },
+    {
+      "threads": 2,
+      "ell": 16,
+      "d": 32,
+      "dtype": "torch.float64",
+      "kind": "four_short"
+    },
+    {
+      "threads": 2,
+      "ell": 16,
+      "d": 32,
+      "dtype": "torch.float64",
+      "kind": "four_long"
+    },
+    {
+      "threads": 2,
+      "ell": 16,
+      "d": 32,
+      "dtype": "torch.float64",
+      "kind": "constant_n"
+    },
+    {
+      "threads": 2,
+      "ell": 16,
+      "d": 128,
+      "dtype": "torch.float64",
+      "kind": "four_short"
+    },
+    {
+      "threads": 2,
+      "ell": 16,
+      "d": 128,
+      "dtype": "torch.float64",
+      "kind": "four_long"
+    },
+    {
+      "threads": 2,
+      "ell": 16,
+      "d": 128,
+      "dtype": "torch.float64",
+      "kind": "constant_n"
+    },
+    {
+      "threads": 4,
+      "ell": 16,
+      "d": 32,
+      "dtype": "torch.float32",
+      "kind": "four_short"
+    },
+    {
+      "threads": 4,
+      "ell": 16,
+      "d": 32,
+      "dtype": "torch.float32",
+      "kind": "four_long"
+    },
+    {
+      "threads": 4,
+      "ell": 16,
+      "d": 32,
+      "dtype": "torch.float32",
+      "kind": "constant_n"
+    },
+    {
+      "threads": 4,
+      "ell": 16,
+      "d": 32,
+      "dtype": "torch.float64",
+      "kind": "four_short"
+    },
+    {
+      "threads": 4,
+      "ell": 16,
+      "d": 32,
+      "dtype": "torch.float64",
+      "kind": "four_long"
+    },
+    {
+      "threads": 4,
+      "ell": 16,
+      "d": 32,
+      "dtype": "torch.float64",
+      "kind": "constant_n"
+    },
+    {
+      "threads": 8,
+      "ell": 16,
+      "d": 32,
+      "dtype": "torch.float32",
+      "kind": "four_short"
+    },
+    {
+      "threads": 8,
+      "ell": 16,
+      "d": 32,
+      "dtype": "torch.float32",
+      "kind": "four_long"
+    },
+    {
+      "threads": 8,
+      "ell": 16,
+      "d": 32,
+      "dtype": "torch.float32",
+      "kind": "constant_n"
+    },
+    {
+      "threads": 8,
+      "ell": 16,
+      "d": 32,
+      "dtype": "torch.float64",
+      "kind": "four_short"
+    },
+    {
+      "threads": 8,
+      "ell": 16,
+      "d": 32,
+      "dtype": "torch.float64",
+      "kind": "four_long"
+    },
+    {
+      "threads": 8,
+      "ell": 16,
+      "d": 32,
+      "dtype": "torch.float64",
+      "kind": "constant_n"
+    }
+  ],
+  "thread_gain_to_loss_reversals": [],
+  "new_losses_relative_to_thread1": [
+    {
+      "threads": 2,
+      "ell": 16,
+      "d": 128,
+      "dtype": "torch.float32",
+      "kind": "four_short"
+    },
+    {
+      "threads": 2,
+      "ell": 16,
+      "d": 128,
+      "dtype": "torch.float32",
+      "kind": "four_long"
+    },
+    {
+      "threads": 2,
+      "ell": 16,
+      "d": 128,
+      "dtype": "torch.float32",
+      "kind": "constant_n"
+    },
+    {
+      "threads": 2,
+      "ell": 16,
+      "d": 128,
+      "dtype": "torch.float64",
+      "kind": "four_short"
+    },
+    {
+      "threads": 2,
+      "ell": 16,
+      "d": 128,
+      "dtype": "torch.float64",
+      "kind": "four_long"
+    },
+    {
+      "threads": 2,
+      "ell": 16,
+      "d": 128,
+      "dtype": "torch.float64",
+      "kind": "constant_n"
+    }
+  ],
+  "classification": {
+    "math": "PASS",
+    "shape_crossover": "INCONCLUSIVE",
+    "integration": "INCONCLUSIVE / RETAIN_DIRECT_DEFAULT",
+    "threads": "SUPPORTED (execution and scoped CPU math)",
+    "gpu": "NOT_RUN",
+    "production_backend": "UNCHANGED"
+  }
+}
