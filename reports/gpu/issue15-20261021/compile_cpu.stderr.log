@@ -1,0 +1,13 @@
+/home/zhangru/.cache/sae-environments/torchyand-issue21-175309/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:307: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+W1021 13:14:31.053000 370 torch/_dynamo/variables/tensor.py:1379] [2/0] Graph break from `Tensor.item()`, consider setting:
+W1021 13:14:31.053000 370 torch/_dynamo/variables/tensor.py:1379] [2/0]     torch._dynamo.config.capture_scalar_outputs = True
+W1021 13:14:31.053000 370 torch/_dynamo/variables/tensor.py:1379] [2/0] or:
+W1021 13:14:31.053000 370 torch/_dynamo/variables/tensor.py:1379] [2/0]     env TORCHDYNAMO_CAPTURE_SCALAR_OUTPUTS=1
+W1021 13:14:31.053000 370 torch/_dynamo/variables/tensor.py:1379] [2/0] to include these operations in the captured graph.
+W1021 13:14:31.053000 370 torch/_dynamo/variables/tensor.py:1379] [2/0]
+W1021 13:14:31.053000 370 torch/_dynamo/variables/tensor.py:1379] [2/0] Graph break: from user code at:
+W1021 13:14:31.053000 370 torch/_dynamo/variables/tensor.py:1379] [2/0]   File "/tmp/fd15-bweta6si/source/experiments/compile_fd/shrink.py", line 32, in _factor
+W1021 13:14:31.053000 370 torch/_dynamo/variables/tensor.py:1379] [2/0]     if not bool(torch.isfinite(output).all()):
+W1021 13:14:31.053000 370 torch/_dynamo/variables/tensor.py:1379] [2/0]
+W1021 13:14:31.053000 370 torch/_dynamo/variables/tensor.py:1379] [2/0]
