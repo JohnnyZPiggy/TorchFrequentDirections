@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440" role="img" aria-labelledby="title desc">
+<title id="title">Pointwise shrink fusion versus full-stream kernel counts</title><desc id="desc">PR16 T4 float32 ell16 d512 profiles: one pure shrink has ten eager kernel launches versus one compiled Triton launch; an independently profiled full stream has 709 versus 664 launches. Counts are not elapsed speedups.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#475569"/></marker></defs>
+<rect width="100%" height="100%" rx="16" fill="#f8fafc"/>
+<g font-family="Arial, sans-serif" fill="#0f172a">
+<text x="28" y="40" font-size="26" fill="#0f172a" >Fewer pointwise launches do not mean fused full FD</text>
+<text x="28" y="70" font-size="16" fill="#475569" >PR #16 | T4 | float32 | ell=16, d=512 | separate intrusive profiler scopes</text>
+<text x="28" y="122" font-size="21" fill="#0f172a" >One pure tensor shrink</text>
+<text x="28" y="161" font-size="15" fill="#0f172a" >Eager</text>
+<rect x="28" y="173" width="345.000" height="26" rx="3" fill="#64748b" data-scope="pure" data-variant="0" data-count="10"/>
+<text x="393" y="193" font-size="19" fill="#0f172a" >10</text>
+<text x="28" y="237" font-size="15" fill="#0f172a" >Compiled shrink</text>
+<rect x="28" y="249" width="34.500" height="26" rx="3" fill="#0f766e" data-scope="pure" data-variant="1" data-count="1"/>
+<text x="393" y="269" font-size="19" fill="#0f172a" >1</text>
+<text x="28" y="310" font-size="14" fill="#475569" >Linear launch-count scale: 0 to 10</text>
+<text x="522" y="122" font-size="21" fill="#0f172a" >Full update + sketch</text>
+<text x="522" y="161" font-size="15" fill="#0f172a" >Eager</text>
+<rect x="522" y="173" width="305.756" height="26" rx="3" fill="#64748b" data-scope="full" data-variant="0" data-count="709"/>
+<text x="887" y="193" font-size="19" fill="#0f172a" >709</text>
+<text x="522" y="237" font-size="15" fill="#0f172a" >Compiled shrink</text>
+<rect x="522" y="249" width="286.350" height="26" rx="3" fill="#0f766e" data-scope="full" data-variant="1" data-count="664"/>
+<text x="887" y="269" font-size="19" fill="#0f172a" >664</text>
+<text x="522" y="310" font-size="14" fill="#475569" >Linear launch-count scale: 0 to 800</text>
+<text x="28" y="352" font-size="16" fill="#0f172a" >10 -&gt; 1 is a launch count, NOT a 10x latency gain. Full streams still call eager Direct SVD.</text>
+<text x="28" y="380" font-size="15" fill="#0f172a" >Pure shrink measured ~1.545-1.610x locally; 0/30 whole-workload performance screens passed.</text>
+<text x="28" y="413" font-size="13" fill="#475569" >Source: reports/gpu/issue15-20261021/verification.json (fusion); no whole-FD fusion claim.</text>
+</g></svg>

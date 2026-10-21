@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="510" viewBox="0 0 1000 510" role="img" aria-labelledby="title desc">
+<title id="title">T4 full update plus sketch: Direct SVD versus experimental QR-SVD</title><desc id="desc">All five long-final-buffer float32 compression cases from PR 14, one device/study/protocol. Points are median paired Direct/QR ratios; whiskers descriptive 95 percent paired bootstrap intervals, not cross-session confidence.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#475569"/></marker></defs>
+<rect width="100%" height="100%" rx="16" fill="#f8fafc"/>
+<g font-family="Arial, sans-serif" fill="#0f172a">
+<text x="28" y="38" font-size="25" fill="#0f172a" >T4 full update + sketch: local QR gains do not generalize</text>
+<text x="28" y="66" font-size="16" fill="#475569" >PR #14 | 2026-10-21 | float32 | resident inputs | 20 balanced AB/BA pairs</text>
+<text x="28" y="91" font-size="15" fill="#0f172a" >Median paired Direct / QR time; &gt;1 favors QR. Whiskers: descriptive 95% bootstrap.</text>
+<path d="M300.00,115 V390" stroke="#cbd5e1" stroke-dasharray="4 4"/>
+<text x="290.0" y="415" font-size="14" fill="#0f172a" >0.8</text>
+<path d="M381.43,115 V390" stroke="#cbd5e1" stroke-dasharray="4 4"/>
+<text x="371.4285714285714" y="415" font-size="14" fill="#0f172a" >0.9</text>
+<path d="M462.86,115 V390" stroke="#334155" stroke-dasharray="4 4"/>
+<text x="452.8571428571428" y="415" font-size="14" fill="#0f172a" >1.0</text>
+<path d="M544.29,115 V390" stroke="#cbd5e1" stroke-dasharray="4 4"/>
+<text x="534.2857142857143" y="415" font-size="14" fill="#0f172a" >1.1</text>
+<path d="M625.71,115 V390" stroke="#cbd5e1" stroke-dasharray="4 4"/>
+<text x="615.7142857142856" y="415" font-size="14" fill="#0f172a" >1.2</text>
+<path d="M707.14,115 V390" stroke="#cbd5e1" stroke-dasharray="4 4"/>
+<text x="697.1428571428571" y="415" font-size="14" fill="#0f172a" >1.3</text>
+<path d="M788.57,115 V390" stroke="#cbd5e1" stroke-dasharray="4 4"/>
+<text x="778.5714285714284" y="415" font-size="14" fill="#0f172a" >1.4</text>
+<path d="M870.00,115 V390" stroke="#cbd5e1" stroke-dasharray="4 4"/>
+<text x="860.0" y="415" font-size="14" fill="#0f172a" >1.5</text>
+<text x="28" y="150" font-size="16" fill="#0f172a" >ell=16, d=64, n=85</text>
+<g data-source="reports/gpu/issue13-20261021/benchmark.csv" data-d="64" data-ratio="1.2525161575674446" data-lower="1.2423460978274354" data-upper="1.316123830345834">
+<path d="M660.20,145 H720.27 M660.20,139 V151 M720.27,139 V151" stroke="#0f766e" stroke-width="2"/>
+<circle cx="668.48" cy="145" r="6" fill="#0f766e"/>
+<text x="900" y="150" font-size="16" fill="#0f172a" >1.253x</text>
+</g>
+<text x="28" y="202" font-size="16" fill="#0f172a" >ell=16, d=128, n=85</text>
+<g data-source="reports/gpu/issue13-20261021/benchmark.csv" data-d="128" data-ratio="1.2628661867410527" data-lower="1.2291266026072432" data-upper="1.2951463574282425">
+<path d="M649.43,197 H703.19 M649.43,191 V203 M703.19,191 V203" stroke="#0f766e" stroke-width="2"/>
+<circle cx="676.91" cy="197" r="6" fill="#0f766e"/>
+<text x="900" y="202" font-size="16" fill="#0f172a" >1.263x</text>
+</g>
+<text x="28" y="254" font-size="16" fill="#0f172a" >ell=16, d=512, n=85</text>
+<g data-source="reports/gpu/issue13-20261021/benchmark.csv" data-d="512" data-ratio="1.3456335388572724" data-lower="1.321959800114143" data-upper="1.381688097833281">
+<path d="M725.02,249 H773.66 M725.02,243 V255 M773.66,243 V255" stroke="#0f766e" stroke-width="2"/>
+<circle cx="744.30" cy="249" r="6" fill="#0f766e"/>
+<text x="900" y="254" font-size="16" fill="#0f172a" >1.346x</text>
+</g>
+<text x="28" y="306" font-size="16" fill="#0f172a" >ell=32, d=1024, n=165</text>
+<g data-source="reports/gpu/issue13-20261021/benchmark.csv" data-d="1024" data-ratio="0.9963681703788536" data-lower="0.9826297142792318" data-upper="1.0245799825633783">
+<path d="M448.71,301 H482.87 M448.71,295 V307 M482.87,295 V307" stroke="#0f766e" stroke-width="2"/>
+<circle cx="459.90" cy="301" r="6" fill="#0f766e"/>
+<text x="900" y="306" font-size="16" fill="#0f172a" >0.996x</text>
+</g>
+<text x="28" y="358" font-size="16" fill="#0f172a" >ell=64, d=2048, n=325</text>
+<g data-source="reports/gpu/issue13-20261021/benchmark.csv" data-d="2048" data-ratio="0.9986283189280134" data-lower="0.9854836941708626" data-upper="1.0043587638232179">
+<path d="M451.04,353 H466.41 M451.04,347 V359 M466.41,347 V359" stroke="#0f766e" stroke-width="2"/>
+<circle cx="461.74" cy="353" r="6" fill="#0f766e"/>
+<text x="900" y="358" font-size="16" fill="#0f172a" >0.999x</text>
+</g>
+<text x="28" y="453" font-size="14" fill="#0f172a" >Selection: every float32 long-final-buffer compression shape in this study; no factor-only or fallback rows.</text>
+<text x="28" y="478" font-size="14" fill="#475569" >Different n/ell/d across rows. No CPU ratio, snapshot-only gain or cross-study ratio is mixed into this plot.</text>
+</g></svg>
