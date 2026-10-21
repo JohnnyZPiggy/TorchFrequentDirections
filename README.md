@@ -94,6 +94,29 @@ fixed-size snapshot and `ell>d` extensions. See the [derivation and numerical
 boundary](docs/performance/README.md#mathematical-contract) and retained
 [foundational research record](docs/research/frequent-directions-tensorization.md).
 
+## Potential Applications in LLMs and VLMs
+
+**Research directions only — not implemented or benchmarked on LLMs/VLMs in this repository.**
+The [Frequent Directions paper](https://arxiv.org/abs/1501.01711) establishes
+streaming second-moment and right-subspace approximation guarantees; it does not
+establish transformer quality, training speed or GPU memory savings. The
+[Sketchy study (NeurIPS 2023)](https://papers.nips.cc/paper_files/paper/2023/hash/ef72fa6579401ffff9da246a5014f055-Abstract-Conference.html)
+demonstrates related FD-based low-rank statistics for adaptive optimization in
+studied deep-learning settings, **not** an optimizer supplied by TorchFD.
+
+| Potential direction | What FD could contribute | Evidence boundary |
+|---|---|---|
+| LLM activation statistics | Stream hidden-state vectors as rows of `H` and retain a compact `B` with `B.T @ B` approximating `H.T @ H`, for exploratory dominant-subspace or layer-representation analysis. | FD's Gram guarantee applies to the **uncentered second moment**. Centered covariance needs mean tracking and appropriate centering; no LLM activation study is provided here. |
+| Optimizer statistics | Explore sketches of gradients or suitable factor statistics as components of low-rank preconditioners. | Sketchy supports the research motivation, but TorchFD does not implement Sketchy, Shampoo, autograd-based training or an interchangeable optimizer; memory, convergence and throughput gains are untested here. |
+| VLM feature analysis | Sketch a clearly defined stream of same-dimensional projected image/text embeddings to inspect principal directions or representation shifts. | FD does not itself learn cross-modal alignment or fusion. Any shared-space, cross-covariance or concatenated-feature design needs separate justification and experiments. |
+| Continual learning | Study compact feature/gradient subspace summaries across tasks as a possible diagnostic of distribution drift or an ingredient for future regularization. | A sketch alone does not prevent catastrophic forgetting; no continual-learning benchmark has been run. |
+
+The sketch stores `O(ell * d)` elements, **not** an `O(ell * d)` bound
+on total LLM/VLM training memory. Practical usefulness would also depend on
+feature normalization, layer widths, repeated SVD costs, device synchronization
+and integration with training systems. The current API is inference-only,
+without autograd support.
+
 ## Performance: read the scope before the ratio
 
 ![T4 full update plus sketch: paired Direct versus QR-SVD timings](docs/assets/gpu-benchmarks.svg)
