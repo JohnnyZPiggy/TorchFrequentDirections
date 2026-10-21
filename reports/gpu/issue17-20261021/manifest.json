@@ -1,0 +1,81 @@
+{
+  "source_sha": "6a4900c25314af856ee4e37a59b875d05dd6d768",
+  "run_id": "fd17-20261021-121300",
+  "scientific_status": "GPU_BATCH_FAIL_CLOSED",
+  "issue": 17,
+  "files": {
+    "audit.json": {
+      "bytes": 928,
+      "sha256": "be8b492e7a348e9dc0829ef34f3e29bc37a2975e568048c4e8baa7a6de848ad9"
+    },
+    "benchmark.csv": {
+      "bytes": 191,
+      "sha256": "21970b360e6ae4782e7dcb18d8932f299d5f875c09c263ca7ce91caa73d65ace"
+    },
+    "colab-control.json": {
+      "bytes": 5865,
+      "sha256": "9e12f2746dcaa6a3aee3bc95d170e31cd049b1285be5933ecfdbf36dcaf64dcb"
+    },
+    "correctness.json": {
+      "bytes": 247100,
+      "sha256": "980eb58b25ad94d0d75bf250b8f9a66d967cd7ef5a2cdd0800a2a8472a67105b"
+    },
+    "cpu-full.json": {
+      "bytes": 126541,
+      "sha256": "fa671798405fffdfac2d10fd1ab625126fe7dd32214ad3977e45aaf986b291e6"
+    },
+    "cpu_validation.json": {
+      "bytes": 107283,
+      "sha256": "181c33dea6d5f82ccda36cad8c2655a7b6f12e56068a0dc0a9fd56690c50331b"
+    },
+    "cpu_validation.stderr.log": {
+      "bytes": 338,
+      "sha256": "10bc182b6344fdd55aaf59131e4f134021035b1d3cc317cde8881924a536d8bc"
+    },
+    "fd-full-gpu.json": {
+      "bytes": 128747,
+      "sha256": "43a8613c198152a0b44e7f151bab53574baad618b6117c87d488d95c9c5399d4"
+    },
+    "full_cpu.stderr.log": {
+      "bytes": 338,
+      "sha256": "10bc182b6344fdd55aaf59131e4f134021035b1d3cc317cde8881924a536d8bc"
+    },
+    "graph-diagnostics.json": {
+      "bytes": 4000,
+      "sha256": "edabf71acf6b1e1e171a09bd59c98771bcd4a039691338dc2975ca3baa3893fe"
+    },
+    "host-execution.json": {
+      "bytes": 1088,
+      "sha256": "4e2ca63aee7eb92b3b374e13914eef1bf08b5716398759fd7b8637525824b309"
+    },
+    "local-execution.json": {
+      "bytes": 657,
+      "sha256": "0149cb69ba58263863299edeb98ddab47782d92398121cac0d3a6d23a3567d46"
+    },
+    "preflight.json": {
+      "bytes": 3115,
+      "sha256": "b1c511d63599101a4994b63eb6b3c6fc0b7cc19d1846a3fda51bff0473471a79"
+    },
+    "snapshot.json": {
+      "bytes": 208,
+      "sha256": "6bb52b7104d17a6897897cfbf4173a59bad135f8fde40019132c3bd45b33f6f8"
+    },
+    "summary.md": {
+      "bytes": 6618,
+      "sha256": "a3b25336df967122a67d129754b65db94d16c06013fdfd7fd717758d4327a2f8"
+    }
+  },
+  "source_files": {
+    "LICENSE": "2f0819452dd5f7667e2c0e93b769238a41c8164e62f89f212646076f66765bde",
+    "torchfrequentdirections/__init__.py": "e65e1bcff754fe3cc2b5e3fb383f7b6293a7a3a358757e8cc0861856e54306c7",
+    "torchfrequentdirections/fd.py": "18e84afa295d3bb75cb97f68bd98fa339fc3ee061e26e8071051021066d30e85",
+    "experiments/qr_svd/driver.py": "65845b029b415e9214947433a76523380ae78f8e90006c11e304e7d9336480a4",
+    "experiments/qr_svd/cuda_driver.py": "d8f919ac1d92a3f0ba17a577f84b4f98ff9b8361921b3ebf463fc66f7ef7b9b6",
+    "experiments/qr_svd/prototype.py": "58c10f6297588c79f7ddb00f58e9f0b607c8b690405c2f8e1f49bc778ae1ddb2",
+    "experiments/zero_clear/driver.py": "0ffa14cbf6a56ea4fadd10f252a5bb6a56fa8ae70bf8d794e1c91d41958ce18e",
+    "experiments/compile_fd/driver.py": "4bb2108c0f2150770643d1f7d9f943d570388eca7fe014124a39b0bb74a178c0",
+    "experiments/full_gpu/candidate.py": "f37ad64cfb11a7bc1071566e7d196cd9a1756bbbdd76a20a1ece4a9e986c8a66"
+  },
+  "driver_sha256": "d2da27e47f59686edf8bde7229c2c81167a19979fb7f23d757d687e3abe291a0",
+  "artifact_manifest_sha256": "e956b28e325eab29649f2bcb2593201091c0d317ed939e22a459626242a22715"
+}

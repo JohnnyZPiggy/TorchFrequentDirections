@@ -1,0 +1,29 @@
+{
+  "source_sha": "6a4900c25314af856ee4e37a59b875d05dd6d768",
+  "events": [
+    {
+      "name": "cpu_validation",
+      "exit_code": 0,
+      "elapsed_seconds": 14.011651035
+    },
+    {
+      "name": "snapshot",
+      "exit_code": 0,
+      "elapsed_seconds": 0.1227179939999985
+    },
+    {
+      "name": "full_cpu",
+      "exit_code": 0,
+      "elapsed_seconds": 4.209343656999991
+    },
+    {
+      "name": "preflight",
+      "exit_code": 0,
+      "elapsed_seconds": 1.1137538889999945
+    }
+  ],
+  "source_clean": true,
+  "utc": "2026-10-21T12:12:47.339980+00:00",
+  "owned_temp_clones_removed": 2,
+  "original_download_compared_before_cleanup": true
+}

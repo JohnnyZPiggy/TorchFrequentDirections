@@ -1,0 +1,2 @@
+status,scope,reason
+NOT_RUN,"all full update+sketch AB/BA, A/A, drift and kernel blocks",CUDA Graph probe failure followed by CUDA RNG offset error before study() entry; no second allocation

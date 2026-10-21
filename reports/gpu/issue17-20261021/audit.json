@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "scientific_status": "GPU_BATCH_FAIL_CLOSED",
+  "source_sha": "6a4900c25314af856ee4e37a59b875d05dd6d768",
+  "raw_download_bytes": 128747,
+  "raw_download_sha256": "43a8613c198152a0b44e7f151bab53574baad618b6117c87d488d95c9c5399d4",
+  "source_driver_manifest_hashes_verified": true,
+  "transport_integrity": "controller passed emitted size/SHA comparison before rejecting FAIL scientific status; remote marker not separately persisted",
+  "controller_artifact_sha256": "ABSENT_BY_DESIGN_ON_FAILED_SCIENCE",
+  "cpu_tests": 50,
+  "cpu_fixture_gates": 72,
+  "gpu_fixture_gates": 72,
+  "independent_oracles": 288,
+  "per_k_bounds": 1952,
+  "completed_timing_blocks": 0,
+  "kernel_profiles": 0,
+  "graph_capture_attempts": 1,
+  "graph_replay_samples": 0,
+  "single_allocation": true,
+  "stop_controller_and_independent_zero": true,
+  "no_performance_claim": true,
+  "production_and_framework_unchanged": true
+}

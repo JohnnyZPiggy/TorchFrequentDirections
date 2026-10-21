@@ -1,0 +1,48 @@
+{
+  "source_sha": "6a4900c25314af856ee4e37a59b875d05dd6d768",
+  "status": "PROBE_ONLY_FAILED",
+  "graphs": [
+    {
+      "dtype": "torch.float32",
+      "scope": "NON_EQUIVALENT tensor transition only; strict finite predicates excluded",
+      "full_stream": "FULL_STREAM_GRAPH_NOT_AVAILABLE",
+      "capture_attempts": 1,
+      "status": "CAPTURE_FAILED_PROBE_ONLY",
+      "capture_seconds": 0.08492852900000969,
+      "error": {
+        "type": "AcceleratorError",
+        "message": "CUDA error: operation failed due to a previous error during capture\nSearch for `cudaErrorStreamCaptureInvalidated' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+      }
+    }
+  ],
+  "terminal_error": {
+    "type": "RuntimeError",
+    "message": "Offset increment outside graph capture encountered unexpectedly."
+  },
+  "strict_full_stream": "NOT_AVAILABLE",
+  "AA": "NOT_RUN",
+  "paired_benchmarks": "NOT_RUN",
+  "kernel_profiles": "NOT_RUN",
+  "diagnosis": "Capture failed; next CUDA random tensor construction raised offset error. Shared-process state contamination is a hypothesis; triggering SVD/shrink/reset operation not localized by this trace.",
+  "cold_probe_seconds": 0.6823542479999958,
+  "first_graph_capture_seconds": 0.08492852900000969,
+  "steady_replay": "NOT_RUN",
+  "device_metrics": {
+    "status": "OBSERVED",
+    "fields": "name,temp_C,sm_MHz,memory_MHz,power_W,utilization_pct",
+    "value": "Tesla T4, 60, 630, 5000, 30.40, 1"
+  },
+  "environment": {
+    "python": "3.13.15",
+    "torch": "2.11.0+cu130",
+    "cuda": "13.0",
+    "cpu_threads": 1,
+    "interop_threads": 1,
+    "tf32": false,
+    "cpu_affinity": [
+      0,
+      1
+    ],
+    "torch_build": "PyTorch built with:\n  - GCC 13.3\n  - C++ Version: 201703\n  - Intel(R) oneAPI Math Kernel Library Version 2024.2-Product Build 20240605 for Intel(R) 64 architecture applications\n  - Intel(R) MKL-DNN v3.10.2 (Git Hash f1d471933dc852f956fd05389f9313c7148783d5)\n  - OpenMP 201511 (a.k.a. OpenMP 4.5)\n  - LAPACK is enabled (usually provided by MKL)\n  - NNPACK is enabled\n  - CPU capability usage: AVX512\n  - CUDA Runtime 13.0\n  - NVCC architecture flags: -gencode;arch=compute_75,code=sm_75;-gencode;arch=compute_80,code=sm_80;-gencode;arch=compute_86,code=sm_86;-gencode;arch=compute_90,code=sm_90;-gencode;arch=compute_100,code=sm_100;-gencode;arch=compute_120,code=sm_120\n  - CuDNN 92.7  (built against CUDA 12.9)\n    - Built with CuDNN 91.9\n  - Magma 2.6.1\n  - Build settings: BLAS_INFO=mkl, BUILD_TYPE=Release, COMMIT_SHA=70d99e998b4955e0049d13a98d77ae1b14db1f45, CUDA_VERSION=13.0, CUDNN_VERSION=9.19.0, CXX_COMPILER=/opt/rh/gcc-toolset-13/root/usr/bin/c++, CXX_FLAGS= -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -DNDEBUG -DUSE_KINETO -DLIBKINETO_NOROCTRACER -DLIBKINETO_NOXPUPTI=ON -DUSE_FBGEMM -DUSE_MSLK -DUSE_PYTORCH_QNNPACK -DUSE_XNNPACK -DSYMBOLICATE_MOBILE_DEBUG_HANDLE -O2 -fPIC -DC10_NODEPRECATED -Wall -Wextra -Werror=return-type -Werror=non-virtual-dtor -Werror=range-loop-construct -Werror=bool-operation -Wnarrowing -Wno-missing-field-initializers -Wno-unknown-pragmas -Wno-unused-parameter -Wno-strict-overflow -Wno-strict-aliasing -Wno-stringop-overflow -Wsuggest-override -Wno-psabi -Wno-error=old-style-cast -faligned-new -Wno-maybe-uninitialized -fno-math-errno -fno-trapping-math -Werror=format -Wno-dangling-reference -Wno-error=dangling-reference -Wno-stringop-overflow, LAPACK_INFO=mkl, PERF_WITH_AVX=1, PERF_WITH_AVX2=1, TORCH_VERSION=2.11.0, USE_CUDA=ON, USE_CUDNN=ON, USE_CUSPARSELT=1, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_GLOO=ON, USE_MKL=ON, USE_MKLDNN=ON, USE_MPI=OFF, USE_NCCL=1, USE_NNPACK=ON, USE_OPENMP=ON, USE_ROCM=OFF, USE_ROCM_KERNEL_ASSERT=OFF, USE_XCCL=OFF, USE_XPU=OFF, \n"
+  }
+}
