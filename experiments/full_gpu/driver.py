@@ -148,18 +148,22 @@ def study(oracle,support,timing,profiler,directory):
         drift=after/before-1
         placebo=[]
         for tag in ('AA_before','AA_after'):
-            lo,hi=record[tag]['timing']['paired_median_bootstrap_95']; placebo.append(lo>1.05 or hi<1/1.05)
+            t=record[tag]['timing']; lo,hi=t['paired_median_bootstrap_95']
+            placebo.append(abs(t['median_paired_ratio']-1)>.05 or lo>1.05 or hi<1/1.05)
         # Compare CUDA baseline inside CPU context to CUDA-only paired baseline.
         context=record['comparisons']['cpu_cuda_context']['timing']['candidate']['median_ms']/record['comparisons']['cuda_candidate']['timing']['baseline']['median_ms']-1
         pair=record['comparisons']['cuda_candidate']['timing']
         stable=abs(drift)<=.05 and abs(context)<=.05 and not any(placebo)
         initial=report['initial_AA']['timing']['paired_median_bootstrap_95']
-        stable=stable and not (initial[0]>1.05 or initial[1]<1/1.05)
+        stable=stable and abs(report['initial_AA']['timing']['median_paired_ratio']-1)<=.05 and not (initial[0]>1.05 or initial[1]<1/1.05)
         record.update(status='PASS',baseline_drift_fraction=drift,cpu_context_cuda_drift_fraction=context,placebo_material=placebo,performance='INCONCLUSIVE' if not stable else 'SCREEN_PASS' if pair['median_paired_ratio']>1.05 and pair['paired_median_bootstrap_95'][0]>1 else 'SCREEN_NOT_MET',device_after=metrics())
         if d in (64,512) and final>ell and ell==16:
             record['profiles']={name:profiler.kernel_profile(fn,'cuda',directory,'full-'+name) for name,fn in fns.items()}
             record['factor_pair']=paired_block({name:lambda cls=cls:cls(ell,d,dtype=dtype,device='cuda')._factor(a[:2*ell],shrink=True) for name,cls in (('baseline',FD),('candidate',Candidate))},seed+4,timing)
     report['final_AA']=paired_block(dict(baseline=control_fn,candidate=control_fn),SEED+999,timing)
+    if abs(report['final_AA']['timing']['median_paired_ratio']-1)>.05:
+        for record in report['records']:
+            if record['status']=='PASS': record['performance']='INCONCLUSIVE'
     return report
 
 
@@ -186,7 +190,9 @@ def main():
             report['cpu_or_gpu_fixture_gates']=[]
             device='cpu' if os.environ.get('SAE_CPU_ONLY')=='1' else 'cuda'
             if device=='cuda':
-                report['probe']=support.probe(); report['device_initial']=metrics()
+                tick=time.monotonic(); report['probe']=support.probe()
+                report['first_cuda_probe_seconds']=time.monotonic()-tick
+                report['device_initial']=metrics()
             for dtype in (torch.float32,torch.float64):
                 for name,a in oracle.fixtures(dtype).items():
                     for ell in (1,4,a.shape[1]+2):
