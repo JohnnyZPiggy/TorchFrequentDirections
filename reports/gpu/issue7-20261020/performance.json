@@ -1,0 +1,74 @@
+{
+  "status": "INCONCLUSIVE_SMALL_SIGNALS",
+  "serialization_boundary": "CANDIDATE_PRIVATE_TAIL_PRESERVED_BY_IMPLICIT_CPU_PICKLE",
+  "engineer_recommendation": "RETAIN_BASELINE_DO_NOT_MERGE_RUNTIME_CANDIDATE",
+  "architect_acceptance": "PENDING",
+  "candidate_sha": "1fab940d4f3987e0b03b7b5fad8540a9ccd51fb2",
+  "retained_baseline_test_sha": "39ebb07e27260552e4839692b143d76d0175e01e",
+  "predeclared_screen": "Affected workload paired median>=1.01 and descriptive bootstrap lower>1; a candidate signal only, not acceptance.",
+  "affected_signals": [
+    {
+      "n": 64,
+      "d": 32,
+      "ell": 4,
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "no_full_shrink": false,
+      "full_shrinks": 12,
+      "bytes": "",
+      "paired_median_ratio": 1.0197484317285346,
+      "descriptive_interval": [
+        1.004574028920838,
+        1.040726338722182
+      ]
+    },
+    {
+      "n": 64,
+      "d": 32,
+      "ell": 4,
+      "dtype": "torch.float64",
+      "device": "cuda",
+      "no_full_shrink": false,
+      "full_shrinks": 12,
+      "bytes": "",
+      "paired_median_ratio": 1.0125290795993651,
+      "descriptive_interval": [
+        1.0056306496972551,
+        1.0191063560188165
+      ]
+    },
+    {
+      "n": 512,
+      "d": 64,
+      "ell": 8,
+      "dtype": "torch.float64",
+      "device": "cpu",
+      "no_full_shrink": false,
+      "full_shrinks": 56,
+      "bytes": "",
+      "paired_median_ratio": 1.0113126794287046,
+      "descriptive_interval": [
+        1.0005487631871468,
+        1.0204281182450001
+      ]
+    }
+  ],
+  "negative_control_signals": [
+    {
+      "n": 7,
+      "d": 64,
+      "ell": 8,
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "no_full_shrink": true,
+      "full_shrinks": 0,
+      "bytes": "",
+      "paired_median_ratio": 1.0121322258551873,
+      "descriptive_interval": [
+        1.0042994718028861,
+        1.0218356420465269
+      ]
+    }
+  ],
+  "interpretation": "A few ~1-2% affected signals coexist with comparable movement in no-clear controls and many intervals spanning one. Multiple comparisons/shared-session variation limit conclusions. Clear-only cost is measured but not additive end-to-end savings. Preserve the existing runtime; publish all evidence for Architect review."
+}

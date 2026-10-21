@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "candidate_sha": "1fab940d4f3987e0b03b7b5fad8540a9ccd51fb2",
+  "environment": {
+    "python": "3.12.3",
+    "torch": "2.11.0+cpu",
+    "cuda": null,
+    "cpu_threads": 1,
+    "tf32": false,
+    "cpu_model": "AMD Ryzen 7 4800H with Radeon Graphics"
+  },
+  "safety_cases": 54,
+  "benchmark_cases": 12,
+  "raw_sha256": "4b084c906dc1934526283c855961c34190697793f6bb01b84fbe38567eb7543c",
+  "scope": "Local CPU readiness only; raw retained locally. Same-host CPU/T4 primary values in fd-zero-clear.json.",
+  "interpretation": "No local CPU full-workload descriptive interval established a gain; measurable clear-specific cost justified one T4 hypothesis test."
+}

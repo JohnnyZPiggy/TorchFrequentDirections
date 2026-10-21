@@ -1,5 +1,15 @@
 # Issue #1 — CPU bootstrap engineering evidence
 
+Issue #7 follow-up: occupied-prefix/factor-read and fault checks passed for the
+one-line no-clear prototype, but the CPU/T4 performance evidence was inconclusive
+and implicit pickle preserves its stale private tail. The submitted runtime is
+byte-identical to the clearing baseline; all finite checks remain untouched.
+The [study update](../research/frequent-directions-tensorization.md) distinguishes
+logical equivalence from serialization, and the
+[evidence report](../../reports/gpu/issue7-20261020/summary.md) recommends rejecting
+the runtime candidate. A fresh 31-test clean CPU run includes a pickle regression;
+the exact earlier candidate SHA and real T4 evidence are retained for review.
+
 Issue #5 follow-up: `sketch()` now copies and zero-pads an occupied prefix of
 at most ell rows, retaining finite output checks and the longer-buffer shrink.
 The [R1–R3 update](../research/frequent-directions-tensorization.md) documents

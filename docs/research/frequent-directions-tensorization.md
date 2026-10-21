@@ -142,3 +142,63 @@ The hypothesis is one saved SVD for each nonempty short snapshot; empty already
 used zero SVDs. Latency/synchronization benefit needs actual CPU/GPU measurements.
 No change to finite checks or full-buffer zeroing is included. Secondary zero-clear,
 compile/fusion and alternate SVD candidates are deferred to retain causal attribution.
+
+## Issue #7 — occupied-prefix equivalence before removing full-buffer zeroing
+
+Conditional research decision: GPT Mentor/Architect's
+[Issue #7](https://github.com/JohnnyZPiggy/TorchFrequentDirections/issues/7).
+This is a single-line candidate, not a performance conclusion or merge approval.
+
+R1 / read-path audit: constructor buffers stay torch.zeros-initialized. Fast update
+writes appended rows before increasing count; a full-buffer _factor reads only
+after count reaches 2ell. Snapshot reads [:count], then either creates a fresh
+zero-padded short factor or factors that prefix. Reference FD has separate state
+and is not modified. _validate reads incoming rows, shape/dtype/device and finite
+status, not unoccupied buffer data. _factor always allocates independent output
+using new_zeros before reading SVD results; its output cannot alias the old buffer.
+No explicit serialization API is defined, but a separate CPU test confirms that
+implicit Python pickle preserves private physical storage, including a candidate's
+unused old tail. Thus the proof covers update/sketch, not serialization equivalence.
+Existing test-only full-buffer clones check nonmutation internally; numerical oracles/diagnostic reports receive
+only snapshots and scalar counts/timings, never raw unused rows. Arbitrary mutation
+of private/configuration fields is outside this maintained-state contract.
+
+R2: define the logical state as (r,C), C=buffer[:r]. Two physical buffers are
+equivalent if they share r and C (or their corresponding FD Gram under SVD basis
+ambiguity), regardless of their unused tail. A full shrink computes an independent
+factor F, retains q=min(ell-1,d), and writes F[:q]. Clearing the rest is unobservable.
+On append, [r:r+t] is completely overwritten before r grows. Induction on appends
+and full shrinks shows that no old tail enters any later factor/SVD input; the
+same shrink sequence therefore obeys the original covariance/projection guarantees.
+Snapshots create fresh output from the logical prefix, so they cannot reveal tail
+bytes, including when ell=1 resets occupancy to zero or ell>d retains only d rows.
+No retained-prefix cleaning is required because F storage is independent and the
+entire retained prefix is overwritten. Newly allocated buffers remain initialized.
+
+Exception audit: invalid inputs are rejected before mutation. SVD/backend or
+nonfinite-factor failures occur before the clear/reset point in both versions;
+they leave the same fully occupied valid input buffer and propagate the same
+exception class. Such instances are discarded per the public contract. Snapshot
+finite checks remain unchanged. No finite check is removed, moved or weakened.
+
+R3: tests deliberately poison unused rows with NaN, inspect every factor input,
+compare old/new Gram matrices and independent FD bounds after every update/snapshot,
+and verify alias isolation, noncontiguous input, rank deficiency, zero rows,
+ell=1/ell>d, full cycles and failure paths. NaN poison and raw trace tensors remain
+test-local; they are never saved in reports. The actual previous source is the A/B
+baseline. Separate resident zero_ versus no-op timings do not imply additive FD
+savings. Full update+snapshot A/B includes no-shrink controls and wide/large-ell
+cases, balanced shuffled pairs, SVD/finite/clear counts and real CPU/T4 evidence.
+Candidate signals require an observed >=1% median paired gain with a descriptive
+paired-bootstrap lower bound above one; all workloads/controls must be reported.
+The interval is not cross-session or multiple-comparison-adjusted proof. A null
+result is valid and should retain the baseline rather than force this optimization.
+
+Measured disposition: logical prefix/factor/Gram and exception tests PASS on CPU/T4.
+Performance is inconclusive with small mixed signals and comparable no-clear
+control movement. The default runtime retains clearing. A CPU synthetic pickle
+roundtrip additionally preserves old unused candidate rows whereas baseline rows
+remain zero; raw pickle/tail bytes were not saved. Snapshot padding and Gram remain
+correct, but blanket no-stale-export compatibility is not established. Do not merge
+the runtime candidate under this Issue's requirements. A serialization policy/fix
+would require a separate scope, not a hidden change in this optimization.

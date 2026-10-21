@@ -1,0 +1,123 @@
+{
+  "status": "ENGINEERING_EVIDENCE_COMPLETE",
+  "candidate_sha": "1fab940d4f3987e0b03b7b5fad8540a9ccd51fb2",
+  "baseline_sha": "f6ef317edd2e9ad1a42d8bc37a9a2e6229f88448",
+  "retained_baseline_test_sha": "39ebb07e27260552e4839692b143d76d0175e01e",
+  "published_runtime": "BASELINE_CLEAR_PRESERVED",
+  "engineer_recommendation": "DO_NOT_MERGE_RUNTIME_CANDIDATE",
+  "architect_acceptance": "PENDING",
+  "run_id": "fd7-20261020-212203",
+  "issue": "https://github.com/JohnnyZPiggy/TorchFrequentDirections/issues/7",
+  "environment": {
+    "python": "3.13.15",
+    "torch": "2.11.0+cu130",
+    "cuda": "13.0",
+    "cpu_threads": 1,
+    "tf32": false,
+    "cpu_model": "Intel(R) Xeon(R) CPU @ 2.00GHz"
+  },
+  "device": {
+    "observed": "Tesla T4",
+    "compute_capability": [
+      7,
+      5
+    ],
+    "total_memory_bytes": 15637086208,
+    "tensor_device": "cuda:0"
+  },
+  "seed": 20261020,
+  "cleanup_confirmed": true,
+  "framework_sha": "a60ed92d80a8866b413b928d609cc3afb82ec408",
+  "artifacts": [
+    {
+      "name": "summary.md",
+      "bytes": 13088,
+      "sha256": "a982103f945cad9447b203e06a08ff4fcfe90974be12278eea644c2f2d91a9a7"
+    },
+    {
+      "name": "correctness.json",
+      "bytes": 4863,
+      "sha256": "b8c82d581c97cda2e5821dede7992de7d4dbe396ff42d2242bad8567300e749b"
+    },
+    {
+      "name": "performance.json",
+      "bytes": 2268,
+      "sha256": "b9172ccde06b372521b67c9f6b59c9b292fc454d4ec8f4df6a023ffdbbf41e21"
+    },
+    {
+      "name": "benchmark.csv",
+      "bytes": 73446,
+      "sha256": "b1681bacda90f335af8effa1696d675a3c1af20d1d0d00be8e0e8aee594ab376"
+    },
+    {
+      "name": "profile.csv",
+      "bytes": 4826,
+      "sha256": "c48e503234db1f1b84662490b490925c8339a1baf6d4b2bd5e28af3de209ad09"
+    },
+    {
+      "name": "cpu_validation.json",
+      "bytes": 104843,
+      "sha256": "37888584fa5c2fbd8f197cd206dd0d43fa5bd96df19ab92bcce25fc22126a5d5"
+    },
+    {
+      "name": "retained-baseline-cpu.json",
+      "bytes": 105011,
+      "sha256": "0d00dcb52ae92c2d0f7cc6d1323671cbb8ba23282c596c70f1b67ea4f3189443"
+    },
+    {
+      "name": "preliminary-failure.json",
+      "bytes": 361,
+      "sha256": "1a785cb31504ed91a2867cff01dbfcf525c6248d5f9971016b275cadd914bd9e"
+    },
+    {
+      "name": "snapshot.json",
+      "bytes": 222,
+      "sha256": "379cee212a2ec1b2b4576f23c0588d37f612bb3e49b0904bb87f6dafb7740cb1"
+    },
+    {
+      "name": "local-ab-summary.json",
+      "bytes": 682,
+      "sha256": "7f68d1dde22eac5028578e86e1b0b16d2c196663e777ede6720fa52f514d62e4"
+    },
+    {
+      "name": "local-execution.json",
+      "bytes": 723,
+      "sha256": "d99df4e7b409bd96cae3d5c5a4d02c6e881e589f6ae23b1356603e591e31c38c"
+    },
+    {
+      "name": "preflight.json",
+      "bytes": 3113,
+      "sha256": "b12018d3e2501ea487206a6fa39c014ad5b92a4c9092f9702ff4b708033d54b5"
+    },
+    {
+      "name": "fd-zero-clear.json",
+      "bytes": 508967,
+      "sha256": "4c98c9b80ab234c2e1e4a33157f95fd2a4d3f95f4d249007c05ef59ed0051110"
+    },
+    {
+      "name": "colab-control.json",
+      "bytes": 5928,
+      "sha256": "39815bc1b4c7191625cab2fcf9055375c41ea03f273d00e9600361058052c1fe"
+    },
+    {
+      "name": "host-execution.json",
+      "bytes": 710,
+      "sha256": "195eddcf0fa7db312633963c46ab98b4bf7212271d89f30a83651fb3a1316ca2"
+    },
+    {
+      "name": "pickle-candidate.json",
+      "bytes": 587,
+      "sha256": "aa0820d4f113a1a999487ca51a0981c23c2041ac1d66a3d0e71080040d244499"
+    },
+    {
+      "name": "pickle-baseline.json",
+      "bytes": 585,
+      "sha256": "e45d50a083aadc2a5b4976767e093fd274d4e7bf4f557fc2d57f1d0854e5bfed"
+    },
+    {
+      "name": "resumption-verification.json",
+      "bytes": 865,
+      "sha256": "3be9f5bb047be4667efd210a5a468a206271afa44b26cb64a062b57862d89ad8"
+    }
+  ]
+}

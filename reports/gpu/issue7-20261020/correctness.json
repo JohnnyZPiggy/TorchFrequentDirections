@@ -1,0 +1,160 @@
+{
+  "status": "LOGICAL_CHECKS_PASS",
+  "serialization_equivalence": "FAIL_SYNTHETIC_COUNTEREXAMPLE",
+  "no_stale_export_requirement": "NOT_MET_BY_RUNTIME_CANDIDATE",
+  "candidate_sha": "1fab940d4f3987e0b03b7b5fad8540a9ccd51fb2",
+  "baseline_sha": "f6ef317edd2e9ad1a42d8bc37a9a2e6229f88448",
+  "candidate_diff": "exact baseline source minus one self._buffer.zero_() line; finite checks byte-identical",
+  "safety_cases": 108,
+  "benchmark_cases": 24,
+  "fault_groups": [
+    {
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "checks": [
+        {
+          "variant": "baseline",
+          "status": "PASS",
+          "invalid_update_atomic": "PASS",
+          "svd_exception": "PASS",
+          "nonfinite_factor": "PASS",
+          "nonfinite_snapshot": "PASS"
+        },
+        {
+          "variant": "candidate",
+          "status": "PASS",
+          "invalid_update_atomic": "PASS",
+          "svd_exception": "PASS",
+          "nonfinite_factor": "PASS",
+          "nonfinite_snapshot": "PASS"
+        }
+      ]
+    },
+    {
+      "device": "cuda",
+      "dtype": "torch.float32",
+      "checks": [
+        {
+          "variant": "baseline",
+          "status": "PASS",
+          "invalid_update_atomic": "PASS",
+          "svd_exception": "PASS",
+          "nonfinite_factor": "PASS",
+          "nonfinite_snapshot": "PASS"
+        },
+        {
+          "variant": "candidate",
+          "status": "PASS",
+          "invalid_update_atomic": "PASS",
+          "svd_exception": "PASS",
+          "nonfinite_factor": "PASS",
+          "nonfinite_snapshot": "PASS"
+        }
+      ]
+    },
+    {
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "checks": [
+        {
+          "variant": "baseline",
+          "status": "PASS",
+          "invalid_update_atomic": "PASS",
+          "svd_exception": "PASS",
+          "nonfinite_factor": "PASS",
+          "nonfinite_snapshot": "PASS"
+        },
+        {
+          "variant": "candidate",
+          "status": "PASS",
+          "invalid_update_atomic": "PASS",
+          "svd_exception": "PASS",
+          "nonfinite_factor": "PASS",
+          "nonfinite_snapshot": "PASS"
+        }
+      ]
+    },
+    {
+      "device": "cuda",
+      "dtype": "torch.float64",
+      "checks": [
+        {
+          "variant": "baseline",
+          "status": "PASS",
+          "invalid_update_atomic": "PASS",
+          "svd_exception": "PASS",
+          "nonfinite_factor": "PASS",
+          "nonfinite_snapshot": "PASS"
+        },
+        {
+          "variant": "candidate",
+          "status": "PASS",
+          "invalid_update_atomic": "PASS",
+          "svd_exception": "PASS",
+          "nonfinite_factor": "PASS",
+          "nonfinite_snapshot": "PASS"
+        }
+      ]
+    }
+  ],
+  "summary": [
+    {
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "safety_cases": 27,
+      "factor_inputs_checked_per_variant": 465,
+      "oracle_calls_both_variants": 870,
+      "max_excess_over_tolerance": {
+        "psd": 0.014252600572272707,
+        "covariance": 0.014252600572272707,
+        "projection": 6.97888990624013e-10,
+        "snapshot_gap": 0.0,
+        "svd_input_gap": 0.0
+      }
+    },
+    {
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "safety_cases": 27,
+      "factor_inputs_checked_per_variant": 465,
+      "oracle_calls_both_variants": 870,
+      "max_excess_over_tolerance": {
+        "psd": 0.007686190818761926,
+        "covariance": 0.015337602101118347,
+        "projection": 0.012463104938649711,
+        "snapshot_gap": 0.0,
+        "svd_input_gap": 0.0
+      }
+    },
+    {
+      "device": "cuda",
+      "dtype": "torch.float32",
+      "safety_cases": 27,
+      "factor_inputs_checked_per_variant": 465,
+      "oracle_calls_both_variants": 870,
+      "max_excess_over_tolerance": {
+        "psd": 0.016821605209134203,
+        "covariance": 0.05222732456363768,
+        "projection": 1.6817892503255545e-09,
+        "snapshot_gap": 0.0,
+        "svd_input_gap": 0.0
+      }
+    },
+    {
+      "device": "cuda",
+      "dtype": "torch.float64",
+      "safety_cases": 27,
+      "factor_inputs_checked_per_variant": 465,
+      "oracle_calls_both_variants": 870,
+      "max_excess_over_tolerance": {
+        "psd": 0.01083369404441527,
+        "covariance": 0.06968061131218103,
+        "projection": 0.012463104938649711,
+        "snapshot_gap": 0.0,
+        "svd_input_gap": 0.0
+      }
+    }
+  ],
+  "scope": "Logical update/sketch API checks PASS; implicit Python pickle preserves private stale tails in candidate, so serialization equivalence is NOT established. Poison/raw traces/pickle bytes never saved; snapshots/oracles contain finite occupied-prefix data.",
+  "tolerance": "Inherited CPU float64 oracle with 32*eps(input_dtype)*max(n,d,2ell,1)*energy; Gram comparisons use four times this slack. Empirical, not an arbitrary-length proof."
+}
