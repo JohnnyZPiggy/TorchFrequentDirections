@@ -176,3 +176,7 @@ Project code and original figures are [MIT licensed](LICENSE); the fixed
 private dataset or third-party implementation is redistributed. No GitHub Actions
 or background compute is enabled. [Project rules](AGENTS.md) assign implementation
 and evidence to Codex, and independent scientific/merge review to GPT Architect.
+
+## Claude Engineer Smoke Test
+
+This note verifies the local Claude Code Engineer workflow (branch, test, commit, push, draft PR). It is documentation only and has no effect on the library.
