@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "source_sha": "23b5aa13ef926ecd5df36908f2277fc6e1c77b00",
+  "download_bytes": 476872,
+  "download_sha256": "5b5546b5ab3ddb9914768ff6d428cc470aff31b99a5f5cf441d5dc459438626b",
+  "single_allocation": true,
+  "stop_and_controller_zero": true,
+  "independent_authenticated_zero": true,
+  "tested_driver_transport_hash_verified": true,
+  "artifact_manifest_hash_verified": true,
+  "paired_blocks_recomputed": 42,
+  "primary_blocks": 38,
+  "placebo_flags": [],
+  "not_run": [],
+  "math_classification": "VALIDATE_PASS (scoped numerical gates)",
+  "performance_classification": "INCONCLUSIVE; retain direct default",
+  "production_and_framework": "UNCHANGED"
+}
