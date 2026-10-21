@@ -224,10 +224,17 @@ def benchmarks():
             for shrink in (True, False):
                 if not shrink and (m, d) not in ((4, 8), (16, 4)):
                     continue
-                timing = paired([lambda s=s: s._factor(a, shrink=shrink) for s in streams],
+                factor_ell = ell if shrink else m
+                factor_streams = [cls(factor_ell, d, dtype=dtype)
+                                  for cls in (FrequentDirections, QRSmallSVD)]
+                factor_gate = compare(a, [s._factor(a, shrink=shrink) for s in factor_streams],
+                                      factor_ell)
+                if not factor_gate['passed']:
+                    raise AssertionError('benchmark no-shrink/factor gate')
+                timing = paired([lambda s=s: s._factor(a, shrink=shrink) for s in factor_streams],
                                 SEED + len(records))
-                record = dict(kind='factor', m=m, d=d, ell=ell, dtype=str(dtype),
-                              shrink=shrink, gate=gate, timing=timing)
+                record = dict(kind='factor', m=m, d=d, ell=factor_ell, dtype=str(dtype),
+                              shrink=shrink, gate=factor_gate, timing=timing)
                 if shrink and m <= d:
                     record['instrumented_nonadditive_stages'] = stages(a, ell)
                 records.append(record)

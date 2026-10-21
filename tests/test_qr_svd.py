@@ -5,10 +5,29 @@ from unittest.mock import patch
 import torch
 
 from experiments.qr_svd.prototype import QRSmallSVD
+from experiments.qr_svd.driver import oracle, paired
 from torchfrequentdirections import FrequentDirections
 
 
 class QRTests(unittest.TestCase):
+    def test_independent_oracle_rejects_corruption(self):
+        a = torch.diag(torch.tensor([4., 3., 2., 1.], dtype=torch.float64))
+        self.assertFalse(oracle(a, torch.zeros(2, 4, dtype=a.dtype), 2)['passed'])
+        self.assertFalse(oracle(a, 2 * a[:2], 2)['passed'])
+
+    def test_pairing_is_balanced_and_equal_work(self):
+        calls = [0, 0]
+
+        def call(i):
+            calls[i] += 1
+
+        report = paired([lambda: call(0), lambda: call(1)], 19)
+        self.assertEqual(calls, [22, 22])
+        orders = [r['order'] for r in report['raw_ordered_pairs']]
+        self.assertEqual(orders.count([0, 1]), 10)
+        self.assertEqual(orders.count([1, 0]), 10)
+        self.assertEqual(len(report['baseline']['samples_ms']), 20)
+
     def test_fallback_and_empty_do_not_use_qr(self):
         for rows in (torch.empty(0, 3), torch.randn(7, 3)):
             candidate = QRSmallSVD(5, 3, dtype=rows.dtype)
