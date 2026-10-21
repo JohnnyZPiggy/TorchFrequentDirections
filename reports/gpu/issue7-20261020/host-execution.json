@@ -1,0 +1,23 @@
+{
+  "source_sha": "1fab940d4f3987e0b03b7b5fad8540a9ccd51fb2",
+  "run_id": "fd7-20261020-212203",
+  "utc_start": "2026-10-20T21:22:03.107674+00:00",
+  "task_seconds": 600,
+  "allocation_seconds": 540,
+  "work_timeout_seconds": 420,
+  "cleanup_seconds": 60,
+  "host_timeout_seconds": 660,
+  "new_attempt_limit": 1,
+  "controller_exit_code": 0,
+  "independent_readback": {
+    "utc": "2026-10-20T21:23:28.624771+00:00",
+    "status": "AUTHENTICATED_ZERO",
+    "assignments": 0
+  },
+  "elapsed_seconds": 89.23835209900001,
+  "utc_end": "2026-10-20T21:23:28.691605+00:00",
+  "status": "PASS",
+  "download_sha256": {
+    "fd-zero-clear.json": "4c98c9b80ab234c2e1e4a33157f95fd2a4d3f95f4d249007c05ef59ed0051110"
+  }
+}

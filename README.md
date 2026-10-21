@@ -1,10 +1,15 @@
 # TorchFrequentDirections
 
 Inference-only reference and buffered Frequent Directions, using native PyTorch
-SVD. CPU and bounded T4 baselines were accepted in PRs #2/#4; the lossless
-short-snapshot optimization for
-[Issue #5](https://github.com/JohnnyZPiggy/TorchFrequentDirections/issues/5)
+SVD. CPU and bounded T4 baselines were accepted in PRs #2/#4, and the lossless
+short-snapshot optimization in PR #6. The buffer-clear study for
+[Issue #7](https://github.com/JohnnyZPiggy/TorchFrequentDirections/issues/7)
 is submitted for GPT Architect review.
+
+The [buffer-clear study](reports/gpu/issue7-20261020/summary.md) retains the
+existing clearing behavior: logical update/sketch equivalence passed, but overall
+CPU/T4 gains were inconclusive and implicit pickle preserved unused candidate
+rows. The one-line runtime candidate is not proposed for adoption.
 
 ```sh
 python -m pip install .

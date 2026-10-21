@@ -1,0 +1,12 @@
+{
+  "status": "PASS_OBSERVATION",
+  "fixture": "synthetic arange, one full shrink, ell=4,d=7",
+  "source_sha": "39ebb07e27260552e4839692b143d76d0175e01e",
+  "fd_sha256": "18e84afa295d3bb75cb97f68bd98fa339fc3ee061e26e8071051021066d30e85",
+  "unused_tail_zero_before": true,
+  "unused_tail_zero_after_pickle": true,
+  "public_snapshot_padding_zero": true,
+  "public_snapshot_roundtrip_unchanged": true,
+  "raw_pickle_or_tail_saved": false,
+  "boundary": "Implicit Python pickle serializes private physical state; logical update/sketch equivalence does not normalize that unused tail."
+}

@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "source_sha": "1fab940d4f3987e0b03b7b5fad8540a9ccd51fb2",
+  "utc_end": "2026-10-20T21:21:31.265791+00:00",
+  "elapsed_seconds": 26.951583916999994,
+  "events": [
+    {
+      "name": "cpu_validation",
+      "exit_code": 0,
+      "elapsed_seconds": 6.156488500999998,
+      "status": "PASS",
+      "tests": 30,
+      "dirty": false
+    },
+    {
+      "name": "snapshot",
+      "exit_code": 0,
+      "elapsed_seconds": 0.12084535799999685,
+      "status": "PASS"
+    },
+    {
+      "name": "cpu_ab",
+      "exit_code": 0,
+      "elapsed_seconds": 16.652131151
+    },
+    {
+      "name": "preflight",
+      "exit_code": 0,
+      "elapsed_seconds": 2.0982594519999935
+    }
+  ],
+  "source_clean": true
+}

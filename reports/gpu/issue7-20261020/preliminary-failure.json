@@ -1,0 +1,7 @@
+{
+  "status": "FAIL_PRELIMINARY_SUPERSEDED",
+  "source_sha": "474563881b3641eb48f32521d5bbfbca4b731318",
+  "tests_run": 30,
+  "failed_test": "test_clear_counter_is_specific_and_does_not_count_new_zeros",
+  "reason": "A method bound before patching bypassed the spy; changed test to resolve zero_ inside the instrumented lambda. No FD or finite-check change."
+}

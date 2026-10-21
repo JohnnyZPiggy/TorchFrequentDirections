@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "utc_verified": "2026-10-21T08:30:03.428838+00:00",
+  "candidate_sha": "1fab940d4f3987e0b03b7b5fad8540a9ccd51fb2",
+  "retained_baseline_test_sha": "39ebb07e27260552e4839692b143d76d0175e01e",
+  "recovered_gpu_run": "fd7-20261020-212203",
+  "recovered_gpu_utc": "2026-10-20T21:23:28.691605+00:00",
+  "new_gpu_allocations_this_resumption": 0,
+  "download_sha256": "4c98c9b80ab234c2e1e4a33157f95fd2a4d3f95f4d249007c05ef59ed0051110",
+  "source_diff": "candidate is exact baseline minus one buffer.zero_ line; final runtime byte-identical to baseline",
+  "pickle_reproduction": "Fresh clean CPU clones reproduce stale candidate tail and zero retained-baseline tail; only booleans/hashes saved",
+  "scope": "Historical CPU/T4 measurements reverified, not rerun or represented as a new GPU experiment; cleanup is historical timestamped evidence."
+}
