@@ -1,0 +1,253 @@
+{
+  "source_sha": "d62ae254b0c9252cb68f13ffff8017ae79c32dc6",
+  "scope": "PROBE_ONLY, excludes strict host predicates",
+  "children": [
+    {
+      "stage": "pointwise",
+      "dtype": "float32",
+      "transport": {
+        "exit_code": 0,
+        "timeout": false,
+        "wall_seconds": 6.838488761999997
+      },
+      "result": {
+        "stage": "pointwise",
+        "dtype": "torch.float32",
+        "device": "cuda",
+        "status": "CAPTURE_REPLAY_PASS_PROBE_ONLY",
+        "phase": "complete",
+        "warmups": 2,
+        "scope": "PROBE_ONLY; tensor stages exclude mandatory host finite/error decisions; NOT full strict update graph",
+        "svd": "preallocated out U/S/Vh; full_matrices=False",
+        "recaptures": 0,
+        "capture_seconds": 0.01494891900000539,
+        "replay_ms": [
+          0.0457870000047933,
+          0.06795799998826624,
+          0.0312309999799254,
+          0.027790999979515618,
+          0.028964000023279368
+        ],
+        "max_abs_errors": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "stable_preallocated_addresses": true
+      }
+    },
+    {
+      "stage": "pointwise",
+      "dtype": "float64",
+      "transport": {
+        "exit_code": 0,
+        "timeout": false,
+        "wall_seconds": 2.8943979480000053
+      },
+      "result": {
+        "stage": "pointwise",
+        "dtype": "torch.float64",
+        "device": "cuda",
+        "status": "CAPTURE_REPLAY_PASS_PROBE_ONLY",
+        "phase": "complete",
+        "warmups": 2,
+        "scope": "PROBE_ONLY; tensor stages exclude mandatory host finite/error decisions; NOT full strict update graph",
+        "svd": "preallocated out U/S/Vh; full_matrices=False",
+        "recaptures": 0,
+        "capture_seconds": 0.006455187000000251,
+        "replay_ms": [
+          0.045585999998820625,
+          0.04614700000615812,
+          0.0360090000128821,
+          0.0324590000104763,
+          0.0331990000006499
+        ],
+        "max_abs_errors": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "stable_preallocated_addresses": true
+      }
+    },
+    {
+      "stage": "svd",
+      "dtype": "float32",
+      "transport": {
+        "exit_code": 0,
+        "timeout": false,
+        "wall_seconds": 2.5047046960000046
+      },
+      "result": {
+        "stage": "svd",
+        "dtype": "torch.float32",
+        "device": "cuda",
+        "status": "CAPTURE_FAILED_PROBE_ONLY",
+        "phase": "capture",
+        "warmups": 2,
+        "scope": "PROBE_ONLY; tensor stages exclude mandatory host finite/error decisions; NOT full strict update graph",
+        "svd": "preallocated out U/S/Vh; full_matrices=False",
+        "recaptures": 0,
+        "operation_error": {
+          "type": "RuntimeError",
+          "message": "cusolver error: CUSOLVER_STATUS_EXECUTION_FAILED, when calling `cusolverDnSgesvdj(handle, jobz, econ, m, n, A, lda, S, U, ldu, V, ldv, work, lwork, info, params)`. If you keep seeing this error, you may use `torch.backends.cuda.preferred_linalg_library()` to try linear algebra operators with other supported backends. See https://pytorch.org/docs/stable/backends.html#torch.backends.cuda.preferred_linalg_library"
+        },
+        "capture_error": {
+          "type": "AcceleratorError",
+          "message": "CUDA error: operation failed due to a previous error during capture\nSearch for `cudaErrorStreamCaptureInvalidated' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        "capture_seconds": 0.08534085999997387
+      }
+    },
+    {
+      "stage": "svd",
+      "dtype": "float64",
+      "transport": {
+        "exit_code": 0,
+        "timeout": false,
+        "wall_seconds": 2.4302721299999916
+      },
+      "result": {
+        "stage": "svd",
+        "dtype": "torch.float64",
+        "device": "cuda",
+        "status": "CAPTURE_FAILED_PROBE_ONLY",
+        "phase": "capture",
+        "warmups": 2,
+        "scope": "PROBE_ONLY; tensor stages exclude mandatory host finite/error decisions; NOT full strict update graph",
+        "svd": "preallocated out U/S/Vh; full_matrices=False",
+        "recaptures": 0,
+        "operation_error": {
+          "type": "RuntimeError",
+          "message": "cusolver error: CUSOLVER_STATUS_EXECUTION_FAILED, when calling `cusolverDnDgesvdj(handle, jobz, econ, m, n, A, lda, S, U, ldu, V, ldv, work, lwork, info, params)`. If you keep seeing this error, you may use `torch.backends.cuda.preferred_linalg_library()` to try linear algebra operators with other supported backends. See https://pytorch.org/docs/stable/backends.html#torch.backends.cuda.preferred_linalg_library"
+        },
+        "capture_error": {
+          "type": "AcceleratorError",
+          "message": "CUDA error: operation failed due to a previous error during capture\nSearch for `cudaErrorStreamCaptureInvalidated' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        "capture_seconds": 0.0029455680000012308
+      }
+    },
+    {
+      "stage": "svd_shrink",
+      "dtype": "float32",
+      "transport": {
+        "exit_code": 0,
+        "timeout": false,
+        "wall_seconds": 2.3872072959999855
+      },
+      "result": {
+        "stage": "svd_shrink",
+        "dtype": "torch.float32",
+        "device": "cuda",
+        "status": "CAPTURE_FAILED_PROBE_ONLY",
+        "phase": "capture",
+        "warmups": 2,
+        "scope": "PROBE_ONLY; tensor stages exclude mandatory host finite/error decisions; NOT full strict update graph",
+        "svd": "preallocated out U/S/Vh; full_matrices=False",
+        "recaptures": 0,
+        "operation_error": {
+          "type": "RuntimeError",
+          "message": "cusolver error: CUSOLVER_STATUS_EXECUTION_FAILED, when calling `cusolverDnSgesvdj(handle, jobz, econ, m, n, A, lda, S, U, ldu, V, ldv, work, lwork, info, params)`. If you keep seeing this error, you may use `torch.backends.cuda.preferred_linalg_library()` to try linear algebra operators with other supported backends. See https://pytorch.org/docs/stable/backends.html#torch.backends.cuda.preferred_linalg_library"
+        },
+        "capture_error": {
+          "type": "AcceleratorError",
+          "message": "CUDA error: operation failed due to a previous error during capture\nSearch for `cudaErrorStreamCaptureInvalidated' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        "capture_seconds": 0.003307442000021865
+      }
+    },
+    {
+      "stage": "svd_shrink",
+      "dtype": "float64",
+      "transport": {
+        "exit_code": 0,
+        "timeout": false,
+        "wall_seconds": 2.5659141480000187
+      },
+      "result": {
+        "stage": "svd_shrink",
+        "dtype": "torch.float64",
+        "device": "cuda",
+        "status": "CAPTURE_FAILED_PROBE_ONLY",
+        "phase": "capture",
+        "warmups": 2,
+        "scope": "PROBE_ONLY; tensor stages exclude mandatory host finite/error decisions; NOT full strict update graph",
+        "svd": "preallocated out U/S/Vh; full_matrices=False",
+        "recaptures": 0,
+        "operation_error": {
+          "type": "RuntimeError",
+          "message": "cusolver error: CUSOLVER_STATUS_EXECUTION_FAILED, when calling `cusolverDnDgesvdj(handle, jobz, econ, m, n, A, lda, S, U, ldu, V, ldv, work, lwork, info, params)`. If you keep seeing this error, you may use `torch.backends.cuda.preferred_linalg_library()` to try linear algebra operators with other supported backends. See https://pytorch.org/docs/stable/backends.html#torch.backends.cuda.preferred_linalg_library"
+        },
+        "capture_error": {
+          "type": "AcceleratorError",
+          "message": "CUDA error: operation failed due to a previous error during capture\nSearch for `cudaErrorStreamCaptureInvalidated' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        "capture_seconds": 0.0032439240000030622
+      }
+    },
+    {
+      "stage": "buffer",
+      "dtype": "float32",
+      "transport": {
+        "exit_code": 0,
+        "timeout": false,
+        "wall_seconds": 2.5014985669999987
+      },
+      "result": {
+        "stage": "buffer",
+        "dtype": "torch.float32",
+        "device": "cuda",
+        "status": "CAPTURE_FAILED_PROBE_ONLY",
+        "phase": "capture",
+        "warmups": 2,
+        "scope": "PROBE_ONLY; tensor stages exclude mandatory host finite/error decisions; NOT full strict update graph",
+        "svd": "preallocated out U/S/Vh; full_matrices=False",
+        "recaptures": 0,
+        "operation_error": {
+          "type": "RuntimeError",
+          "message": "cusolver error: CUSOLVER_STATUS_EXECUTION_FAILED, when calling `cusolverDnSgesvdj(handle, jobz, econ, m, n, A, lda, S, U, ldu, V, ldv, work, lwork, info, params)`. If you keep seeing this error, you may use `torch.backends.cuda.preferred_linalg_library()` to try linear algebra operators with other supported backends. See https://pytorch.org/docs/stable/backends.html#torch.backends.cuda.preferred_linalg_library"
+        },
+        "capture_error": {
+          "type": "AcceleratorError",
+          "message": "CUDA error: operation failed due to a previous error during capture\nSearch for `cudaErrorStreamCaptureInvalidated' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        "capture_seconds": 0.003227550000019619
+      }
+    },
+    {
+      "stage": "buffer",
+      "dtype": "float64",
+      "transport": {
+        "exit_code": 0,
+        "timeout": false,
+        "wall_seconds": 2.5413371719999986
+      },
+      "result": {
+        "stage": "buffer",
+        "dtype": "torch.float64",
+        "device": "cuda",
+        "status": "CAPTURE_FAILED_PROBE_ONLY",
+        "phase": "capture",
+        "warmups": 2,
+        "scope": "PROBE_ONLY; tensor stages exclude mandatory host finite/error decisions; NOT full strict update graph",
+        "svd": "preallocated out U/S/Vh; full_matrices=False",
+        "recaptures": 0,
+        "operation_error": {
+          "type": "RuntimeError",
+          "message": "cusolver error: CUSOLVER_STATUS_EXECUTION_FAILED, when calling `cusolverDnDgesvdj(handle, jobz, econ, m, n, A, lda, S, U, ldu, V, ldv, work, lwork, info, params)`. If you keep seeing this error, you may use `torch.backends.cuda.preferred_linalg_library()` to try linear algebra operators with other supported backends. See https://pytorch.org/docs/stable/backends.html#torch.backends.cuda.preferred_linalg_library"
+        },
+        "capture_error": {
+          "type": "AcceleratorError",
+          "message": "CUDA error: operation failed due to a previous error during capture\nSearch for `cudaErrorStreamCaptureInvalidated' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
+        },
+        "capture_seconds": 0.00323975399999199
+      }
+    }
+  ],
+  "healthy_fresh_benchmark_rng": "PASS"
+}
