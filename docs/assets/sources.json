@@ -1,0 +1,24 @@
+{
+  "documentation_base_sha": "f97070dddc1cb1788d4b1fab85c58da650a9f552",
+  "source_blob_sha256": {
+    "torchfrequentdirections/fd.py": "18e84afa295d3bb75cb97f68bd98fa339fc3ee061e26e8071051021066d30e85",
+    "reports/gpu/issue13-20261021/benchmark.csv": "62019e04278dce40c78a5aeda244d082977ced94ea380aee0abbadd08f34b719",
+    "reports/gpu/issue15-20261021/verification.json": "398347fb1195c720ae8b4ac277cfb3d6a5985c0c17e2f21db182a3a8c104f45c",
+    "reports/gpu/issue15-20261021/benchmark.csv": "d8f86dcf463e731aa0c9a83c9598f0ae6961c5fddc89124c1c24ee6d370f069b",
+    "reports/gpu/issue3-20261020/manifest.json": "21e733ed6f3878e29a7dca255733744faf8eb41c25219d92760d01aecde6908e",
+    "reports/gpu/issue3-20261020/benchmark.csv": "4645feaa2fabcb9a2053c41293157ee752b0fb46b6cdd07f8f82767617304cf1",
+    "reports/gpu/issue5-20261020/manifest.json": "f10ab31391ef4fdfcd668a9d4465b25cdbb1bcf02d63b94a42643dcb7b9938a9",
+    "reports/gpu/issue5-20261020/benchmark.csv": "51dc533f024fba68fb3358cf4e8edad9bb374f48af5717ce6c604022e0ea4262",
+    "reports/gpu/issue7-20261020/manifest.json": "e0aa845dd5e1c7a6181970116bd35ccf05cd3f8782a8b0782cc7c298cc6b9dd4",
+    "reports/gpu/issue7-20261020/benchmark.csv": "b1681bacda90f335af8effa1696d675a3c1af20d1d0d00be8e0e8aee594ab376",
+    "reports/cpu/issue11-20261021/manifest.json": "3fd4de4f28fe8fa4260bbb514e49df3c4f222e05d80266de323ae6b91cf78330",
+    "reports/cpu/issue11-20261021/benchmark.csv": "1fe810dac229d81182a1ff9f5e16ae5f4735b8ab7b60fcd2a2cd8555704cf8fd",
+    "reports/gpu/issue13-20261021/manifest.json": "3104c85e29c82aa2819f3ab31570dcb4367bf1e572b3ac3dec228a963e1578c1",
+    "reports/gpu/issue15-20261021/manifest.json": "baf3e83d3d97f4ef0a0580106b186243544a5c699108d63b1297c4da1343b0af",
+    "reports/gpu/issue17-followup-20261021/manifest.json": "032fb69d22b07e50ba17301044c3ea03066d0aaa5cbeaf8a48bce934b56f6eac",
+    "reports/gpu/issue17-followup-20261021/benchmark.csv": "a70a3fdf43b918f7a604593f5798dcefda898a6c6d3c759f6c36d73d856873dd"
+  },
+  "gpu_selection": "PR14 float32 direct/QR kind=long; all five ell<=d configurations; no factor/fallback rows",
+  "kernel_selection": "PR16 verification.fusion ell16 d512 float32; separate pure and full scopes",
+  "regeneration": "python docs/tools/build_figures.py; --check compares bytes without writing"
+}

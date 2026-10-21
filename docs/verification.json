@@ -1,0 +1,95 @@
+{
+  "status": "PASS",
+  "documentation_source_sha": "2d48ce4840b6c3502d8ad2d55f9868ed681f28f5",
+  "base_main_sha": "f97070dddc1cb1788d4b1fab85c58da650a9f552",
+  "utc": "2026-10-21T13:43:16.100764+00:00",
+  "events": [
+    {
+      "name": "figure_regeneration",
+      "exit_code": 0,
+      "elapsed_seconds": 0.13336754099999837,
+      "result": {
+        "status": "PASS",
+        "mode": "check",
+        "outputs": [
+          "docs/assets/fd-algorithm.svg",
+          "docs/assets/gpu-benchmarks.svg",
+          "docs/assets/kernel-fusion.svg",
+          "docs/performance/measurements.md",
+          "docs/assets/sources.json"
+        ],
+        "sources": 16
+      }
+    },
+    {
+      "name": "docs_math_links_SVG",
+      "exit_code": 0,
+      "elapsed_seconds": 2.680157790999999,
+      "result": {
+        "status": "PASS",
+        "documentation_base_sha": "f97070dddc1cb1788d4b1fab85c58da650a9f552",
+        "checked_head": "2d48ce4840b6c3502d8ad2d55f9868ed681f28f5",
+        "relative_links": 113,
+        "svg_files": 3,
+        "benchmark_points_independently_matched": 5,
+        "kernel_counts_independently_matched": 4,
+        "source_hashes": 16,
+        "historical_evidence_and_production_unchanged": true,
+        "readme_example": {
+          "status": "PASS",
+          "torch": "2.11.0+cpu",
+          "device": "cpu",
+          "outputs": 3,
+          "per_k_checks": 24
+        }
+      }
+    },
+    {
+      "name": "SAE_snapshot",
+      "exit_code": 0,
+      "elapsed_seconds": 0.07467117099999143,
+      "result": {
+        "status": "PASS",
+        "framework_sha": "a60ed92d80a8866b413b928d609cc3afb82ec408",
+        "files_verified": 131,
+        "preexisting_template_links": 8,
+        "project_root_links": "PASS",
+        "parsers": "Python AST / JSON / SVG XML"
+      }
+    },
+    {
+      "name": "local_install_and_installed_README_example",
+      "exit_code": 0,
+      "elapsed_seconds": 2.2719282850000013,
+      "result": {
+        "status": "PASS",
+        "import_from_installed_target": true,
+        "device": "cpu",
+        "outputs": 3
+      },
+      "command": "uv pip install --offline --no-deps --no-build-isolation --target <temp> .",
+      "network": "offline; no dependencies installed",
+      "pip_recipe": "Equivalent local build/install via existing uv; python -m pip unavailable in CPU env"
+    }
+  ],
+  "accepted_PRs_live_verified": [
+    2,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    19
+  ],
+  "figure_visual_review": "All three SVGs rendered with existing bundled sharp and inspected: no clipping; readable labels and explicit separate scales",
+  "limitations": "No new GPU or CPU performance run, full algorithm suite, or external publication URL crawl. README CPU smoke only. Historical reports and framework remain unchanged.",
+  "initial_diagnostics": [
+    "Fixed draft GPU driver link experiments/gpu -> experiments/fd_gpu",
+    "Verification record created before self-link validation",
+    "Windows CRLF snapshot check failed; clean Linux committed-byte snapshot check passed without framework changes"
+  ],
+  "owned_temporary_checkout_and_install_removed": true
+}
