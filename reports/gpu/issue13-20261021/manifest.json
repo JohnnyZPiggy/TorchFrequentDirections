@@ -1,0 +1,62 @@
+{
+  "source_sha": "23b5aa13ef926ecd5df36908f2277fc6e1c77b00",
+  "run_id": "fd13-20261021-104026",
+  "files": {
+    "adapter_cpu.stderr.log": {
+      "bytes": 338,
+      "sha256": "10bc182b6344fdd55aaf59131e4f134021035b1d3cc317cde8881924a536d8bc"
+    },
+    "benchmark.csv": {
+      "bytes": 7693,
+      "sha256": "62019e04278dce40c78a5aeda244d082977ced94ea380aee0abbadd08f34b719"
+    },
+    "colab-control.json": {
+      "bytes": 5923,
+      "sha256": "faaa55e4f8f45f3d39fb304a7d1678517c476ec97b3c2e1926c37a5b24afa8e1"
+    },
+    "correctness.json": {
+      "bytes": 372290,
+      "sha256": "ceb2850d648f2052dbd95b606ef7eabbbc753b41e40bd20bec65466d4c9a696b"
+    },
+    "cpu-adapter.json": {
+      "bytes": 188241,
+      "sha256": "8ef170393cee7b9e44f3962203edcaa06e9bb007d31a34acb938f98e60ab5c31"
+    },
+    "cpu_validation.json": {
+      "bytes": 106527,
+      "sha256": "2ad1e157047ddc49a149a4dc7d9764050eaa2038d948a725e6761248bc150c79"
+    },
+    "cpu_validation.stderr.log": {
+      "bytes": 338,
+      "sha256": "10bc182b6344fdd55aaf59131e4f134021035b1d3cc317cde8881924a536d8bc"
+    },
+    "fd-cuda-qr.json": {
+      "bytes": 476872,
+      "sha256": "5b5546b5ab3ddb9914768ff6d428cc470aff31b99a5f5cf441d5dc459438626b"
+    },
+    "host-execution.json": {
+      "bytes": 1081,
+      "sha256": "0b01b311ab028a3292e1175b0f855c6bb3e3b87f38dc02d90cd283386c7f8339"
+    },
+    "local-execution.json": {
+      "bytes": 617,
+      "sha256": "a4bcd8626d2ad15f18af7ef8d3d467858daaf48798e3117c6d3c3db77fb488dc"
+    },
+    "preflight.json": {
+      "bytes": 3115,
+      "sha256": "da38f91d0fff430e5ac1ed29f9eca3bd73353e30bfd326c4d5965f795e7e53c8"
+    },
+    "snapshot.json": {
+      "bytes": 208,
+      "sha256": "6bb52b7104d17a6897897cfbf4173a59bad135f8fde40019132c3bd45b33f6f8"
+    },
+    "summary.md": {
+      "bytes": 10105,
+      "sha256": "69d0970001029125f4a150ef71a6c93acdd54ea7819709ec9bebdad809f814e3"
+    },
+    "verification.json": {
+      "bytes": 678,
+      "sha256": "dcc1bd3f0307de675b5caea3cd73b929372ab33ac99ed11a32dc5ea092c4b663"
+    }
+  }
+}

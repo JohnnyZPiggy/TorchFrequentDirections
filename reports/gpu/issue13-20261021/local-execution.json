@@ -1,0 +1,28 @@
+{
+  "source_sha": "23b5aa13ef926ecd5df36908f2277fc6e1c77b00",
+  "events": [
+    {
+      "name": "cpu_validation",
+      "exit_code": 0,
+      "elapsed_seconds": 5.458197904000002
+    },
+    {
+      "name": "snapshot",
+      "exit_code": 0,
+      "elapsed_seconds": 0.08839362999999878
+    },
+    {
+      "name": "adapter_cpu",
+      "exit_code": 0,
+      "elapsed_seconds": 2.190096050000008
+    },
+    {
+      "name": "preflight",
+      "exit_code": 0,
+      "elapsed_seconds": 1.2958138019999978
+    }
+  ],
+  "source_clean": true,
+  "utc": "2026-10-21T10:39:14.089721+00:00",
+  "temporary_checkout_removed": true
+}

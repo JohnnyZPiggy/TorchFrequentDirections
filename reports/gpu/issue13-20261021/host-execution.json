@@ -1,0 +1,30 @@
+{
+  "source_sha": "23b5aa13ef926ecd5df36908f2277fc6e1c77b00",
+  "run_id": "fd13-20261021-104026",
+  "utc_start": "2026-10-21T10:40:26.913021+00:00",
+  "task_seconds": 600,
+  "allocation_seconds": 540,
+  "work_timeout_seconds": 420,
+  "cleanup_seconds": 60,
+  "host_timeout_seconds": 660,
+  "new_attempt_limit": 1,
+  "preallocation": {
+    "method": "CLI_074_AUTHENTICATED_CCU_INFO",
+    "balance": 62.41,
+    "assignments": 0
+  },
+  "entitlement_boundary": "Existing positive prepaid/included CU; managed Colab CLI assign only; no purchase, pay, top-up, billing settings or Cloud/Enterprise route",
+  "policy_reference": "https://research.google.com/colaboratory/faq.html#resource-limits",
+  "controller_exit_code": 0,
+  "independent_readback": {
+    "utc": "2026-10-21T10:42:01.827120+00:00",
+    "status": "AUTHENTICATED_ZERO",
+    "assignments": 0,
+    "balance": 62.41
+  },
+  "elapsed_seconds": 96.876570732,
+  "utc_end": "2026-10-21T10:42:01.861780+00:00",
+  "download_sha256": {
+    "fd-cuda-qr.json": "5b5546b5ab3ddb9914768ff6d428cc470aff31b99a5f5cf441d5dc459438626b"
+  }
+}
