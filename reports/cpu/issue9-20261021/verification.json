@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "staged_artifact_hashes": 8,
+  "tested_source": "f5894820dcfdf5bd977384ea24033c10a7793aa2",
+  "timing_blocks_recomputed": 40,
+  "unchanged_production_and_framework": true,
+  "changed_files": 14
+}

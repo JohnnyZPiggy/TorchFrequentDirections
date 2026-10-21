@@ -1,0 +1,39 @@
+{
+  "source_sha": "f5894820dcfdf5bd977384ea24033c10a7793aa2",
+  "utc": "2026-10-21T09:14:17.435309+00:00",
+  "events": [
+    {
+      "name": "unit",
+      "command": [
+        "scripts/validate_cpu.py"
+      ],
+      "timeout_seconds": 120,
+      "elapsed_seconds": 5.112502214999978,
+      "exit_code": 0
+    },
+    {
+      "name": "snapshot",
+      "command": [
+        "scripts/check_snapshot.py"
+      ],
+      "timeout_seconds": 120,
+      "elapsed_seconds": 0.11027941300000066,
+      "exit_code": 0
+    },
+    {
+      "name": "experiment",
+      "command": [
+        "-m",
+        "experiments.qr_svd.driver",
+        "OUTPUT.json"
+      ],
+      "timeout_seconds": 1000,
+      "elapsed_seconds": 55.020452629999994,
+      "exit_code": 0
+    }
+  ],
+  "source_clean": true,
+  "device": "CPU ONLY",
+  "accelerator_allocation_and_execution": "NONE",
+  "note": "Existing validate_cpu.py records torch.cuda.is_available()=false using CPU-only torch; no accelerator allocation, tensors, kernels, Colab, or TPU execution."
+}
