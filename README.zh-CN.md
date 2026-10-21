@@ -90,6 +90,26 @@ arXiv:1501.01711v2](https://arxiv.org/abs/1501.01711v2)，并包含文档说明�
 固定大小快照及 `ell>d` 扩展。参见[推导与数值边界](docs/performance/README.md#mathematical-contract)
 和保留的[基础研究记录](docs/research/frequent-directions-tensorization.md)。
 
+## 在大语言模型与视觉语言模型中的潜在应用
+
+**以下仅为研究方向：本仓库尚未在 LLM/VLM 上实现或测试这些应用。**
+[Frequent Directions 原始论文](https://arxiv.org/abs/1501.01711)
+建立了流式二阶矩及右奇异子空间近似的数学保证，但并未证明 Transformer 的模型质量、
+训练速度或 GPU 显存收益。[Sketchy（NeurIPS 2023）](https://papers.nips.cc/paper_files/paper/2023/hash/ef72fa6579401ffff9da246a5014f055-Abstract-Conference.html)
+在其研究的深度学习场景中使用 FD 维护低秩统计量以支持自适应优化；
+**TorchFD 本身并未实现 Sketchy 优化器**。
+
+| 潜在方向 | FD 可能发挥的作用 | 证据边界 |
+|---|---|---|
+| LLM 激活统计 | 将隐藏层激活向量作为 `H` 的行流式输入，维护紧凑草图 `B`，使 `B.T @ B` 近似 `H.T @ H`，用于探索主要子空间和层表示结构。 | FD 保证的是**未中心化二阶矩**的近似；中心化协方差还需要均值统计及适当中心化。本项目未开展 LLM 激活实验。 |
+| 优化器统计 | 探索用梯度或适当的因子统计草图辅助构建低秩预条件器。 | Sketchy 为这一研究方向提供依据，但 TorchFD 不包含 Sketchy、Shampoo、自动求导训练或可直接替换的优化器；显存、收敛与吞吐收益均未经本项目验证。 |
+| VLM 多模态特征分析 | 对定义明确、维度兼容的图像与文本投影嵌入流进行草图压缩，探索主方向或表示漂移。 | FD 本身不学习跨模态对齐或融合；共享特征空间、交叉协方差及特征拼接方案需要额外论证和实验。 |
+| 持续学习 | 探索跨任务保存紧凑特征或梯度子空间摘要，用于分析分布漂移，或作为未来正则化方法的一个组件。 | FD 草图本身不能防止灾难性遗忘；尚无持续学习基准结果。 |
+
+草图需要存储约 `O(ell * d)` 个元素，**不意味着整个 LLM/VLM 训练系统**
+只需这么多显存。实际价值还取决于特征归一化、各层维度、重复 SVD 的成本、
+设备同步以及与训练系统的集成。目前本项目 API 仅面向推断，不支持 autograd。
+
 ## 性能：先看测量范围，再看比值
 
 ![T4 完整 update 加 sketch：Direct 与 QR-SVD 的配对计时](docs/assets/gpu-benchmarks.svg)
