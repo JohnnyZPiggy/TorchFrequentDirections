@@ -241,6 +241,7 @@ def main():
         raise RuntimeError('clean source required')
     report = dict(source_sha=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
         clean=True, phase=args.phase, seed=SEED, cpu=platform.processor(),
+        platform=platform.platform(), host_frequency_turbo='uncontrolled; WSL exposes no frequency isolation',
         cpu_details=subprocess.check_output(['lscpu'],text=True), python=sys.version,
         torch=torch.__version__, torch_build=torch.__config__.show(),
         intra_threads=torch.get_num_threads(), interop_threads=torch.get_num_interop_threads(),
