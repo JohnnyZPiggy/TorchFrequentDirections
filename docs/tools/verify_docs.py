@@ -26,7 +26,7 @@ def main():
         assert git('show','HEAD:'+path)==original(path),'source changed: '+path
     # Files and same-file/cross-file fragment anchors for all current docs. Historical
     # docs are read as link targets but not rewritten or reclassified by this check.
-    pages=[ROOT/'README.md',ROOT/'docs/README.md',ROOT/'docs/performance/README.md',
+    pages=[ROOT/'README.md',ROOT/'README.zh-CN.md',ROOT/'docs/README.md',ROOT/'docs/performance/README.md',
         ROOT/'docs/performance/measurements.md',ROOT/'docs/assets/README.md',ROOT/'docs/VERIFICATION.md']
     links=0
     for page in pages:
@@ -65,6 +65,12 @@ def main():
     math_text=' '.join(figures['fd-algorithm.svg'].itertext())
     for label in ('m = 2ell','min(ell - 1, d)','0 <= m <= ell','ell < m < 2ell','sigma_ell^2','No SVD','No state mutation'):
         assert label.lower() in math_text.lower(),label
+    english=(ROOT/'README.md').read_text(); chinese=(ROOT/'README.zh-CN.md').read_text()
+    for language in ('python','sh','text'):
+        pattern=r'```'+language+r'\n(.*?)```'
+        assert re.findall(pattern,english,re.S)==re.findall(pattern,chinese,re.S),'bilingual '+language+' blocks differ'
+    switch='[English](README.md) | [简体中文](README.zh-CN.md)'
+    assert switch in english.splitlines()[:4] and switch in chinese.splitlines()[:4]
     example='NOT_RUN (use --run-example with CPU torch)'
     if '--run-example' in sys.argv:
         import torch
@@ -85,7 +91,7 @@ def main():
                 assert residual<=ell*bound+tol
         example=dict(status='PASS',torch=str(torch.__version__),device=str(a.device),outputs=3,per_k_checks=24)
     changed=git('diff',BASE,'--name-only').decode().splitlines()
-    allowed={'README.md','docs/README.md','docs/VERIFICATION.md','docs/verification.json',
+    allowed={'README.md','README.zh-CN.md','docs/README.md','docs/VERIFICATION.md','docs/verification.json',
         'docs/performance/README.md','docs/performance/measurements.md',
         'docs/assets/README.md','docs/assets/sources.json','docs/assets/fd-algorithm.svg',
         'docs/assets/gpu-benchmarks.svg','docs/assets/kernel-fusion.svg',
