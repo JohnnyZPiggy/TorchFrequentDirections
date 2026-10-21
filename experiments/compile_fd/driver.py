@@ -289,6 +289,10 @@ def main():
             torch.set_float32_matmul_precision('highest')
             report['environment']=dict(python=platform.python_version(),torch=str(torch.__version__),cuda=torch.version.cuda,
                 cpu_threads=1,interop_threads=1,tf32=False,compiler_threads=1,cold_cache='new isolated temp directories')
+            report['environment'].update(cpu_model=next((line.split(':',1)[1].strip() for line in
+                Path('/proc/cpuinfo').read_text().splitlines() if line.startswith('model name')),'UNKNOWN'),
+                cpu_affinity=sorted(os.sched_getaffinity(0)),torch_build=torch.__config__.show(),
+                thread_environment={key:os.environ.get(key) for key in ('OMP_NUM_THREADS','MKL_NUM_THREADS','OPENBLAS_NUM_THREADS')})
             if cpu_only:
                 report['cpu']=cpu_diagnosis(module,oracle)
                 report['status']='PASS'
