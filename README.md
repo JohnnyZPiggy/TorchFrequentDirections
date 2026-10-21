@@ -4,8 +4,7 @@
 
 Streaming matrix sketches in native PyTorch: reference and buffered Frequent
 Directions for covariance approximation and right-subspace estimation.
-CPU, real-T4 and compilation studies explore performance; GPU acceleration is
-**not** a default performance guarantee.
+Includes CPU and NVIDIA T4 experiments, PyTorch compilation studies, and reproducible performance reports.
 
 ![MIT license](https://img.shields.io/badge/license-MIT-0f766e)
 ![Research software](https://img.shields.io/badge/status-research_software-334155)
@@ -22,9 +21,8 @@ installed, install the local package:
 python -m pip install --no-deps --no-build-isolation .
 ```
 
-This uses the checkout, not a claimed PyPI release. The build requires setuptools
->=68; `pip install .` can resolve build/runtime dependencies when needed. Packaging
-version ranges are not validation claims for every release.
+The local build requires setuptools >=68. Alternatively, `pip install .` can
+resolve build and runtime dependencies.
 
 ```python
 import torch
@@ -63,9 +61,7 @@ the example above is deliberately CPU-only.
 | Removing physical buffer clearing | Rejected: mixed/null timing evidence and different implicit pickle tail state |
 
 The [current evidence index](docs/README.md#accepted-evidence-map) records merged
-studies through PR #19. Acceptance of research evidence does **not** promote its
-prototype to the API. Historical reports retain their original review-pending
-language; the index gives their later disposition.
+studies through PR #19. The index also tracks the status of experimental modules and historical reports.
 
 ## Algorithm and guarantee
 
@@ -96,42 +92,51 @@ boundary](docs/performance/README.md#mathematical-contract) and retained
 
 ## Potential Applications in LLMs and VLMs
 
-**Research directions only — not implemented or benchmarked on LLMs/VLMs in this repository.**
-The [Frequent Directions paper](https://arxiv.org/abs/1501.01711) establishes
-streaming second-moment and right-subspace approximation guarantees; it does not
-establish transformer quality, training speed or GPU memory savings. The
-[Sketchy study (NeurIPS 2023)](https://papers.nips.cc/paper_files/paper/2023/hash/ef72fa6579401ffff9da246a5014f055-Abstract-Conference.html)
-demonstrates related FD-based low-rank statistics for adaptive optimization in
-studied deep-learning settings, **not** an optimizer supplied by TorchFD.
+Frequent Directions offers a compact streaming summary of high-dimensional
+features. Its covariance and right-subspace approximation properties suggest
+several directions for large-scale model analysis and optimization, building on
+the [original FD work](https://arxiv.org/abs/1501.01711) and related
+[Sketchy optimizer research (NeurIPS 2023)](https://papers.nips.cc/paper_files/paper/2023/hash/ef72fa6579401ffff9da246a5014f055-Abstract-Conference.html).
 
-| Potential direction | What FD could contribute | Evidence boundary |
-|---|---|---|
-| LLM activation statistics | Stream hidden-state vectors as rows of `H` and retain a compact `B` with `B.T @ B` approximating `H.T @ H`, for exploratory dominant-subspace or layer-representation analysis. | FD's Gram guarantee applies to the **uncentered second moment**. Centered covariance needs mean tracking and appropriate centering; no LLM activation study is provided here. |
-| Optimizer statistics | Explore sketches of gradients or suitable factor statistics as components of low-rank preconditioners. | Sketchy supports the research motivation, but TorchFD does not implement Sketchy, Shampoo, autograd-based training or an interchangeable optimizer; memory, convergence and throughput gains are untested here. |
-| VLM feature analysis | Sketch a clearly defined stream of same-dimensional projected image/text embeddings to inspect principal directions or representation shifts. | FD does not itself learn cross-modal alignment or fusion. Any shared-space, cross-covariance or concatenated-feature design needs separate justification and experiments. |
-| Continual learning | Study compact feature/gradient subspace summaries across tasks as a possible diagnostic of distribution drift or an ingredient for future regularization. | A sketch alone does not prevent catastrophic forgetting; no continual-learning benchmark has been run. |
+| Research direction | How FD can help |
+|---|---|
+| LLM activation analysis | Sketch hidden-state vectors online; approximate their uncentered second moment with `B.T @ B` and inspect dominant representation subspaces. |
+| Optimizer statistics | Summarize gradient or factor statistics for research into low-rank preconditioning, motivated in part by Sketchy. |
+| VLM representation analysis | Sketch dimension-compatible projected image and text embeddings to study dominant directions and representation shifts. |
+| Continual learning | Retain compact feature or gradient subspace summaries across tasks for drift analysis and exploration of regularization methods. |
 
-The sketch stores `O(ell * d)` elements, **not** an `O(ell * d)` bound
-on total LLM/VLM training memory. Practical usefulness would also depend on
-feature normalization, layer widths, repeated SVD costs, device synchronization
-and integration with training systems. The current API is inference-only,
-without autograd support.
+These are potential integrations rather than shipped LLM/VLM workflows.
+Centered covariance requires mean tracking; optimizer integration requires a
+separate training implementation. The sketch occupies `O(ell * d)` elements,
+while end-to-end memory and runtime depend on the surrounding model and
+training pipeline.
 
-## Performance: read the scope before the ratio
+## Performance: measured results
 
 ![T4 full update plus sketch: paired Direct versus QR-SVD timings](docs/assets/gpu-benchmarks.svg)
 
-*PR #14, one T4 study, float32, complete resident-input calls. Points and whiskers
-are paired medians and descriptive bootstrap intervals, not universal speedups.
-QR is a research prototype. [Medians, source SHA and protocol](docs/performance/measurements.md).*
+*Real T4, float32, complete resident-input calls (PR #14). The figure reports
+paired medians and descriptive bootstrap intervals.
+[Measurements, source SHA and protocol](docs/performance/measurements.md).*
 
-The shipped short-snapshot optimization saves a final SVD only on its active path;
-snapshot-only savings are not full-stream savings. QR gains depend on shape and
-device. Compiling pointwise shrink reduced 10 launches to one in measured cases,
-yet **0/30 full-workload compile screens passed**. ScratchFD also passed no
-performance screen. CPU/GPU pairing-context drift limits device comparisons.
-The [integrated study](docs/performance/README.md) retains positive, negative and
-inconclusive results; it never multiplies ratios from different blocks.
+The default buffered implementation uses **Direct SVD**. Research experiments
+also evaluate QR + Small SVD, pointwise `torch.compile` fusion, ScratchFD,
+and CUDA Graphs:
+
+- **Short snapshots:** the shipped fast path avoids an extra SVD when the
+  occupied buffer has at most `ell` rows.
+- **QR + Small SVD:** performance varies by matrix shape, device and threading;
+  this remains an experimental backend.
+- **Pointwise compilation:** measured T4 shrink kernels reduced launches from
+  10 to 1. Full-workload compilation passed 0/30 performance screens.
+- **ScratchFD:** full-workload screens passed 0/26, including 11
+  control-inconclusive cases.
+- **CUDA Graphs:** pointwise capture/replay worked; SVD capture failed in the
+  tested setup.
+
+The [integrated performance study](docs/performance/README.md) contains
+experimental configurations, positive and negative findings, and comparisons
+across CPU and T4.
 
 ## Input, numerical and validation boundaries
 
@@ -162,8 +167,7 @@ python docs/tools/build_figures.py --check
 python docs/tools/verify_docs.py --run-example
 ```
 
-These commands do not allocate cloud hardware. This documentation update runs
-figure/link/example checks only, without new performance experiments.
+These commands run local tests and documentation checks.
 
 ## License and research workflow
 
