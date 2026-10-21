@@ -156,8 +156,10 @@ zero-padded short factor or factors that prefix. Reference FD has separate state
 and is not modified. _validate reads incoming rows, shape/dtype/device and finite
 status, not unoccupied buffer data. _factor always allocates independent output
 using new_zeros before reading SVD results; its output cannot alias the old buffer.
-No production serializer exposes the private buffer. Existing test-only full-buffer
-clones check nonmutation internally; numerical oracles/diagnostic reports receive
+No explicit serialization API is defined, but a separate CPU test confirms that
+implicit Python pickle preserves private physical storage, including a candidate's
+unused old tail. Thus the proof covers update/sketch, not serialization equivalence.
+Existing test-only full-buffer clones check nonmutation internally; numerical oracles/diagnostic reports receive
 only snapshots and scalar counts/timings, never raw unused rows. Arbitrary mutation
 of private/configuration fields is outside this maintained-state contract.
 
@@ -191,3 +193,12 @@ Candidate signals require an observed >=1% median paired gain with a descriptive
 paired-bootstrap lower bound above one; all workloads/controls must be reported.
 The interval is not cross-session or multiple-comparison-adjusted proof. A null
 result is valid and should retain the baseline rather than force this optimization.
+
+Measured disposition: logical prefix/factor/Gram and exception tests PASS on CPU/T4.
+Performance is inconclusive with small mixed signals and comparable no-clear
+control movement. The default runtime retains clearing. A CPU synthetic pickle
+roundtrip additionally preserves old unused candidate rows whereas baseline rows
+remain zero; raw pickle/tail bytes were not saved. Snapshot padding and Gram remain
+correct, but blanket no-stale-export compatibility is not established. Do not merge
+the runtime candidate under this Issue's requirements. A serialization policy/fix
+would require a separate scope, not a hidden change in this optimization.

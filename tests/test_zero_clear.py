@@ -1,3 +1,4 @@
+import pickle
 import unittest
 
 import torch
@@ -17,6 +18,13 @@ class ClearingBaseline(FrequentDirections):
 
 
 class ZeroClearTests(unittest.TestCase):
+    def test_retained_runtime_pickle_does_not_export_stale_unused_rows(self):
+        stream=FrequentDirections(4,7).update(torch.arange(56,dtype=torch.float64).reshape(8,7))
+        restored=pickle.loads(pickle.dumps(stream))
+        self.assertEqual(stream._count,3)
+        self.assertEqual(int(torch.count_nonzero(restored._buffer[restored._count:])),0)
+        torch.testing.assert_close(restored.sketch(),stream.sketch(),rtol=0,atol=0)
+
     def test_poisoned_tail_never_enters_factor_or_snapshot(self):
         for dtype in (torch.float32,torch.float64):
             for ell,d in ((1,3),(4,7),(6,2)):
