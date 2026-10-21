@@ -50,3 +50,7 @@ is single-host/single-session, CPU-only; no GPU extrapolation is permitted.
 Instrumented QR, small SVD, Vh recovery and shrink/output diagnostics are separate
 intrusive measurements, not additive median components of the primary timing.
 The process has a 900-second internal bound and an external 1000-second timeout.
+
+Final independent CPU results: [Issue #9 evidence](../../reports/cpu/issue9-20261021/summary.md).
+Numerical checks passed on the recorded clean SHA; the predeclared universal
+performance screen failed. Retain direct SVD; GPT review is pending.
