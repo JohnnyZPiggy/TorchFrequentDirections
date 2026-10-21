@@ -107,12 +107,13 @@ def paired_block(functions,seed,timing):
     return dict(seed=seed,timing=timing.paired(functions,'cuda',seed=seed,repeats=20))
 
 
-def study(oracle,support,timing,profiler,directory):
+def study(oracle,support,timing,profiler,directory,*,deadline_seconds=285,checkpoint=lambda _:None):
     report=dict(records=[],block_order=[],controls_first=True,full_stream_graph='NOT_AVAILABLE; strict host finite predicates remain eager')
     # Mandatory H0 control before candidates, repeated later in each sandwich.
-    control=torch.randn(95,64,dtype=torch.float32).cuda()
+    control=torch.randn(95,64,dtype=torch.float32,generator=torch.Generator().manual_seed(SEED)).cuda()
     control_fn=lambda:run(control,16,FD)
     report['initial_AA']=paired_block(dict(baseline=control_fn,candidate=control_fn),SEED,timing)
+    checkpoint(report)
     specs=[]
     for ell,d in ((16,64),(16,512),(32,1024),(64,2048),(8,3),(2,8)):
         for dtype in (torch.float32,torch.float64):
@@ -122,8 +123,8 @@ def study(oracle,support,timing,profiler,directory):
     for index,(ell,d,dtype,final,kind) in enumerate(specs):
         record=dict(index=index,ell=ell,d=d,dtype=str(dtype),final_count=final,kind=kind)
         report['records'].append(record); report['block_order'].append(index)
-        if time.monotonic()-START>285:
-            record.update(status='NOT_RUN',reason='timing reserve for cleanup'); continue
+        if time.monotonic()-START>deadline_seconds:
+            record.update(status='NOT_RUN',reason='timing reserve for cleanup'); checkpoint(report); continue
         retained=min(ell-1,d); n=2*ell+3*(2*ell-retained)+final-retained if kind=='stream' else final
         cpu=torch.randn(n,d,dtype=dtype,generator=torch.Generator().manual_seed(SEED+index)); a=cpu.cuda()
         record['n']=n; record['device_before']=metrics()
@@ -160,10 +161,12 @@ def study(oracle,support,timing,profiler,directory):
         if d in (64,512) and final>ell and ell==16:
             record['profiles']={name:profiler.kernel_profile(fn,'cuda',directory,'full-'+name) for name,fn in fns.items()}
             record['factor_pair']=paired_block({name:lambda cls=cls:cls(ell,d,dtype=dtype,device='cuda')._factor(a[:2*ell],shrink=True) for name,cls in (('baseline',FD),('candidate',Candidate))},seed+4,timing)
+        checkpoint(report)
     report['final_AA']=paired_block(dict(baseline=control_fn,candidate=control_fn),SEED+999,timing)
     if abs(report['final_AA']['timing']['median_paired_ratio']-1)>.05:
         for record in report['records']:
             if record['status']=='PASS': record['performance']='INCONCLUSIVE'
+    checkpoint(report)
     return report
 
 
