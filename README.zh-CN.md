@@ -4,7 +4,7 @@
 
 基于原生 PyTorch 的流式矩阵摘要：提供参考版与缓冲版 Frequent Directions，
 用于协方差近似和右奇异子空间估计。
-CPU、真实 T4 与编译实验用于探索性能；**不保证默认实现具有 GPU 加速优势**。
+提供 CPU 与 NVIDIA T4 实验、PyTorch 编译研究及可复现的性能报告。
 
 ![MIT 许可证](https://img.shields.io/badge/license-MIT-0f766e)
 ![研究软件](https://img.shields.io/badge/status-research_software-334155)
@@ -21,9 +21,7 @@ CPU、真实 T4 与编译实验用于探索性能；**不保证默认实现具�
 python -m pip install --no-deps --no-build-isolation .
 ```
 
-此命令安装当前检出版本，并不表示项目已经在 PyPI 发布。构建需要 setuptools
->=68；必要时，`pip install .` 可以解析并安装构建及运行依赖。
-包元数据允许的版本范围，不等于每个版本都已通过验证。
+本地构建需要 setuptools >=68；也可以使用 `pip install .` 自动解析构建与运行依赖。
 
 ```python
 import torch
@@ -61,8 +59,7 @@ assert not snapshot.requires_grad
 | 去除物理缓冲区清零 | 已否决：计时证据混合或无明确收益，且隐式 pickle 的尾部状态不同 |
 
 [当前证据索引](docs/README.md#accepted-evidence-map) 收录了截至 PR #19 已合并的研究。
-研究证据获验收，**不等于**其原型已成为公共 API。
-历史报告保留当时的“等待审查”等措辞；索引说明其后续处理结果。
+索引同时记录实验模块和历史报告的状态。
 
 ## 算法与保证
 
@@ -92,50 +89,40 @@ arXiv:1501.01711v2](https://arxiv.org/abs/1501.01711v2)，并包含文档说明�
 
 ## 在大语言模型与视觉语言模型中的潜在应用
 
-**以下仅为研究方向：本仓库尚未在 LLM/VLM 上实现或测试这些应用。**
-[Frequent Directions 原始论文](https://arxiv.org/abs/1501.01711)
-建立了流式二阶矩及右奇异子空间近似的数学保证，但并未证明 Transformer 的模型质量、
-训练速度或 GPU 显存收益。[Sketchy（NeurIPS 2023）](https://papers.nips.cc/paper_files/paper/2023/hash/ef72fa6579401ffff9da246a5014f055-Abstract-Conference.html)
-在其研究的深度学习场景中使用 FD 维护低秩统计量以支持自适应优化；
-**TorchFD 本身并未实现 Sketchy 优化器**。
+Frequent Directions 能以紧凑的流式摘要表示高维特征。基于其协方差和右奇异子空间近似性质，
+结合 [FD 原始研究](https://arxiv.org/abs/1501.01711) 与
+[Sketchy 优化器研究（NeurIPS 2023）](https://papers.nips.cc/paper_files/paper/2023/hash/ef72fa6579401ffff9da246a5014f055-Abstract-Conference.html)，
+可以探索以下方向：
 
-| 潜在方向 | FD 可能发挥的作用 | 证据边界 |
-|---|---|---|
-| LLM 激活统计 | 将隐藏层激活向量作为 `H` 的行流式输入，维护紧凑草图 `B`，使 `B.T @ B` 近似 `H.T @ H`，用于探索主要子空间和层表示结构。 | FD 保证的是**未中心化二阶矩**的近似；中心化协方差还需要均值统计及适当中心化。本项目未开展 LLM 激活实验。 |
-| 优化器统计 | 探索用梯度或适当的因子统计草图辅助构建低秩预条件器。 | Sketchy 为这一研究方向提供依据，但 TorchFD 不包含 Sketchy、Shampoo、自动求导训练或可直接替换的优化器；显存、收敛与吞吐收益均未经本项目验证。 |
-| VLM 多模态特征分析 | 对定义明确、维度兼容的图像与文本投影嵌入流进行草图压缩，探索主方向或表示漂移。 | FD 本身不学习跨模态对齐或融合；共享特征空间、交叉协方差及特征拼接方案需要额外论证和实验。 |
-| 持续学习 | 探索跨任务保存紧凑特征或梯度子空间摘要，用于分析分布漂移，或作为未来正则化方法的一个组件。 | FD 草图本身不能防止灾难性遗忘；尚无持续学习基准结果。 |
+| 研究方向 | FD 可以发挥的作用 |
+|---|---|
+| LLM 激活分析 | 在线摘要隐藏层激活，以 `B.T @ B` 近似未中心化二阶矩，分析表示的主要子空间。 |
+| 优化器统计 | 摘要梯度或因子统计量，探索受 Sketchy 启发的低秩预条件方法。 |
+| VLM 表示分析 | 对维度兼容的图像、文本投影嵌入进行流式摘要，研究主要方向与表示漂移。 |
+| 持续学习 | 跨任务保留紧凑的特征或梯度子空间摘要，用于漂移分析和正则化方法探索。 |
 
-草图需要存储约 `O(ell * d)` 个元素，**不意味着整个 LLM/VLM 训练系统**
-只需这么多显存。实际价值还取决于特征归一化、各层维度、重复 SVD 的成本、
-设备同步以及与训练系统的集成。目前本项目 API 仅面向推断，不支持 autograd。
+这些属于潜在集成方向，并非本仓库已交付的 LLM/VLM 工作流。
+中心化协方差需要额外跟踪均值，优化器集成需要独立的训练实现。
+草图存储量为 `O(ell * d)`，端到端显存和运行成本取决于模型及训练流程。
 
-## 性能：先看测量范围，再看比值
+## 性能：实测结果
 
 ![T4 完整 update 加 sketch：Direct 与 QR-SVD 的配对计时](docs/assets/gpu-benchmarks.svg)
 
-*PR #14，单次 T4 研究，float32，输入已驻留设备的完整调用。
-点与误差线分别表示配对比值的中位数和描述性 bootstrap 区间，不代表普遍加速。
-QR 仍是研究原型。[中位数、源码 SHA 与实验协议](docs/performance/measurements.md)。*
+*真实 T4、float32、输入已驻留设备的完整调用（PR #14）。图中展示配对中位数及
+描述性 bootstrap 区间。[测量数据、源码 SHA 与实验协议](docs/performance/measurements.md)。*
 
-已交付的短快照优化，只在其适用路径上省去最终一次 SVD；
-快照单独计时的收益不等于完整流式处理的收益。QR 的收益取决于形状和设备。
-编译逐点收缩在实测用例中把 kernel 启动次数从 10 次降为 1 次，
-但**完整工作负载的编译性能筛选为 0/30 通过**。
-ScratchFD 同样没有通过性能筛选。CPU/GPU 配对上下文的漂移限制了设备间比较。
-[综合研究](docs/performance/README.md) 同时保留正面、负面及不确定结果，
-不会把不同计时块的比值相乘。
+默认缓冲实现使用 **Direct SVD**。研究实验还覆盖 QR + Small SVD、
+逐点 `torch.compile` 融合、ScratchFD 和 CUDA Graphs：
 
-CUDA Graphs 的负结果限定于被测 T4、torch/CUDA 版本及预分配输出的 SVD 调用：
-逐点捕获可用，含 SVD 的探针在 cuSOLVER 调用处失败；不能据此断言所有配置下的
-cuSOLVER 都不兼容 CUDA Graphs。独立探针也不等于保持严格检查语义的完整 FD 图。
+- **短快照：** 已交付的快速路径在缓冲区占用不超过 `ell` 行时省去一次额外 SVD。
+- **QR + Small SVD：** 性能随矩阵形状、设备和线程设置变化，目前属于实验后端。
+- **逐点编译：** 实测 T4 收缩算子的 kernel 启动次数由 10 降至 1；完整工作负载编译性能筛选为 0/30。
+- **ScratchFD：** 完整工作负载性能筛选为 0/26，其中 11 组对照结果不确定。
+- **CUDA Graphs：** 逐点运算捕获与回放成功；被测环境中的 SVD 捕获失败。
 
-![逐点收缩与完整流式处理：两个独立范围的 kernel 启动计数](docs/assets/kernel-fusion.svg)
-
-*复用原英文融合图：PR #16 中，单次逐点收缩为 10→1 次 kernel 启动；
-另行 profiling 的 float32、ell=16、d=512 完整流式调用为 709→664 次。
-这是两个独立范围的启动计数，**不是 10 倍运行加速，也不是完整 FD 融合**。
-[图表来源与范围说明](docs/assets/README.md)。*
+[综合性能研究](docs/performance/README.md) 汇总实验配置、正面与负面结果，
+以及 CPU 和 T4 的性能比较。
 
 ## 输入、数值与验证边界
 
@@ -165,8 +152,7 @@ python docs/tools/build_figures.py --check
 python docs/tools/verify_docs.py --run-example
 ```
 
-这些命令不会分配云端硬件。本次文档更新只验证图表、链接和示例，
-不开展新的性能实验。三张图均直接引用原英文 SVG，不翻译、复制或修改图像。
+这些命令运行本地测试与文档检查。
 
 ## 许可证与研究工作流
 
